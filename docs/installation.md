@@ -1,6 +1,6 @@
 # INSTALLATION INSTRUCTIONS FOR OFFLINE LIBRARY
 
-root password: venterrunde
+root password: *******
 
 ## INSTALL LIBRARYBOX ON ROUTER ##
 
