@@ -101,6 +101,8 @@ change redirect line to:
 the root folder is under **/mnt/usb/LibraryBox/**. The index.html needs to be placed here: **/mnt/usb/LibraryBox/Content/index.html**
 
 
-## configure sqllite
+## configure sqlite
 
-*Already installed?*
+*Already installed!*
+
+No need to make any changes

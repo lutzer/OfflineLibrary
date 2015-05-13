@@ -1,7 +1,6 @@
 <?php
 
-define("DATABASE_FILE","documents.sqlite");
-define("DATABASE_TABLE_DOCUMENTS","documents");
+require_once("config.php");
 
 class Database extends SQLite3 {
 	function __construct() {

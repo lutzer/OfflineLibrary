@@ -4,7 +4,7 @@ define([], function(){
 			/*
 			 *  server settings 
 			 */
-			"web_service_url": "data/",
+			"web_service_url": "api/",
 
 	};
 	return Constants;

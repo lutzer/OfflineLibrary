@@ -9,7 +9,7 @@ define([
 		
 		model: DocumentModel,
 
-		url : Constants['web_service_url'],
+		url : Constants['web_service_url']+"?documents",
 	
 	});
 	
