@@ -22,6 +22,23 @@
 			$result = $db->getDocument($id);
 			return $result;
 		}
+
+		/**
+		 * @url DELETE /?documents/$id
+		 */
+		function deleteDocument($id = null) {
+			$db = new Database();
+			$db->deleteDocument($id);
+		}
+
+		/**
+		* @url GET /?topics
+		*/
+		function listTopics() {
+			$db = new Database();
+			$result = $db->listTopics();
+			return $result;
+		}
 	}
 
 	spl_autoload_register(); // don't load our classes unless we use them

@@ -406,6 +406,7 @@ class RestServer
 	{
 		header("Cache-Control: no-cache, must-revalidate");
 		header("Expires: 0");
+		//header('Content-type: text/json; charset=utf-8'); 
 		header('Content-Type: ' . $this->format);
 
 		if ($this->format == RestFormat::AMF) {
@@ -441,7 +442,6 @@ class RestServer
 				$data = $this->json_format($data);
 			}
 		}
-
 		echo $data;
 	}
 

@@ -4,10 +4,10 @@ define([
 	'marionette',
 	'vent',
 	'models/Database',
-	'text!templates/homeTemplate.html',
-], function($, _, Marionette, Vent, Database, template){
+	'views/items/DocumentItemView'
+], function($, _, Marionette, Vent, Database, DocumentItemView){
 	
-	var HomeView = Marionette.LayoutView.extend({
+	var DocumentListView = Marionette.CollectionView.extend({
 		
 		initialize: function(options) {
 			
@@ -20,18 +20,16 @@ define([
 
 		},
 		
-		template : _.template(template),
+		childView: DocumentItemView,
 		
-		//childView: ExplorationListItemView,
-		
-		childViewContainer: '.document-list',
+		className: 'row'
 		
 		/*emptyView: Backbone.Marionette.ItemView.extend({
 			template: _.template(emptyTemplate)
 		}),*/
 		
 	});
-	// Our module now returns our view
-	return HomeView;
+	
+	return DocumentListView;
 	
 });

@@ -2,8 +2,10 @@ define([
         'jquery',
         'marionette',
         'vent',
-        'views/HomeView'
-], function($, Marionette, Vent, HomeView){
+        'views/DocumentListView',
+        'views/HeaderView',
+        'views/FooterView'
+], function($, Marionette, Vent, DocumentListView, HeaderView, FooterView){
 	
 	var Controller = Marionette.Controller.extend({
 		
@@ -11,20 +13,28 @@ define([
 			this.app = app;
 			
 			app.addRegions({
-				containerRegion: "#container",
+				headerRegion: "#header",
+				contentRegion: "#content",
+				footerRegion: "#footer",
 				modalRegion: "#modal-container"
 			});
+			
+			this.headerView = new HeaderView();
+			this.footerView = new FooterView();
+			
+			this.app.headerRegion.show(this.headerView);
+			this.app.footerRegion.show(this.footerView);
 		},
 		
 			
 		/* ROUTES */
 		
 		document: function(id) {
-			this.homeView.showRecording(id);
+			//this.app.contentRegion.show(new DocumentView(id));
 		},
 	
 		defaultRoute: function() {
-			this.app.containerRegion.show(new HomeView())
+			this.app.contentRegion.show(new DocumentListView())
 		},
 		
 	});

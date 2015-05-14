@@ -1,0 +1,99 @@
+body {
+	color: rgba(0, 0, 0, 0.87)
+}
+
+h1 {
+	font-size: 120%;
+}
+
+/*
+ * HEADER STYLES
+ */
+.header-wrapper {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	padding: 30px;
+}
+
+#header a {
+	color: #fff3e0;
+}
+
+#header .nav-wrapper {
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #e65100;
+	color: #fff3e0;
+}
+
+#header .side-nav {
+	background-color: #e65100;
+}
+
+#header .side-nav li:hover {
+	background-color: #b42e03;
+}
+
+/*
+ * FOOTER STYLES
+ */
+#footer {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	padding: 30px;
+}
+
+#footer .footer-bar {
+	background-color: #e65100;
+	padding: 10px;
+	color: #fff3e0;
+	text-align: right;
+}
+
+/*
+ * CONTENT STYLES
+ */
+#content {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+/*
+ * CARD STYLES
+ */
+
+.card {
+	background-color: #ffb74d;
+}
+
+.card a {
+	color: rgba(0, 0, 0, 0.87)
+} 
+ 
+ 
+.card-author {
+	display:block;
+	font-size:110%;
+	font-style:italic;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.card-description {
+	
+}
+
+.card-tags {
+	/*border-top: 1px solid #000;*/
+	background-color: #ffa726 ;
+}
+
+.card-tags a {
+	color: #000;
+}
+
+.card-tags ul {
+	margin: 0px;
+}

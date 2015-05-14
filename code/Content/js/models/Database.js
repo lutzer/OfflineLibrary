@@ -1,5 +1,6 @@
 define([
-        'models/DocumentCollection'
+        'models/DocumentCollection',
+        'models/TopicCollection'
 ], function (DocumentCollection) {
 	
 	var instance = null;
@@ -16,9 +17,11 @@ define([
         initialize: function(){
             
         	this.documents = new DocumentCollection();
+        	this.topics = new TopicCollection();
         	
         	//fetch data
         	this.documents.fetch();
+        	this.topics.fetch();
         	
         },
         

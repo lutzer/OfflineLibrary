@@ -84,7 +84,7 @@ see <http://wiki.openwrt.org/doc/howto/http.lighttpd>
 
 the config file can be found under **/opt/piratebox/conf/lighthttpd**.
 
-TODO: how to use clean urls for api route
+* [x] TODO: how to use clean urls for api route
 
 ### change redirection
 
@@ -95,6 +95,8 @@ change redirect line to:
 ```
 <meta http-equiv="refresh" content="0;url=/content" />
 ```
+
+***!!! This also needs to be reverted for deployment.***
 
 ### WWW Folder
 

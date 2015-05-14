@@ -1,0 +1,18 @@
+<div class="col s12 m6 l4">
+	<div class="card">
+		<a href="#">
+		<div class="card-content">
+			<span class="card-title"><%= title %></span> 
+			<span class="card-author"><%= author %></span>
+			<p class="card-description"><%= description %></p>
+		</div>
+		</a>
+		<div class="card-content card-tags">
+			<ul>
+				<% _.each(keywords, function(keyword){ %>
+				<li><a href="#keyword/<%= keyword %>"><%= keyword.toUpperCase() %></a></li>
+				<% }); %>
+			</ul>
+		</div>
+	</div>
+</div>
