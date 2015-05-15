@@ -21,6 +21,7 @@ define([
 			controller: new Controller(App),
 			appRoutes: {
 				'document/:id': 'document',
+				'upload': 'upload',
 				'*actions': 'defaultRoute'
 			}
 		});

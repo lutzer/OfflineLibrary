@@ -20,7 +20,7 @@ define([
 		template : _.template(template),
 		
 		onShow: function() {
-			$('#content').css('margin-bottom',$('#footer').outerHeight());
+			//$('#content').css('margin-bottom',$('#footer').outerHeight());
 		}
 	});
 	

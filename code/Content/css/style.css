@@ -13,7 +13,7 @@ h1 {
 	position: fixed;
 	top: 0px;
 	width: 100%;
-	padding: 30px;
+	padding: 1em;
 }
 
 #header a {
@@ -39,16 +39,14 @@ h1 {
  * FOOTER STYLES
  */
 #footer {
-	position: fixed;
-	bottom: 0px;
-	width: 100%;
-	padding: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
 #footer .footer-bar {
-	background-color: #e65100;
+	/*background-color: #e65100;
+	color: #fff3e0;*/
 	padding: 10px;
-	color: #fff3e0;
 	text-align: right;
 }
 
@@ -81,19 +79,55 @@ h1 {
 	padding-bottom: 10px;
 }
 
-.card-description {
-	
+.card p {
+	padding:0.3em;
 }
 
-.card-tags {
+.card p a {
+	font-weight: bold;
+}
+
+.card-bottom {
 	/*border-top: 1px solid #000;*/
 	background-color: #ffa726 ;
 }
 
-.card-tags a {
+.card-bottom a {
 	color: #000;
+	font-weight: bold;
 }
 
-.card-tags ul {
+.card-bottom ul {
 	margin: 0px;
+}
+
+/*
+ * FORM STYLES
+ */
+ 
+.input-field input, .input-field label, .input-field textarea {
+	border-color: #000;
+	color: rgba(0, 0, 0, 0.87);
+}
+
+input:focus, textarea:focus {
+	border-color: #000 !important; 
+	webkit-box-shadow: 0 1px 0 0 #000 !important;
+	box-shadow: 0 1px 0 0 #000 !important;
+}
+
+.input-field label.active  {
+	color: rgba(0, 0, 0, 0.87) !important; 
+}
+
+.input-field #filepath {
+	display:block;
+	text-align: right;
+	height:3.5em;
+	line-height:3.5em;
+}
+
+.input-field .btn {
+	margin-left:1em;
+	margin-right:1em;
 }

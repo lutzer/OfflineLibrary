@@ -1,0 +1,75 @@
+<form enctype="multipart/form-data">
+<div class="row">
+	<div class="col s0 m1 l2"><p></p></div>
+	<div class="col s12 m10 l8">
+		<div class="card upload">
+				<div class="card-content">
+					<span class="card-title">Upload Document</span> 
+						
+					<div class="input-field col s12">
+						<input id="title" type="text"> 
+						<label for="title">Title</label>
+					</div>
+					
+					<div class="input-field col s12">
+						<input id="author" type="text"> 
+						<label for="Author">Author</label>
+					</div>
+					
+					<div class="input-field col s12">
+			          <textarea id="description" class="materialize-textarea"></textarea>
+			          <label for="description">Description</label>
+			        </div>
+					
+					<div class="input-field col s12">
+						<input id="keywords" type="text"> 
+						<label for="keywords">Keywords</label>
+					</div>
+					
+					<div class="input-field col s12">
+						<input id="published" type="text"> 
+						<label for="published">Publishing Year</label>
+					</div>
+					
+					<div class="input-field col s12">
+						<input id="isbn" type="text"> 
+						<label for="isbn">ISBN</label>
+					</div>
+					
+					<div class="input-field col s12">
+						<select id="language" class="browser-default">
+							<option value="" disabled selected>Choose language</option>
+							<% _.each(languages, function(language){ %>
+						    <option value="<%= language %>"><%= language %></option>
+						    <% }); %>
+						</select>
+					</div>
+					
+					<div class="input-field col s12">
+						<select id="topic" class="browser-default">
+							<option value="" disabled selected>Choose topic</option>
+							<% _.each(items, function(item){ %>
+						    <option value="<%= item.id %>"><%= item.topic_name %></option>
+						    <% }); %>
+						</select>
+					</div>
+					
+					<div class="file-field input-field col s12">
+						<div class="btn">
+							<span>Choose file</span> <input id="file-chooser" name='file' type="file" />
+						</div>
+						<div id="filepath"></div>
+					</div>
+					
+					<!--  need this to keep layout alright -->
+					<div><img src="images/placeholder.gif"/></div>
+	
+				</div>
+				<div class="card-content card-bottom center">
+					<input type="submit" value="Submit" class="waves-effect waves-light btn">
+				</div>
+		</div>
+	</div>
+	
+</div>
+</form>

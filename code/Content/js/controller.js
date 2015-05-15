@@ -2,10 +2,12 @@ define([
         'jquery',
         'marionette',
         'vent',
+        'views/DocumentView',
         'views/DocumentListView',
+        'views/UploadView',
         'views/HeaderView',
         'views/FooterView'
-], function($, Marionette, Vent, DocumentListView, HeaderView, FooterView){
+], function($, Marionette, Vent, DocumentView, DocumentListView, UploadView, HeaderView, FooterView){
 	
 	var Controller = Marionette.Controller.extend({
 		
@@ -30,11 +32,15 @@ define([
 		/* ROUTES */
 		
 		document: function(id) {
-			//this.app.contentRegion.show(new DocumentView(id));
+			this.app.contentRegion.show(new DocumentView({id: id}));
+		},
+		
+		upload: function() {
+			this.app.contentRegion.show(new UploadView());
 		},
 	
 		defaultRoute: function() {
-			this.app.contentRegion.show(new DocumentListView())
+			this.app.contentRegion.show(new DocumentListView());
 		},
 		
 	});

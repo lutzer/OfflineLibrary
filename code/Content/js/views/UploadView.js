@@ -1,0 +1,83 @@
+define([
+	'jquery',
+	'underscore',
+	'backbone',
+	'marionette',
+	'vent',
+	'models/Database',
+	'models/DocumentModel',
+	'values/Languages',
+	'text!templates/uploadTemplate.html',
+], function($, _, Backbone, Marionette, Vent, Database, DocumentModel, Languages, template){
+	
+	var UploadView = Marionette.ItemView.extend({
+		
+		initialize: function(options) {
+			this.collection = Database.getInstance().topics;
+		},
+		
+		collectionEvents: {
+		    "sync": "render"
+		},
+		
+		events: {
+		    'submit form' : 'uploadFile',
+		    'change #file-chooser' : 'onFileChoosen'
+		},
+		
+		template : _.template(template),
+		
+		templateHelpers: {
+	        languages: Languages
+	    },
+		
+		uploadFile: function(event) {
+			var self = this;
+			var values = {
+					author: $('#author').val(),
+					title: $('#title').val(),
+					description: $('#description').val(),
+					keywords: $('#keywords').val(),
+					published: $('#published').val(),
+					isbn: $('#isbn').val(),
+					language: $("#language").val(),
+					topic_id: $("#topic").val()
+			};
+
+			if(event) 
+				event.preventDefault();
+
+			var model = new DocumentModel(values);
+			
+			model.save(values, { 
+				iframe: true,
+				files: this.$('form :file'),
+				data: values,
+				success: function(model,response) {
+					if ('error' in response)
+						console.log("error uploading file");
+					else {
+						self.addModel(model);
+						window.location.href = "#document/"+response.id;
+					}	
+				},
+				error: function(model,response) {
+					console.log("error uploading file");
+				}
+			});
+		},
+		
+		addModel: function(model) {
+			Database.getInstance().documents.add(model);
+		},
+		
+		onFileChoosen: function(event) {
+			filename = event.target.value.split('/').pop()
+			filename = filename.split('\\').pop();
+			this.$('#filepath').html(filename);
+		}
+	});
+	
+	return UploadView;
+	
+});

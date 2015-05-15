@@ -8,13 +8,27 @@ define([
 
 		urlRoot : Constants['web_service_url']+"?documents",
 		
-		set: function(attributes, options) {
-		    if (attributes.keywords !== undefined && attributes.keywords != null) {
+		defaults: {
+			title: '',
+			author: '',
+			description: '',
+			keywords: '',
+			published: 0,
+			isbn: '',
+			language: '',
+			topic_name: '',
+			topic_id: null,
+			file: ''
+			
+		}
+		
+		/*set: function(attributes, options) {
+		    if (attributes.keywords !== undefined && attributes.keywords.length > 1) {
 		        attributes.keywords = attributes.keywords.split(" ");
 		    }
 		    
 		    return Backbone.Model.prototype.set.call(this, attributes, options);
-		},
+		},*/
 		
 	});
 
