@@ -50,7 +50,7 @@
 		"title" => "Madame Bovary",
 		"author" => "Flaubert Gustave",
 		"description" => "Etiam vulputate neque turpis, vel malesuada tellus commodo ut. Proin gravida augue odio, Aenean varius quam at quam convallis, id porta nulla luctus. Nullam a tincidunt odio, sit amet mollis elit. Pellentesque et tristique enim. Aliquam vel dolor et lectus venenatis varius at aliquam nulla. Integer vehicula nibh justo, aliquet feugiat ex maximus et. Curabitur ex velit, commodo vitae odio id, ultrices euismod ante. Curabitur lacinia est sed urna cursus, vitae finibus metus vulputate. Duis iaculis a est eget mollis. Maecenas feugiat sem sit amet tellus convallis, in placerat nisi sollicitudin. Duis vehicula ipsum nec elit dignissim, at ornare orci blandit. Donec varius sollicitudin euismod. Praesent ac imperdiet massa.",
-		"keywords" => "french literature",
+		"keywords" => "french Literature",
 		"topic_id" => 2,
 		"published" => 1856,
 		"language" => "French",
@@ -61,7 +61,7 @@
 		"title" => "Madame Bovary",
 		"author" => "Flaubert Gustave",
 		"topic_id" => 2,
-		"keywords" => "vel malesuada tellus commodo",
+		"keywords" => "French literature",
 		"language" => "French",
 		"file" => "bovary.pdf"
 	));
@@ -69,6 +69,7 @@
 		"id" => null,
 		"title" => "Madame Bovary",
 		"author" => "Flaubert Gustave",
+		"topic_id" => 3,
 		"description" => "Etiam vulputate neque turpis, vel malesuada tellus commodo ut. Proin gravida augue odio,",
 		"file" => "bovary.pdf"
 	));
@@ -100,8 +101,8 @@
 	$rows = $db->listDocuments();
 	var_dump($rows);
 
-	echo "<h2>GET FIRST DOCUMENT</h2>";	
-	$rows = $db->getDocument(1);
+	echo "<h2>GET THIRD DOCUMENT</h2>";	
+	$rows = $db->getDocument(3);
 	var_dump($rows);
 
 	echo "<h2>CHANGE TITLE</h2>";

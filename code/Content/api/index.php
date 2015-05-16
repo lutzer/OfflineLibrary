@@ -2,6 +2,7 @@
 
 	require("Database.php");
 	require('RestServer.php');
+	require('Validator.php');
 
 	class Controller {
 
@@ -29,6 +30,22 @@
 		 */
 		function insertDocument($id = null) {
 			
+			//validate post data
+			$validator = new Validator($_POST);
+			$errors = $validator->validate(array(
+				'title' => VALIDATE_NON_EMPTY_STRING,
+				'author' => VALIDATE_NON_EMPTY_STRING,
+				'keywords' => VALIDATE_EXISTS
+			));
+			if (!empty($errors))
+				throw new RestException(400, implode(" ",$errors));
+			
+			//change string cases
+			$_POST['title'] = strtoupper($_POST['title']);
+			$_POST['author'] = ucwords($_POST['author']);
+			$_POST['keywords'] = strtolower($_POST['keywords']);
+			
+			// submit new entry and upload file
 			if ($id == null) {
 				if (!isset($_FILES['file']))
 					throw new RestException(400, 'No File submitted');
@@ -40,27 +57,25 @@
 				$_POST['file'] = $file['name']; 
 				$db->insertDocument($_POST);
 				
+				//upload file
 				$id = $db->lastInsertRowid();
-				
-				//move file to shared directory
 				$upload_dir = DIR_RECORD_FILES.'/'.$id;
 				try {
 					uploadFile($file['tmp_name'],$upload_dir,$file['name']);
 				} catch (Exception $e) {
+					// delete entry if upload failed
+					$db->deleteDocument($id);
 					throw new RestException(400, $e->getMessage());
 				}
 				
 				return $db->getDocument($id);
-			}
-			
-			//insert Model and return it
-			/*try {
+				
+			// modify entry
+			} else {
+				//insert Model and return it
 				$db->insertDocument($_POST);
-			} catch (Exception $e) {
-				throw new RestException(400, $e->getMessage());
-			}*/
-			
-			
+				return $db->getDocument($id);
+			}
 			
 		}
 
@@ -95,9 +110,8 @@
 		if (is_uploaded_file($tmp_file)) {
 			move_uploaded_file($tmp_file, $path.'/'.$filename);
 		} else {
-			throw new Exception('Cant copy file to new server.');
+			throw new Exception('No file submitted.');
 		}
-		
 	}
 
 	spl_autoload_register(); // don't load our classes unless we use them

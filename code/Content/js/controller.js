@@ -5,9 +5,12 @@ define([
         'views/DocumentView',
         'views/DocumentListView',
         'views/UploadView',
+        'views/AboutView',
         'views/HeaderView',
-        'views/FooterView'
-], function($, Marionette, Vent, DocumentView, DocumentListView, UploadView, HeaderView, FooterView){
+        'views/FooterView',
+        'views/dialogs/ModalDialogView',
+        'models/Database'
+], function($, Marionette, Vent, DocumentView, DocumentListView, UploadView, AboutView, HeaderView, FooterView, ModalDialogView){
 	
 	var Controller = Marionette.Controller.extend({
 		
@@ -26,6 +29,9 @@ define([
 			
 			this.app.headerRegion.show(this.headerView);
 			this.app.footerRegion.show(this.footerView);
+			
+			//register events
+			Vent.on('dialog:open', this.openDialog, this);
 		},
 		
 			
@@ -38,9 +44,27 @@ define([
 		upload: function() {
 			this.app.contentRegion.show(new UploadView());
 		},
+		
+		about: function() {
+			this.app.contentRegion.show(new AboutView());
+		},
+		
+		topic: function(id) {
+			this.app.contentRegion.show(new DocumentListView({collectionFilter : { topic_id : id}}));
+		},
+		
+		keyword: function(keyword) {
+			this.app.contentRegion.show(new DocumentListView({collectionFilter : { keywords : keyword}}));
+		},
 	
 		defaultRoute: function() {
 			this.app.contentRegion.show(new DocumentListView());
+		},
+		
+		/* DIALOGS */
+		
+		openDialog: function(options) {
+			this.app.modalRegion.show(new ModalDialogView(options));
 		},
 		
 	});

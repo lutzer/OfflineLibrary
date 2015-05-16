@@ -1,9 +1,18 @@
 <!-- Sidebar menu -->
 <ul class="side-nav" id="mobile-demo">
-	<li><a href="#search"><i class="mdi-action-search left"></i>Search</a></li>
+	<li><a href="#">Home</a></li>
 	<li><a href="#about">About</a></li>
 	<li><a href="#upload">Upload</a></li>
 	<li><a href="#index">Index</a></li>
+</ul>
+
+<!-- Dropdown Menu -->
+<ul id="topic-dropdown" class="dropdown-content">
+	<li><a href="#">All Topics</a></li>
+	<li class="divider"></li>
+	<% _.each(items, function(item){ %>
+	<li><a href="#topic/<%= item.id %>"><%= item.topic_name %></a></li>
+    <% }); %>
 </ul>
 
 <!-- Top nav bar -->
@@ -14,15 +23,18 @@
 				data-activates="mobile-demo" class="button-collapse"> <i
 				class="mdi-navigation-menu"></i>
 			</a>
+			<div class="right">
+				<a href="#search"><i class="mdi-action-search"></i></a>
+			</div>
 			<ul class="right hide-on-med-and-down">
-				<li><a href="#about">ABOUT</a></li>
-				<li><a href="#upload">UPLOAD</a></li>
-				<li><a href="#index">INDEX</a></li>
-				<li><a class="dropdown-button" href="#!">TOPICS<i
-						class="mdi-navigation-arrow-drop-down right"></i></a></li>
-				<li><a href="#search"><i class="mdi-action-search"></i></a></li>
+				<li><a class="link" href="#">HOME</a></li>
+				<li><a class="link" href="#about">ABOUT</a></li>
+				<li><a class="link" href="#upload">UPLOAD</a></li>
+				<li><a class="link" href="#index">INDEX</a></li>
+				<li><a class="dropdown-button link" href="#!" data-activates="topic-dropdown">TOPICS
+				<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
 			</ul>
-
+			
 		</div>
 	</nav>
 </div>

@@ -10,7 +10,7 @@
 		<div class="card-content card-bottom">
 			<ul>
 				<% _.each(keywords.split(" "), function(keyword){ %>
-				<li><a href="#keyword/<%= keyword %>"><%= keyword.toUpperCase() %></a></li>
+				<li><a class="link" href="#keyword/<%= keyword %>"><%= keyword.toUpperCase() %></a></li>
 				<% }); %>
 			</ul>
 		</div>

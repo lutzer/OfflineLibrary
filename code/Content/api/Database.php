@@ -72,7 +72,7 @@ class Database extends SQLite3 {
 	function insertDocument($document) {
 		$stmt = $this->prepare("INSERT OR REPLACE INTO ".DATABASE_TABLE_DOCUMENTS." ".
 			"(id,title,author,description,keywords,topic_id,published,isbn,language,file) VALUES ".
-			"(:id,:title,:author,:description,:keywords,:topic_id,:published,:isbn,:language,:file)"
+			"(:id,:title,:author,:description,LOWER(:keywords),:topic_id,:published,:isbn,:language,:file)"
 		);
 
 		foreach ($document as $key => $value)

@@ -22,6 +22,9 @@ define([
 			appRoutes: {
 				'document/:id': 'document',
 				'upload': 'upload',
+				'about' : 'about',
+				'topic/:id' : 'topic',
+				'keyword/:keywoard' : 'keyword',
 				'*actions': 'defaultRoute'
 			}
 		});

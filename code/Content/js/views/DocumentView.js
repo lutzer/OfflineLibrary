@@ -28,6 +28,26 @@ define([
 		        filepath: Constants['upload_directory']+this.model.get('id')+'/'+this.model.get('file')
 		    }
 	    },
+	    
+	    /*//show Spinner when there is no data
+	    getTemplate: function(){
+	        if (this.model.get("title")){
+	        	this.toggleSpinner(false);
+	          return this.template;
+	        } else {
+	          this.toggleSpinner(true);
+	          return _.template(" ");
+	        }
+	    },
+	    
+	    toggleSpinner: function(visible) {
+	    	if (visible) {
+	    		$('#spinner').show();
+	    	} else {
+	    		$('#spinner').hide();
+	    	}
+	    	
+	    }*/
 	});
 	
 	return DocumentView;

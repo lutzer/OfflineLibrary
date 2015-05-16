@@ -54,15 +54,23 @@ define([
 				files: this.$('form :file'),
 				data: values,
 				success: function(model,response) {
-					if ('error' in response)
-						console.log("error uploading file");
-					else {
+					if ('error' in response) {
+						Vent.trigger('dialog:open', {
+							title: "Error uploading", 
+							text: response.error.message, 
+							type: 'message'
+						});
+					} else {
 						self.addModel(model);
 						window.location.href = "#document/"+response.id;
 					}	
 				},
 				error: function(model,response) {
-					console.log("error uploading file");
+					Vent.trigger('dialog:open', {
+						title: "Error uploading", 
+						text: response.responseText, 
+						type: 'message'
+					});
 				}
 			});
 		},

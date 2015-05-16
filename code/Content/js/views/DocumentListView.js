@@ -4,29 +4,49 @@ define([
 	'marionette',
 	'vent',
 	'models/Database',
-	'views/items/DocumentItemView'
-], function($, _, Marionette, Vent, Database, DocumentItemView){
+	'models/DocumentCollection',
+	'views/items/DocumentItemView',
+	'text!templates/documentListTemplate.html'
+], function($, _, Marionette, Vent, Database, DocumentCollection, DocumentItemView ,template){
 	
-	var DocumentListView = Marionette.CollectionView.extend({
+	var DocumentListView = Marionette.CompositeView.extend({
 		
 		initialize: function(options) {
 			
 			var database = Database.getInstance();
 			this.collection = database.documents;
 			
+			if (this.options.collectionFilter !== undefined) {
+				var field = _.keys(this.options.collectionFilter)[0];
+				var value = _.values(this.options.collectionFilter)[0];
+				this.options.filterName = field+"="+value;
+			}
+		
 		},
 		
-		events : {
-
+		template: _.template(template),
+		
+		templateHelpers: function() {
+			return {
+				filterName : this.options.filterName
+			}
 		},
 		
 		childView: DocumentItemView,
 		
-		className: 'row'
+		childViewContainer: "#document-list",
 		
-		/*emptyView: Backbone.Marionette.ItemView.extend({
-			template: _.template(emptyTemplate)
-		}),*/
+		className: 'row',
+		
+		// filter collection
+		filter: function (child, index, collection) {
+			if (this.options.collectionFilter !== undefined) {
+				var field = _.keys(this.options.collectionFilter)[0];
+				var value = _.values(this.options.collectionFilter)[0];
+				return child.matches(field,value);
+			}
+			return true;
+	    }
 		
 	});
 	

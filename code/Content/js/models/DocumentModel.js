@@ -9,27 +9,29 @@ define([
 		urlRoot : Constants['web_service_url']+"?documents",
 		
 		defaults: {
-			title: '',
-			author: '',
-			description: '',
+			title: false,
+			author: false,
+			description: false,
 			keywords: '',
-			published: 0,
-			isbn: '',
-			language: '',
-			topic_name: '',
+			published: false,
+			isbn: false,
+			language: false,
+			topic_name: false,
 			topic_id: null,
 			file: ''
 			
-		}
+		},
 		
-		/*set: function(attributes, options) {
-		    if (attributes.keywords !== undefined && attributes.keywords.length > 1) {
-		        attributes.keywords = attributes.keywords.split(" ");
-		    }
-		    
-		    return Backbone.Model.prototype.set.call(this, attributes, options);
-		},*/
-		
+		/*
+		 * matches an attribute with the value, returns true if match exists
+		 */
+		matches: function(attribute,value) {
+			if (attribute == 'keywords') {
+				return _.contains(this.get('keywords').split(" "), value) 
+			} else {
+				return this.get(attribute) == value;
+			}
+		}		
 	});
 
 	// Return the model for the module

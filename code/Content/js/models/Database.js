@@ -1,7 +1,8 @@
 define([
         'models/DocumentCollection',
-        'models/TopicCollection'
-], function (DocumentCollection) {
+        'models/TopicCollection',
+        'models/SettingsModel'
+], function (DocumentCollection, TopicCollection, SettingsModel) {
 	
 	var instance = null;
 	 
@@ -18,10 +19,12 @@ define([
             
         	this.documents = new DocumentCollection();
         	this.topics = new TopicCollection();
+        	this.settings = new SettingsModel();
         	
         	//fetch data
         	this.documents.fetch();
         	this.topics.fetch();
+        	this.settings.fetch();
         	
         },
         
