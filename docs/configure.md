@@ -102,6 +102,10 @@ change redirect line to:
 
 the root folder is under **/mnt/usb/LibraryBox/**. The index.html needs to be placed here: **/mnt/usb/LibraryBox/Content/index.html**
 
+### Change Php.ini
+
+its located under: **/etc/php.ini**
+
 
 ## configure sqlite
 

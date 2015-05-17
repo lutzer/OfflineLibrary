@@ -38,35 +38,42 @@ define([
 		/* ROUTES */
 		
 		document: function(id) {
+			$('body').scrollTop(0);
 			this.app.contentRegion.show(new DocumentView({id: id}));
 		},
 		
 		upload: function() {
+			$('body').scrollTop(0);
 			this.app.contentRegion.show(new UploadView());
 		},
 		
 		about: function() {
+			$('body').scrollTop(0);
 			this.app.contentRegion.show(new AboutView());
 		},
 		
 		topic: function(id) {
+			$('body').scrollTop(0);
 			this.app.contentRegion.show(new DocumentListView({collectionFilter : { topic_id : id}}));
 		},
 		
 		keyword: function(keyword) {
+			$('body').scrollTop(0);
 			this.app.contentRegion.show(new DocumentListView({collectionFilter : { keywords : keyword}}));
 		},
 		
 		year: function(year) {
+			$('body').scrollTop(0);
 			this.app.contentRegion.show(new DocumentListView({collectionFilter : { published : year}}));
 		},
 		
 		author: function(author) {
+			$('body').scrollTop(0);
 			this.app.contentRegion.show(new DocumentListView({collectionFilter : { author : author}}));
-			
 		},
 		
 		index: function() {
+			$('body').scrollTop(0);
 			this.app.contentRegion.show(new IndexView());
 		},
 	

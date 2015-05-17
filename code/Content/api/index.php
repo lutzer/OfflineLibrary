@@ -1,8 +1,12 @@
 <?php
 
-	require("Database.php");
-	require('RestServer.php');
-	require('Validator.php');
+	require_once('config.php');
+	require_once("Database.php");
+	require_once('RestServer.php');
+	require_once('Validator.php');
+	
+
+	$UPLOAD_ALLOWED_EXTENSIONS = array("jpg", "gif", "png", "txt", "pdf", "doc", "docx", "odt", "epub");
 
 	class Controller {
 
@@ -10,7 +14,7 @@
 		* @url GET /?documents
 		*/
 		function listDocuments() {
-			$db = new Database();
+			$db = new DocumentsDatabase();
 			$result = $db->listDocuments();
 			return $result;
 		}
@@ -19,7 +23,7 @@
 		 * @url GET /?documents/$id
 		 */
 		function getDocument($id = null) {
-			$db = new Database();
+			$db = new DocumentsDatabase();
 			$result = $db->getDocument($id);
 			return $result;
 		}
@@ -33,9 +37,11 @@
 			//validate post data
 			$validator = new Validator($_POST);
 			$errors = $validator->validate(array(
-				'title' => VALIDATE_REQUIRED | VALIDATE_NON_EMPTY_STRING,
-				'author' => VALIDATE_REQUIRED | VALIDATE_NON_EMPTY_STRING,
-				'published' => VALIDATE_YEAR
+				'title' => VALIDATE_RULE_REQUIRED | VALIDATE_RULE_NON_EMPTY_STRING,
+				'author' => VALIDATE_RULE_REQUIRED | VALIDATE_RULE_NON_EMPTY_STRING,
+				'published' => VALIDATE_RULE_YEAR,
+				'keywords' => VALIDATE_RULE_TAGS,
+				'isbn' => VALIDATE_RULE_ISBN, 
 			));
 			if (!empty($errors))
 				throw new RestException(400, implode(" ",$errors));
@@ -47,13 +53,16 @@
 			
 			// submit new entry and upload file
 			if ($id == null) {
-				if (!isset($_FILES['file']))
+				if (!isset($_FILES['file']) || empty($_FILES['file']['name']))
 					throw new RestException(400, 'No File submitted');
 				
 				$file = $_FILES['file'];
 				
+				if ($file['size'] < 1 || $file['size'] > UPLOAD_FILE_MAX_SIZE)
+					throw new RestException(400, "File is too large, maximum file size is ".strval(UPLOAD_FILE_MAX_SIZE/8/1024/1024)." MB.");
+				
 				// append filename to post data and insert in database
-				$db = new Database();
+				$db = new DocumentsDatabase();
 				$_POST['file'] = $file['name']; 
 				$db->insertDocument($_POST);
 				
@@ -61,6 +70,7 @@
 				$id = $db->lastInsertRowid();
 				$upload_dir = DIR_RECORD_FILES.'/'.$id;
 				try {
+					checkFileType($file['name']);
 					uploadFile($file['tmp_name'],$upload_dir,$file['name']);
 				} catch (Exception $e) {
 					// delete entry if upload failed
@@ -73,6 +83,7 @@
 			// modify entry
 			} else {
 				//insert Model and return it
+				$db = new DocumentsDatabase();
 				$db->insertDocument($_POST);
 				return $db->getDocument($id);
 			}
@@ -83,7 +94,7 @@
 		 * @url DELETE /?documents/$id
 		 */
 		function deleteDocument($id = null) {
-			$db = new Database();
+			$db = new DocumentsDatabase();
 			$db->deleteDocument($id);
 		}
 
@@ -91,9 +102,19 @@
 		* @url GET /?topics
 		*/
 		function listTopics() {
-			$db = new Database();
+			$db = new DocumentsDatabase();
 			$result = $db->listTopics();
 			return $result;
+		}
+	}
+	
+	function checkFileType($fileName) {
+		
+		global $UPLOAD_ALLOWED_EXTENSIONS;
+		
+		$extension = pathinfo($fileName, PATHINFO_EXTENSION);
+		if(!in_array($extension, $UPLOAD_ALLOWED_EXTENSIONS)) {
+			throw new Exception('Only these file extensions are allowed: '.implode(", .",$UPLOAD_ALLOWED_EXTENSIONS));
 		}
 	}
 	

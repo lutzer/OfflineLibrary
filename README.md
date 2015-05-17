@@ -16,10 +16,17 @@ See [Coniguration Instructions](docs/configure.md)
 * [ ] create / delete topics
 * [x] Modal Dialogs for Error Handling
 * [ ] Api: Clean up files which are not in database
+* [ ] Pagination for documents
+* [ ] Put rest server in $mode=production
 
 ## QUESTIONS
 
-* [ ] Who can edit/delete documents
-* [ ] do we want an Image upload?
-* [ ] do you need to define topic colors manualy or can they be automaticaly generated?
-* [ ] Customize look: only logo, about and footer text?
+* Who can edit/delete documents
+* do we want an Image upload?
+* do you need to define topic colors manualy or can they be automaticaly generated?
+* Customize look: only logo, about and footer text?
+* how big will the book collection be / how much does it has to handle?
+* maximum filesize for documents?
+* which file types need to be supported?
+* Problem: hardware very slow. large uploads take forever and disable the whole box
+* right now its only possible to upload files up to 15 mb

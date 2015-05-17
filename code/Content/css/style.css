@@ -60,7 +60,8 @@ h1 {
   margin: 0; }
 
 h2 {
-  font-size: 120%; }
+  font-size: 120%;
+  color: #ffffff; }
 
 a.link {
   font-weight: bold;
@@ -93,7 +94,8 @@ a.link {
   background-color: #465157; }
 
 #header .side-nav a {
-  color: #ffffff; }
+  color: #ffffff;
+  font-size: 120%; }
 
 #header .side-nav li:hover {
   background-color: #242A2D; }
@@ -235,7 +237,7 @@ a.btn {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  background-color: #eee;
+  background-color: #afb42b;
   padding: 10px;
   border-radius: 2px;
   -webkit-transform: translate3d(0, 0, 0);

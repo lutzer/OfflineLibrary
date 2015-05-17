@@ -4,6 +4,7 @@ $font-regular:    Helvetica;
 $font-bold:    Helvetica;
 
 $primary-text-color: rgba(0, 0, 0, 0.87);
+$headline-text-color : #ffffff;
 $primary-border-color: #000000;
 
 $button-color: #465157;
@@ -22,7 +23,7 @@ $content-card-bg-color: #c0ca33;
 $content-card-bg-color2: #9e9d24;
 
 $modal-overlay-color: rgba(0, 0, 0, 0.5);
-$modal-bg-color: #eee;
+$modal-bg-color: #afb42b;
 
 /*
  * COLORS
@@ -90,6 +91,7 @@ h1 {
 
 h2 {
 	font-size: 120%;
+	color: $headline-text-color;
 }
 
 a.link {
@@ -131,6 +133,7 @@ a.link {
 
 #header .side-nav a {
 	color: $header-text-color; 
+	font-size:120%;
 }
 
 #header .side-nav li:hover {

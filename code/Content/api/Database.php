@@ -2,7 +2,7 @@
 
 require_once("config.php");
 
-class Database extends SQLite3 {
+class DocumentsDatabase extends SQLite3 {
 	function __construct() {
 		$this->open(DATABASE_FILE);
 	}
