@@ -4,13 +4,14 @@ define([
 	'backbone',
 	'marionette',
 	'vent',
-	'text!templates/footerTemplate.html',
-], function($, _, Backbone, Marionette, Vent, template){
+	'models/Database',
+	'text!templates/footerTemplate.html'
+], function($, _, Backbone, Marionette, Vent, Database, template){
 	
 	var FooterView = Marionette.ItemView.extend({
 		
 		initialize: function(options) {
-			
+			this.model = Database.getInstance().settings;
 		},
 		
 		events : {

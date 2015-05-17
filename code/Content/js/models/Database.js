@@ -37,7 +37,7 @@ define([
         if(instance === null){
             instance = new Database();
         }
-        return instance;
+    	return instance;
     };
     
     return Database;

@@ -33,15 +33,15 @@
 			//validate post data
 			$validator = new Validator($_POST);
 			$errors = $validator->validate(array(
-				'title' => VALIDATE_NON_EMPTY_STRING,
-				'author' => VALIDATE_NON_EMPTY_STRING,
-				'keywords' => VALIDATE_EXISTS
+				'title' => VALIDATE_REQUIRED | VALIDATE_NON_EMPTY_STRING,
+				'author' => VALIDATE_REQUIRED | VALIDATE_NON_EMPTY_STRING,
+				'published' => VALIDATE_YEAR
 			));
 			if (!empty($errors))
 				throw new RestException(400, implode(" ",$errors));
 			
 			//change string cases
-			$_POST['title'] = strtoupper($_POST['title']);
+			$_POST['title'] = ucfirst($_POST['title']);
 			$_POST['author'] = ucwords($_POST['author']);
 			$_POST['keywords'] = strtolower($_POST['keywords']);
 			

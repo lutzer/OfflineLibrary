@@ -6,19 +6,76 @@ $font-bold:    Helvetica;
 $primary-text-color: rgba(0, 0, 0, 0.87);
 $primary-border-color: #000000;
 
-$header-bg-color: #e65100;
-$header-text-color: #fff3e0;
-$sidebar-bg-hover-color: #b42e03;
+$button-color: #465157;
+$button-text-color: #ffffff;
+$button-color-hover: #242A2D;
+
+$header-bg-color: #465157;
+$header-text-color: #ffffff;
+$sidebar-bg-hover-color: #242A2D;
 
 $page-padding: 1em;
 $element-padding: 10px;
 $paragraph-padding: 0.3em;
 
-$content-card-bg-color: #ffb74d;
-$content-card-bg-color2: #ffa726;
+$content-card-bg-color: #c0ca33;
+$content-card-bg-color2: #9e9d24;
 
 $modal-overlay-color: rgba(0, 0, 0, 0.5);
 $modal-bg-color: #eee;
+
+/*
+ * COLORS
+ */
+ .color-main {
+ 	background-color: $content-card-bg-color;
+ }
+ .color-main.darken {
+ 	background-color: $content-card-bg-color2;
+ }
+/* red */
+.color-0 {
+  background-color: #e53935; }
+
+.color-0.darken {
+  background-color: #c62828; }
+  
+/* purple */
+.color-1 {
+  background-color: #5e35b1; }
+
+.color-1.darken {
+  background-color: #4527a0; }
+
+/* blue */
+.color-2 {
+  background-color: #039be5; }
+
+.color-2.darken {
+  background-color: #0277bd; }
+
+/* green */
+.color-3 {
+  background-color: #43a047; }
+
+.color-3.darken {
+  background-color: #2e7d32; }
+
+/* yellow */
+.color-4 {
+  background-color: #fdd835; }
+
+.color-4.darken {
+  background-color: #f9a825; }
+
+/* orange */
+.color-5 {
+  background-color: #f4511e; }
+
+.color-5.darken {
+  background-color: #d84315; }
+
+
 
 /* ########### DEFINE CSS ###########*/
 body {
@@ -37,6 +94,7 @@ h2 {
 
 a.link {
 	font-weight: bold;
+	color: $primary-text-color;
 }
 
 /*
@@ -50,9 +108,14 @@ a.link {
 	padding: $page-padding;
 }
 
+#header a {
+	color: $header-text-color;
+}
+
 #header a.link {
 	color: $header-text-color;
 	font-weight: normal;
+	text-size:110%;
 }
 
 #header .nav-wrapper {
@@ -72,6 +135,10 @@ a.link {
 
 #header .side-nav li:hover {
 	background-color: $sidebar-bg-hover-color;
+}
+
+#header i {
+	color: $header-text-color;
 }
 
 /*
@@ -122,7 +189,6 @@ a.link {
  */
 
 .card {
-	background-color: $content-card-bg-color;
 }
 
 .card a {
@@ -146,8 +212,6 @@ a.link {
 }
 
 .card-bottom {
-	/*border-top: 1px solid #000;*/
-	background-color: $content-card-bg-color2;
 }
 
 .card-bottom ul {
@@ -162,6 +226,18 @@ a.link {
 	padding-left: $element-padding;
 }
 
+.keywords ul li {
+	padding: $paragraph-padding;
+}
+
+.indexlist ul {
+	padding-left: $element-padding;
+}
+
+.indexlist ul li {
+	padding: $paragraph-padding;
+	text-transform: uppercase;
+}
 
 /*
  * FORM STYLES
@@ -199,7 +275,23 @@ input:focus, textarea:focus {
  */
  
 .dropdown-content li>a {
-	color: $primary-text-color;
+	color: $primary-text-color !important; 
+}
+
+/*
+ * BUTTON STYLES
+ */
+ 
+.btn {
+	background-color: $button-color;
+}
+
+a.btn {
+	color: $button-text-color;
+}
+
+.btn:hover {
+	background-color: $button-color-hover;
 }
 
 /*

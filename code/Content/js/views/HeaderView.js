@@ -11,10 +11,7 @@ define([
 	var HeaderView = Marionette.ItemView.extend({
 		
 		initialize: function(options) {
-			
-			var database = Database.getInstance();
-			this.collection = database.topics;
-			
+			this.collection = Database.getInstance().topics;
 		},
 		
 		collectionEvents : {

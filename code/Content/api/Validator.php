@@ -1,9 +1,9 @@
 <?php
 
 	/* Validator Rules */
-	const VALIDATE_NON_EMPTY_STRING = 0;
-	const VALIDATE_NUMBER = 1;
-	const VALIDATE_EXISTS = 2;
+	const VALIDATE_REQUIRED = 1;
+	const VALIDATE_NON_EMPTY_STRING = 2;
+	const VALIDATE_YEAR = 4;
 
 	class Validator {
 		
@@ -23,14 +23,23 @@
 		
 		function validateField($field,$rule) {
 			
-			//field not present
-			if (!isset($this->data[$field]))
-				return $field." is required.";
+			//check if field is set
+			if (($rule & VALIDATE_REQUIRED) == VALIDATE_REQUIRED) {
+				if (!isset($this->data[$field]) || empty($this->data[$field]))
+					return $field." is required.";
+			} else {
+				if (!isset($this->data[$field]) || empty($this->data[$field]))
+					return null;
+			}
 			
 			// check fields
-			if ($rule == VALIDATE_NON_EMPTY_STRING) {
+			if (($rule & VALIDATE_NON_EMPTY_STRING) == VALIDATE_NON_EMPTY_STRING) {
 				if (trim($this->data[$field])==='')
 					return $field." is empty.";
+			} 
+			if (($rule & VALIDATE_YEAR) == VALIDATE_YEAR) {
+				if (!preg_match("/^[1-9]\d*$/",$this->data[$field]))
+					return $field." is not a valid year.";
 			}
 			
 			//passed validation

@@ -25,6 +25,9 @@ define([
 				'about' : 'about',
 				'topic/:id' : 'topic',
 				'keyword/:keywoard' : 'keyword',
+				'year/:year' : 'year',
+				'author/:author' : 'author',
+				'index' : 'index',
 				'*actions': 'defaultRoute'
 			}
 		});

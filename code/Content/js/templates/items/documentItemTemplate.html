@@ -1,5 +1,5 @@
 <div class="col s12 m6 l4">
-	<div class="card">
+	<div class="card color-<%= topic_id%6 %>">
 		<a href="#document/<%= id %>">
 		<div class="card-content">
 			<span class="card-title"><%= title %></span> 
@@ -7,7 +7,7 @@
 			<p class="card-description"><%= description %></p>
 		</div>
 		</a>
-		<div class="card-content card-bottom">
+		<div class="card-content card-bottom keywords color-<%= topic_id%6 %> darken">
 			<ul>
 				<% _.each(keywords.split(" "), function(keyword){ %>
 				<li><a class="link" href="#keyword/<%= keyword %>"><%= keyword.toUpperCase() %></a></li>

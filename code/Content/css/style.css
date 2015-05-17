@@ -1,4 +1,55 @@
 /* ########### SET VARS ########### */
+/*
+ * COLORS
+ */
+.color-main {
+  background-color: #c0ca33; }
+
+.color-main.darken {
+  background-color: #9e9d24; }
+
+/* red */
+.color-0 {
+  background-color: #e53935; }
+
+.color-0.darken {
+  background-color: #c62828; }
+
+/* purple */
+.color-1 {
+  background-color: #5e35b1; }
+
+.color-1.darken {
+  background-color: #4527a0; }
+
+/* blue */
+.color-2 {
+  background-color: #039be5; }
+
+.color-2.darken {
+  background-color: #0277bd; }
+
+/* green */
+.color-3 {
+  background-color: #43a047; }
+
+.color-3.darken {
+  background-color: #2e7d32; }
+
+/* yellow */
+.color-4 {
+  background-color: #fdd835; }
+
+.color-4.darken {
+  background-color: #f9a825; }
+
+/* orange */
+.color-5 {
+  background-color: #f4511e; }
+
+.color-5.darken {
+  background-color: #d84315; }
+
 /* ########### DEFINE CSS ###########*/
 body {
   color: rgba(0, 0, 0, 0.87); }
@@ -12,7 +63,8 @@ h2 {
   font-size: 120%; }
 
 a.link {
-  font-weight: bold; }
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.87); }
 
 /*
  * HEADER STYLES
@@ -23,24 +75,31 @@ a.link {
   width: 100%;
   padding: 1em; }
 
+#header a {
+  color: #ffffff; }
+
 #header a.link {
-  color: #fff3e0;
-  font-weight: normal; }
+  color: #ffffff;
+  font-weight: normal;
+  text-size: 110%; }
 
 #header .nav-wrapper {
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #e65100;
-  color: #fff3e0; }
+  background-color: #465157;
+  color: #ffffff; }
 
 #header .side-nav {
-  background-color: #e65100; }
+  background-color: #465157; }
 
 #header .side-nav a {
-  color: #fff3e0; }
+  color: #ffffff; }
 
 #header .side-nav li:hover {
-  background-color: #b42e03; }
+  background-color: #242A2D; }
+
+#header i {
+  color: #ffffff; }
 
 /*
  * FOOTER STYLES
@@ -79,9 +138,6 @@ a.link {
 /*
  * CARD STYLES
  */
-.card {
-  background-color: #ffb74d; }
-
 .card a {
   color: rgba(0, 0, 0, 0.87); }
 
@@ -98,10 +154,6 @@ a.link {
 .card p {
   padding: 0.3em; }
 
-.card-bottom {
-  /*border-top: 1px solid #000;*/
-  background-color: #ffa726; }
-
 .card-bottom ul {
   margin: 0px; }
 
@@ -110,6 +162,16 @@ a.link {
 
 .keywords ul {
   padding-left: 10px; }
+
+.keywords ul li {
+  padding: 0.3em; }
+
+.indexlist ul {
+  padding-left: 10px; }
+
+.indexlist ul li {
+  padding: 0.3em;
+  text-transform: uppercase; }
 
 /*
  * FORM STYLES
@@ -140,7 +202,19 @@ input:focus, textarea:focus {
  * Dropdown
  */
 .dropdown-content li > a {
-  color: rgba(0, 0, 0, 0.87); }
+  color: rgba(0, 0, 0, 0.87) !important; }
+
+/*
+ * BUTTON STYLES
+ */
+.btn {
+  background-color: #465157; }
+
+a.btn {
+  color: #ffffff; }
+
+.btn:hover {
+  background-color: #242A2D; }
 
 /*
  * MODAL DIALOG

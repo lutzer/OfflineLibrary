@@ -1,0 +1,62 @@
+<div class="row">
+	<div class="col s12 m6 l3">
+		<div class="card indexlist color-main">
+			<div class="card-content">
+				<span class="card-title">Authors</span>
+				<ul>
+					<% _.each(authors, function(author){ %>
+					<li><a class="link" href="#author/<%= author %>"><%= author %></a></li>
+					<% }); %>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col s12 m6 l3">
+		<div class="card indexlist color-main">
+			<div class="card-content">
+				<span class="card-title">Titles</span>
+				<ul>
+					<% _.each(titles, function(entry){ %>
+					<li><a class="link" href="#document/<%= entry.id %>"><%= entry.title %></a></li>
+					<% }); %>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col s12 m6 l3">
+		<div class="card indexlist color-main">
+			<div class="card-content">
+				<span class="card-title">Keywords</span>
+				<ul>
+					<% _.each(keywords, function(keyword){ %>
+					<li><a class="link" href="#keyword/<%= keyword %>"><%= keyword %></a></li>
+					<% }); %>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col s12 m6 l3">
+		<div class="card indexlist color-main">
+			<div class="card-content">
+				<span class="card-title">Published</span>
+				<ul>
+					<% _.each(published, function(year){ %>
+					<li><a class="link" href="#year/<%= year %>"><%= year %></a></li>
+					<% }); %>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col s12 m6 l3">
+		<div class="card indexlist color-main">
+			<div class="card-content">
+				<span class="card-title">Topics</span>
+				<ul>
+					<% _.each(topics, function(topic){ %>
+					<li><a class="link" href="#topic/<%= topic.id %>"><%= topic.name %></a></li>
+					<% }); %>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

@@ -6,11 +6,11 @@ define([
         'views/DocumentListView',
         'views/UploadView',
         'views/AboutView',
+        'views/IndexView',
         'views/HeaderView',
         'views/FooterView',
-        'views/dialogs/ModalDialogView',
-        'models/Database'
-], function($, Marionette, Vent, DocumentView, DocumentListView, UploadView, AboutView, HeaderView, FooterView, ModalDialogView){
+        'views/dialogs/ModalDialogView'
+], function($, Marionette, Vent, DocumentView, DocumentListView, UploadView, AboutView, IndexView, HeaderView, FooterView, ModalDialogView){
 	
 	var Controller = Marionette.Controller.extend({
 		
@@ -55,6 +55,19 @@ define([
 		
 		keyword: function(keyword) {
 			this.app.contentRegion.show(new DocumentListView({collectionFilter : { keywords : keyword}}));
+		},
+		
+		year: function(year) {
+			this.app.contentRegion.show(new DocumentListView({collectionFilter : { published : year}}));
+		},
+		
+		author: function(author) {
+			this.app.contentRegion.show(new DocumentListView({collectionFilter : { author : author}}));
+			
+		},
+		
+		index: function() {
+			this.app.contentRegion.show(new IndexView());
 		},
 	
 		defaultRoute: function() {

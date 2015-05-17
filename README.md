@@ -16,3 +16,10 @@ See [Coniguration Instructions](docs/configure.md)
 * [ ] create / delete topics
 * [x] Modal Dialogs for Error Handling
 * [ ] Api: Clean up files which are not in database
+
+## QUESTIONS
+
+* [ ] Who can edit/delete documents
+* [ ] do we want an Image upload?
+* [ ] do you need to define topic colors manualy or can they be automaticaly generated?
+* [ ] Customize look: only logo, about and footer text?
