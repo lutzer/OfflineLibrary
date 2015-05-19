@@ -25,15 +25,19 @@ See [Coniguration Instructions](docs/configure.md)
     * [ ] truncate description
     * [ ] make author more prominent
     * [ ] keywords zufällig verschieben, evt in weiss darstellen
+    * [ ] Farben in topic drop down menu
+    * [ ] Kein Topic-Farbe auf primär farbe ändern
 * Upload
     * [ ] Upload size erhöhen wenn möglich 
     * [ ] Title Feld automatisch angewählt
     * [ ] Autor und Keyword format erklären
+    * [ ] Autor format: Lastname, Firstname; Lastname2, Firstname2; ...
     * [ ] Keywords auf 5 beschränken
     * [ ] Progressbar für file upload
 * Index
     * [ ] Kategorien einklappbar
     * [ ] Color Coding für Topics und Title, evt durch farbige bullets
+    * [ ] Autor Index: nur erstautor anzeigen
 * Admin
     * [ ] Topic Farbe aus 16 Grundfarben auswählbar
     * [ ] Header Farbe und Logo auswählbar
