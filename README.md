@@ -12,18 +12,17 @@ See [Coniguration Instructions](docs/configure.md)
 
 * [x] Validation for Insert new Document
 * [ ] Delete Documents 
-* [ ] Clean up materialize.css code in uploadTemplate.html
+* [x] Clean up materialize.css code in uploadTemplate.html
 * [ ] create / delete topics
 * [x] Modal Dialogs for Error Handling
 * [ ] Api: Clean up files which are not in database
-* [ ] Pagination for documents
 * [ ] Put rest server in $mode=production
 
 ## MEETING TODO LIST
 
 * Document List
-    * [ ] truncate description
-    * [ ] make author more prominent
+    * [x] truncate description
+    * [x] make author more prominent
     * [ ] keywords zufällig verschieben, evt in weiss darstellen
     * [ ] Farben in topic drop down menu
     * [ ] Kein Topic-Farbe auf primär farbe ändern

@@ -2,6 +2,8 @@ define([
         'jquery',
         'marionette',
         'vent',
+    	'StyleSetter',
+    	'models/Database',
         'views/DocumentView',
         'views/DocumentListView',
         'views/UploadView',
@@ -10,7 +12,7 @@ define([
         'views/HeaderView',
         'views/FooterView',
         'views/dialogs/ModalDialogView'
-], function($, Marionette, Vent, DocumentView, DocumentListView, UploadView, AboutView, IndexView, HeaderView, FooterView, ModalDialogView){
+], function($, Marionette, Vent, StyleSetter, Database, DocumentView, DocumentListView, UploadView, AboutView, IndexView, HeaderView, FooterView, ModalDialogView){
 	
 	var Controller = Marionette.Controller.extend({
 		
@@ -23,7 +25,11 @@ define([
 				footerRegion: "#footer",
 				modalRegion: "#modal-container"
 			});
-			
+
+			//load setting and apply css styles
+			var settings = Database.getInstance().settings;
+			settings.on('sync',StyleSetter.apply);
+
 			this.headerView = new HeaderView();
 			this.footerView = new FooterView();
 			
@@ -32,6 +38,7 @@ define([
 			
 			//register events
 			Vent.on('dialog:open', this.openDialog, this);
+	
 		},
 		
 			
@@ -85,7 +92,7 @@ define([
 		
 		openDialog: function(options) {
 			this.app.modalRegion.show(new ModalDialogView(options));
-		},
+		}
 		
 	});
 	

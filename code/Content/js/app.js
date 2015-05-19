@@ -3,7 +3,7 @@ define([
 	'underscore',
 	'backbone',
 	'marionette',
-	'controller'
+	'Controller'
 ], function($, _, Backbone, Marionette, Controller) {
 	
 	var App = new Backbone.Marionette.Application();
@@ -15,6 +15,7 @@ define([
 			  
 			  // support cross origin sharing
 			  $.support.cors=true;
+			  
 		});
 		
 		App.Router = new Marionette.AppRouter({

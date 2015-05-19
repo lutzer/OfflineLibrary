@@ -3,9 +3,10 @@ define([
 	'underscore',
 	'backbone',
 	'marionette',
+	'string',
 	'vent',
 	'text!templates/items/documentItemTemplate.html',
-], function($, _, Backbone, Marionette, Vent, template){
+], function($, _, Backbone, Marionette, String, Vent, template){
 	
 	var DocumentItemView = Marionette.ItemView.extend({
 		
@@ -17,7 +18,13 @@ define([
 
 		},
 		
-		template : _.template(template)
+		template : _.template(template),
+		
+		templateHelpers: function() {
+			return {
+				description_short : String.truncate(this.model.get('description'),200)
+			}
+		}
 	});
 	return DocumentItemView;
 	

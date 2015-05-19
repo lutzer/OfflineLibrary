@@ -30,6 +30,10 @@ define([
 		templateHelpers: {
 	        languages: Languages
 	    },
+	    
+	    onShow: function() {
+	    	this.$('#title').focus();
+	    },
 		
 		uploadFile: function(event) {
 			var self = this;

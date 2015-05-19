@@ -18,7 +18,9 @@ class SettingsDatabase extends SQLite3 {
 		$this->exec("CREATE TABLE ".DATABASE_SETTINGS_TABLE." ".
 			"(about_text TEXT NOT NULL DEFAULT '-',".
 			"footer_text TEXT NOT NULL DEFAULT 'Powered by OfflineLibrary',".
-			"logo TEXT NOT NULL DEFAULT 'images/logo.png'".
+			"logo TEXT NOT NULL DEFAULT 'images/logo.png',".
+			"header_color INTEGER DEFAULT 0,".
+			"content_color INTEGER DEFAULT 0".
 			")"
 		);
 		
@@ -42,7 +44,8 @@ class SettingsDatabase extends SQLite3 {
 	//updateSettings
 	function updateSettings($settings) {
 		$stmt = $this->prepare("UPDATE ".DATABASE_SETTINGS_TABLE." SET ".
-			"about_text=:about_text, footer_text=:footer_text, logo=:logo"
+			"about_text=:about_text, footer_text=:footer_text, logo=:logo, ".
+			"header_color=:header_color, content_color=:content_color"
 		);
 
 		foreach ($settings as $key => $value)

@@ -1,81 +1,27 @@
 /* ########### SET VARS ########### */
 
-$font-regular:    Helvetica;
-$font-bold:    Helvetica;
+$font-regular:    Helvetica ;
+ $font-bold:    Helvetica ;
 
-$primary-text-color: rgba(0, 0, 0, 0.87);
-$headline-text-color : #ffffff;
-$primary-border-color: #000000;
+ $primary-text-color: rgba(0, 0, 0, 0.87);
+ $headline-text-color : #ffffff ;
+ $primary-border-color: #000000 ;
 
-$button-color: #465157;
-$button-text-color: #ffffff;
-$button-color-hover: #242A2D;
+ $color-hover: #263238 ;
+ $color-header: #37474f ;
+ $color-bg-light: #d5d5d5 ;
+ $color-bg-dark: #bdbdbd ;
 
-$header-bg-color: #465157;
-$header-text-color: #ffffff;
-$sidebar-bg-hover-color: #242A2D;
+ $header-text-color: #ffffff ;
+ $button-text-color: #ffffff ;
 
-$page-padding: 1em;
-$element-padding: 10px;
-$paragraph-padding: 0.3em;
+ $page-padding: 1em ;
+ $element-padding: 10px ;
+ $paragraph-padding: 0.3em ;
+ $card-padding: 20px;
 
-$content-card-bg-color: #c0ca33;
-$content-card-bg-color2: #9e9d24;
-
-$modal-overlay-color: rgba(0, 0, 0, 0.5);
-$modal-bg-color: #afb42b;
-
-/*
- * COLORS
- */
- .color-main {
- 	background-color: $content-card-bg-color;
- }
- .color-main.darken {
- 	background-color: $content-card-bg-color2;
- }
-/* red */
-.color-0 {
-  background-color: #e53935; }
-
-.color-0.darken {
-  background-color: #c62828; }
-  
-/* purple */
-.color-1 {
-  background-color: #5e35b1; }
-
-.color-1.darken {
-  background-color: #4527a0; }
-
-/* blue */
-.color-2 {
-  background-color: #039be5; }
-
-.color-2.darken {
-  background-color: #0277bd; }
-
-/* green */
-.color-3 {
-  background-color: #43a047; }
-
-.color-3.darken {
-  background-color: #2e7d32; }
-
-/* yellow */
-.color-4 {
-  background-color: #fdd835; }
-
-.color-4.darken {
-  background-color: #f9a825; }
-
-/* orange */
-.color-5 {
-  background-color: #f4511e; }
-
-.color-5.darken {
-  background-color: #d84315; }
-
+ $modal-overlay-color: rgba(0, 0, 0, 0.5);
+ $modal-bg-color: #bdbdbd ;
 
 
 /* ########### DEFINE CSS ###########*/
@@ -123,12 +69,12 @@ a.link {
 #header .nav-wrapper {
 	padding-left: $element-padding;
 	padding-right: $element-padding;
-	background-color: $header-bg-color;
+	background-color: $color-header;
 	color: $header-text-color;
 }
 
 #header .side-nav {
-	background-color: $header-bg-color;
+	background-color: $color-header;
 }
 
 #header .side-nav a {
@@ -137,7 +83,7 @@ a.link {
 }
 
 #header .side-nav li:hover {
-	background-color: $sidebar-bg-hover-color;
+	background-color: $color-hover;
 }
 
 #header i {
@@ -158,6 +104,7 @@ a.link {
 	border-top:1px solid #ddd;*/
 	padding: $element-padding;
 	text-align: center;
+	line-height: 55px;
 }
 
 /*
@@ -192,19 +139,19 @@ a.link {
  */
 
 .card {
+	background-color: $color-bg-light;
 }
 
 .card a {
 	color: $primary-text-color;
 } 
 
-.card-top {
-	padding: $element-padding;
+.card .card-title {
 }
  
 .card-author {
 	display:block;
-	font-size:110%;
+	font-size:125%;
 	font-style:italic;
 	padding-top: $element-padding;
 	padding-bottom: $element-padding;
@@ -214,7 +161,17 @@ a.link {
 	padding: $paragraph-padding;
 }
 
-.card-bottom {
+.card .card-content {
+	padding: $card-padding;
+}
+
+.card .card-top {
+	padding: $card-padding $card-padding $element-padding $card-padding;
+}
+
+.card .card-bottom {
+	background-color: $color-bg-dark;
+	padding: $card-padding;
 }
 
 .card-bottom ul {
@@ -223,6 +180,10 @@ a.link {
 
 .keywords {
 	padding: $paragraph-padding;
+}
+
+.keywords.big {
+	font-size:115%;
 }
 
 .keywords ul {
@@ -273,6 +234,25 @@ input:focus, textarea:focus {
 	margin-right:$element-padding;
 }
 
+/* placeholder texts */
+::-webkit-input-placeholder { 
+	color:rgba(0,0,0,0.4);
+	font-size:90%
+} 
+/* webkit */
+::-moz-placeholder { 
+	color:rgba(0,0,0,0.4);
+	font-size:90%
+} /* firefox 19+ */
+:-ms-input-placeholder { 
+	color:rgba(0,0,0,0.4);
+	font-size:90%
+} /* ie */
+input:-moz-placeholder { 
+	color:rgba(0,0,0,0.4);
+	font-size:90%
+}
+
 /*
  * Dropdown
  */
@@ -286,7 +266,7 @@ input:focus, textarea:focus {
  */
  
 .btn {
-	background-color: $button-color;
+	background-color: $color-header;
 }
 
 a.btn {
@@ -294,7 +274,7 @@ a.btn {
 }
 
 .btn:hover {
-	background-color: $button-color-hover;
+	background-color: $color-hover;
 }
 
 /*
@@ -351,4 +331,15 @@ a.btn {
 .modal-dialog #done {
 	text-align:center;
 	font-weight: bold;
+}
+
+/*
+ * SETTINGS
+ */
+ 
+.settings.icon {
+	height:36px;
+	margin: $element-padding;
+	opacity: 0.3;
+	
 }

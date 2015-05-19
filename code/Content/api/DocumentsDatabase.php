@@ -18,7 +18,7 @@ class DocumentsDatabase extends SQLite3 {
 		$this->exec("CREATE TABLE ".DATABASE_TABLE_TOPICS." ".
 			"(id INTEGER PRIMARY KEY AUTOINCREMENT,".
 			"topic_name TEXT NOT NULL,".
-			"topic_color INTEGER".
+			"topic_color INTEGER NOT NULL DEFAULT 0".
 			")"
 		);
 

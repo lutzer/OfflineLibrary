@@ -11,8 +11,9 @@ define([
 		defaults: {
 			about_text: '-',
 			footer_text: 'Powered by OfflineLibrary',
-			logo: 'images/logo.png'
-			
+			logo: 'images/logo.png',
+			header_color: 0,
+			content_color: 0
 		}
 		
 		

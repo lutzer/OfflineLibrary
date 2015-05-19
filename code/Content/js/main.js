@@ -5,6 +5,7 @@ require.config({
 		underscore: 'libs/underscore-min',
 		marionette: 'libs/backbone.marionette.min',
 		text: 'libs/plugins/text',
+		string: 'libs/underscore.string.min'
 	}
 });
 

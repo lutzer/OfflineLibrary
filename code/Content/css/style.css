@@ -1,55 +1,4 @@
 /* ########### SET VARS ########### */
-/*
- * COLORS
- */
-.color-main {
-  background-color: #c0ca33; }
-
-.color-main.darken {
-  background-color: #9e9d24; }
-
-/* red */
-.color-0 {
-  background-color: #e53935; }
-
-.color-0.darken {
-  background-color: #c62828; }
-
-/* purple */
-.color-1 {
-  background-color: #5e35b1; }
-
-.color-1.darken {
-  background-color: #4527a0; }
-
-/* blue */
-.color-2 {
-  background-color: #039be5; }
-
-.color-2.darken {
-  background-color: #0277bd; }
-
-/* green */
-.color-3 {
-  background-color: #43a047; }
-
-.color-3.darken {
-  background-color: #2e7d32; }
-
-/* yellow */
-.color-4 {
-  background-color: #fdd835; }
-
-.color-4.darken {
-  background-color: #f9a825; }
-
-/* orange */
-.color-5 {
-  background-color: #f4511e; }
-
-.color-5.darken {
-  background-color: #d84315; }
-
 /* ########### DEFINE CSS ###########*/
 body {
   color: rgba(0, 0, 0, 0.87); }
@@ -87,18 +36,18 @@ a.link {
 #header .nav-wrapper {
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #465157;
+  background-color: #37474f;
   color: #ffffff; }
 
 #header .side-nav {
-  background-color: #465157; }
+  background-color: #37474f; }
 
 #header .side-nav a {
   color: #ffffff;
   font-size: 120%; }
 
 #header .side-nav li:hover {
-  background-color: #242A2D; }
+  background-color: #263238; }
 
 #header i {
   color: #ffffff; }
@@ -114,7 +63,8 @@ a.link {
   color: $header-text-color;
   border-top:1px solid #ddd;*/
   padding: 10px;
-  text-align: center; }
+  text-align: center;
+  line-height: 55px; }
 
 /*
  * SPINNER
@@ -140,15 +90,15 @@ a.link {
 /*
  * CARD STYLES
  */
+.card {
+  background-color: #d5d5d5; }
+
 .card a {
   color: rgba(0, 0, 0, 0.87); }
 
-.card-top {
-  padding: 10px; }
-
 .card-author {
   display: block;
-  font-size: 110%;
+  font-size: 125%;
   font-style: italic;
   padding-top: 10px;
   padding-bottom: 10px; }
@@ -156,11 +106,24 @@ a.link {
 .card p {
   padding: 0.3em; }
 
+.card .card-content {
+  padding: 20px; }
+
+.card .card-top {
+  padding: 20px 20px 10px 20px; }
+
+.card .card-bottom {
+  background-color: #bdbdbd;
+  padding: 20px; }
+
 .card-bottom ul {
   margin: 0px; }
 
 .keywords {
   padding: 0.3em; }
+
+.keywords.big {
+  font-size: 115%; }
 
 .keywords ul {
   padding-left: 10px; }
@@ -200,6 +163,26 @@ input:focus, textarea:focus {
   margin-left: 10px;
   margin-right: 10px; }
 
+/* placeholder texts */
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 90%; }
+
+/* webkit */
+::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 90%; }
+
+/* firefox 19+ */
+:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 90%; }
+
+/* ie */
+input:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 90%; }
+
 /*
  * Dropdown
  */
@@ -210,13 +193,13 @@ input:focus, textarea:focus {
  * BUTTON STYLES
  */
 .btn {
-  background-color: #465157; }
+  background-color: #37474f; }
 
 a.btn {
   color: #ffffff; }
 
 .btn:hover {
-  background-color: #242A2D; }
+  background-color: #263238; }
 
 /*
  * MODAL DIALOG
@@ -237,7 +220,7 @@ a.btn {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  background-color: #afb42b;
+  background-color: #bdbdbd;
   padding: 10px;
   border-radius: 2px;
   -webkit-transform: translate3d(0, 0, 0);
@@ -265,5 +248,13 @@ a.btn {
 .modal-dialog #done {
   text-align: center;
   font-weight: bold; }
+
+/*
+ * SETTINGS
+ */
+.settings.icon {
+  height: 36px;
+  margin: 10px;
+  opacity: 0.3; }
 
 /*# sourceMappingURL=style.css.map */

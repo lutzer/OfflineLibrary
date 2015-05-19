@@ -18,22 +18,22 @@
 	$db->insertTopic(array(
 		"id" => null,
 		"topic_name" => "Life, Universe and the whole Rest",
-		"topic_color" => null
+		"topic_color" => 1
 	));
 	$db->insertTopic(array(
 		"id" => null,
 		"topic_name" => "Lorem ipsum",
-		"topic_color" => null
+		"topic_color" => 2
 	));
 	$db->insertTopic(array(
 		"id" => null,
 		"topic_name" => "Schildkröten",
-		"topic_color" => null
+		"topic_color" => 3
 	));
 	$db->insertTopic(array(
 		"id" => null,
 		"topic_name" => "To be deleted",
-		"topic_color" => null
+		"topic_color" => 4
 	));
 
 	//fill database
@@ -135,7 +135,9 @@
 	$db->updateSettings(array(
 			"about_text" => "-",
 			"footer_text" => "Powered By OfflineLibrary.",
-			"logo" => "images/logo.png"
+			"logo" => "images/logo.png",
+			"header_color" => 0,
+			"content_color" => 0
 	));
 	$rows = $db->getSettings();
 	var_dump($rows);

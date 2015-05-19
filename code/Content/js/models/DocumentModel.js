@@ -18,6 +18,7 @@ define([
 			language: false,
 			topic_name: false,
 			topic_id: null,
+			topic_color: 0,
 			file: ''
 			
 		},

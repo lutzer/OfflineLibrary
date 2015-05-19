@@ -10,7 +10,7 @@ define([
 		
 		defaults : {
 			topic_name: '',
-			topic_color: '#000000'
+			topic_color: 0
 		}
 		
 	});
