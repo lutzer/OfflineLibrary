@@ -4,11 +4,14 @@
 <body>
 <?php
 
-	require("../api/database.php");
+	require("../api/DocumentsDatabase.php");
+	require("../api/SettingsDatabase.php");
 
+	
 	// API TESTS
 
-	$db = new Database();
+	echo "<h1>DOCUMENT DB</h1>";
+	$db = new DocumentsDatabase();
 	$db->create();
 
 	//create topics
@@ -119,6 +122,24 @@
 	));
 	$rows = $db->getDocument(1);
 	var_dump($rows);
+	
+	echo "<h1>SETTINGS DB</h1>";
+	$db = new SettingsDatabase();
+	$db->create();
+	
+	echo "<h2>GET SETTINGS</h2>";
+	$rows = $db->getSettings();
+	var_dump($rows);
+	
+	echo "<h2>CHANGE SETTINGS</h2>";
+	$db->updateSettings(array(
+			"about_text" => "-",
+			"footer_text" => "Powered By OfflineLibrary.",
+			"logo" => "images/logo.png"
+	));
+	$rows = $db->getSettings();
+	var_dump($rows);
+	
 
 ?>
 </body>

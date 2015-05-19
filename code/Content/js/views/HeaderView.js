@@ -11,14 +11,26 @@ define([
 	var HeaderView = Marionette.ItemView.extend({
 		
 		initialize: function(options) {
-			this.collection = Database.getInstance().topics;
+			var database = Database.getInstance();
+			this.collection = database.topics;
+			this.settings = database.settings
 		},
 		
 		collectionEvents : {
 			'sync' : 'onCollectionLoaded'
 		},
 		
+		modelEvents: {
+			'sync' : 'render'
+		},
+		
 		template : _.template(template),
+		
+		templateHelpers: function() {
+			return {
+				logo : this.settings.get('logo')
+			}
+		},
 		
 		onShow: function() {
 			

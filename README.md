@@ -19,6 +19,26 @@ See [Coniguration Instructions](docs/configure.md)
 * [ ] Pagination for documents
 * [ ] Put rest server in $mode=production
 
+## MEETING TODO LIST
+
+* Document List
+    * [ ] truncate description
+    * [ ] make author more prominent
+    * [ ] keywords zufällig verschieben, evt in weiss darstellen
+* Upload
+    * [ ] Upload size erhöhen wenn möglich 
+    * [ ] Title Feld automatisch angewählt
+    * [ ] Autor und Keyword format erklären
+    * [ ] Keywords auf 5 beschränken
+    * [ ] Progressbar für file upload
+* Index
+    * [ ] Kategorien einklappbar
+    * [ ] Color Coding für Topics und Title, evt durch farbige bullets
+* Admin
+    * [ ] Topic Farbe aus 16 Grundfarben auswählbar
+    * [ ] Header Farbe und Logo auswählbar
+    * [ ] Primär Hintergrund Farbe auswählbar 
+
 ## QUESTIONS
 
 * Who can edit/delete documents

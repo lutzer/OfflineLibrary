@@ -25,6 +25,7 @@ define([
         	this.documents.fetch();
         	this.topics.fetch();
         	this.settings.fetch();
+        	console.log(this.settings);
         	
         },
         

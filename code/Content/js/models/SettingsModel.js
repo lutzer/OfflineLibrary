@@ -6,7 +6,7 @@ define([
 
 	var SettingsModel = Backbone.Model.extend({
 
-		urlRoot : Constants['web_service_url']+"?settings",
+		url : Constants['web_service_url']+"?settings",
 		
 		defaults: {
 			about_text: '-',

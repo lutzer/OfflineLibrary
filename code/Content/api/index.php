@@ -1,7 +1,8 @@
 <?php
 
 	require_once('config.php');
-	require_once("Database.php");
+	require_once("DocumentsDatabase.php");
+	require_once("SettingsDatabase.php");
 	require_once('RestServer.php');
 	require_once('Validator.php');
 	
@@ -104,6 +105,15 @@
 		function listTopics() {
 			$db = new DocumentsDatabase();
 			$result = $db->listTopics();
+			return $result;
+		}
+		
+		/**
+		 * @url GET /?settings
+		 */
+		function getSettings() {
+			$db = new SettingsDatabase();
+			$result = $db->getSettings();
 			return $result;
 		}
 	}

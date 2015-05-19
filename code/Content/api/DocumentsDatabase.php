@@ -123,4 +123,3 @@ class DocumentsDatabase extends SQLite3 {
 	}
 
 }
-

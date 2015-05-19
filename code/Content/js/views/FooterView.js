@@ -14,8 +14,8 @@ define([
 			this.model = Database.getInstance().settings;
 		},
 		
-		events : {
-
+		modelEvents : {
+			'sync' : 'render'
 		},
 		
 		template : _.template(template),
