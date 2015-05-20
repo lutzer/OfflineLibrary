@@ -38,7 +38,7 @@ define([
 		onToggleCollapseIndex : function(event) {
 			var collapseId = "#"+event.currentTarget.dataset.collapse;
 			
-			this.$(collapseId).slideToggle();
+			this.$(collapseId).slideToggle('fast');
 		}
 	});
 	

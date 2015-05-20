@@ -68,6 +68,7 @@ define([
 					} else {
 						self.addModel(model);
 						window.location.href = "#document/"+response.id;
+						Vent.trigger('dialog:close');
 					}	
 				},
 				error: function(model,response) {
@@ -76,6 +77,16 @@ define([
 						text: response.responseText, 
 						type: 'message'
 					});
+				}
+			});
+			
+			//open upload dialog
+			Vent.trigger('dialog:open', {
+				title: "Uploading Document", 
+				text: "Depending on the file size, this may take a while.", 
+				type: 'progress',
+				callback: function() {
+					window.location.href = "#upload";
 				}
 			});
 		},

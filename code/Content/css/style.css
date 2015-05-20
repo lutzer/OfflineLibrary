@@ -37,12 +37,11 @@ a.link {
 #header .nav-wrapper {
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #37474f;
   color: #ffffff; }
 
 #header .side-nav {
   background-color: #37474f;
-  z-index: 200; }
+  z-index: 1000; }
 
 #header .side-nav a {
   color: #ffffff;
@@ -58,7 +57,7 @@ a.link {
  * FOOTER STYLES
  */
 #footer {
-  padding: 1em; }
+  padding: 1em 1em 0 1em; }
 
 #footer .footer-bar {
   /*background-color: $header-bg-color;
@@ -143,6 +142,9 @@ a.link {
   padding: 0.3em;
   text-transform: uppercase; }
 
+.link-cursor {
+  cursor: pointer; }
+
 /*
  * FORM STYLES
  */
@@ -207,6 +209,14 @@ a.btn {
   background-color: #263238; }
 
 /*
+ * SETTINGS
+ */
+.settings.icon {
+  height: 36px;
+  margin: 10px;
+  opacity: 0.3; }
+
+/*
  * MODAL DIALOG
  */
 .modal-background {
@@ -255,11 +265,163 @@ a.btn {
   font-weight: bold; }
 
 /*
- * SETTINGS
+ * COLORS
  */
-.settings.icon {
-  height: 36px;
-  margin: 10px;
-  opacity: 0.3; }
+/* red */
+.color-1 {
+  background-color: #e53935; }
+
+.color-1.dark {
+  background-color: #c62828; }
+
+/* pink */
+.color-2 {
+  background-color: #d81b60; }
+
+.color-2.dark {
+  background-color: #c2185b; }
+
+/* purple */
+.color-3 {
+  background-color: #8e24aa; }
+
+.color-3.dark {
+  background-color: #6a1b9a; }
+
+/* deep-purple */
+.color-4 {
+  background-color: #5e35b1; }
+
+.color-4.dark {
+  background-color: #4527a0; }
+
+/* indigo */
+.color-5 {
+  background-color: #3949ab; }
+
+.color-5.dark {
+  background-color: #283593; }
+
+/* blue */
+.color-6 {
+  background-color: #1e88e5; }
+
+.color-6.dark {
+  background-color: #1565c0; }
+
+/* light-blue */
+.color-7 {
+  background-color: #039be5; }
+
+.color-7.dark {
+  background-color: #0277bd; }
+
+/* cyan */
+.color-8 {
+  background-color: #00acc1; }
+
+.color-8.dark {
+  background-color: #00838f; }
+
+/* teal */
+.color-9 {
+  background-color: #00897b; }
+
+.color-9.dark {
+  background-color: #00695c; }
+
+/* green */
+.color-10 {
+  background-color: #43a047; }
+
+.color-10.dark {
+  background-color: #2e7d32; }
+
+/* light-green */
+.color-11 {
+  background-color: #7cb342; }
+
+.color-11.dark {
+  background-color: #558b2f; }
+
+/* lime */
+.color-11 {
+  background-color: #c0ca33; }
+
+.color-11.dark {
+  background-color: #9e9d24; }
+
+/* yellow */
+.color-12 {
+  background-color: #fdd835; }
+
+.color-12.dark {
+  background-color: #f9a825; }
+
+/* amber */
+.color-13 {
+  background-color: #ffb300; }
+
+.color-13.dark {
+  background-color: #ff8f00; }
+
+/* orange */
+.color-14 {
+  background-color: #fb8c00; }
+
+.color-14.dark {
+  background-color: #ef6c00; }
+
+/* deep-orange */
+.color-15 {
+  background-color: #f4511e; }
+
+.color-15.dark {
+  background-color: #d84315; }
+
+/* brown */
+.color-16 {
+  background-color: #6d4c41; }
+
+.color-16.dark {
+  background-color: #4e342e; }
+
+/* blue-grey */
+.color-17 {
+  background-color: #546e7a; }
+
+.color-17.dark {
+  background-color: #37474f; }
+
+/*
+ * SETTING STYLES
+ */
+#settings {
+  padding: 0 1em 1em 1em; }
+
+.settings-page {
+  padding: 10px;
+  color: #ffffff;
+  border-radius: 2px;
+  width: 100%; }
+
+.settings-page .card-top {
+  padding: 0; }
+.settings-page .card-content {
+  color: rgba(0, 0, 0, 0.87); }
+.settings-page .card-top ul {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0; }
+.settings-page .card-top ul li {
+  display: inline; }
+.settings-page .card-top a {
+  display: inline;
+  padding: 20px;
+  font-size: 110%; }
+.settings-page .list-link:hover {
+  color: #ffffff; }
+.settings-page .list-link.active {
+  color: #ffffff; }
 
 /*# sourceMappingURL=style.css.map */

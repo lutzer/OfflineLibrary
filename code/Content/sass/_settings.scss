@@ -1,0 +1,48 @@
+/*
+ * SETTING STYLES
+ */
+ 
+ #settings {
+	padding: 0 $page-padding $page-padding $page-padding;
+ }
+ 
+.settings-page {
+	padding: $element-padding;
+	color: $header-text-color;
+	border-radius:2px;
+	width:100%;
+}
+
+.settings-page {
+	
+	.card-top {
+		padding:0;
+	}
+	
+	.card-content {
+		color: $primary-text-color;
+	}
+	
+	.card-top ul {
+		margin-left:0;
+		margin-right:0;
+		padding:0;
+	}
+	
+	.card-top ul li {
+		display:inline;
+	}
+	
+	.card-top a {
+		display:inline;
+		padding: $element-padding*2;
+		font-size:110%;;
+	}
+	
+	.list-link:hover {
+		color:#ffffff;
+	}
+	.list-link.active {
+		color:#ffffff;
+	}
+}

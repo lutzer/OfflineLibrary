@@ -15,4 +15,4 @@ define("DATABASE_SETTINGS_TABLE","settings");
 
 define("DIR_RECORD_FILES","../../Shared/docs");
 
-define("UPLOAD_FILE_MAX_SIZE",(8*1024*1024*15)); // 15mb
+define("UPLOAD_FILE_MAX_SIZE",(8*1024*1024*100)); // 100mb

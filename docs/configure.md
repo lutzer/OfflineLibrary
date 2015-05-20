@@ -84,7 +84,11 @@ see <http://wiki.openwrt.org/doc/howto/http.lighttpd>
 
 the config file can be found under **/opt/piratebox/conf/lighthttpd**.
 
-* [x] TODO: how to use clean urls for api route
+Change line 13 in **lighthttpd.conf**:
+
+```
+server.upload-dirs = ( "/mnt/usb/LibraryBox/tmp" )
+```
 
 ### change redirection
 
@@ -104,7 +108,12 @@ the root folder is under **/mnt/usb/LibraryBox/**. The index.html needs to be pl
 
 ### Change Php.ini
 
-its located under: **/etc/php.ini**
+its located under **/etc/php.ini**, change:
+
+```
+post_max_size = 100M
+upload_max_filesize = 100M
+```
 
 
 ## configure sqlite

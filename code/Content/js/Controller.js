@@ -11,8 +11,9 @@ define([
         'views/IndexView',
         'views/HeaderView',
         'views/FooterView',
+        'views/settings/SettingsView',
         'views/dialogs/ModalDialogView'
-], function($, Marionette, Vent, StyleSetter, Database, DocumentView, DocumentListView, UploadView, AboutView, IndexView, HeaderView, FooterView, ModalDialogView){
+], function($, Marionette, Vent, StyleSetter, Database, DocumentView, DocumentListView, UploadView, AboutView, IndexView, HeaderView, FooterView, SettingsView, ModalDialogView){
 	
 	var Controller = Marionette.Controller.extend({
 		
@@ -23,6 +24,7 @@ define([
 				headerRegion: "#header",
 				contentRegion: "#content",
 				footerRegion: "#footer",
+				settingsRegion: "#settings",
 				modalRegion: "#modal-container"
 			});
 
@@ -38,6 +40,9 @@ define([
 			
 			//register events
 			Vent.on('dialog:open', this.openDialog, this);
+			Vent.on('dialog:close', this.closeDialog, this);
+			
+			Vent.on('settings:open', this.toggleSettings, this);
 	
 		},
 		
@@ -92,7 +97,41 @@ define([
 		
 		openDialog: function(options) {
 			this.app.modalRegion.show(new ModalDialogView(options));
-		}
+		},
+		
+		closeDialog: function() {
+			if (this.app.modalRegion.hasView())
+				this.app.modalRegion.reset();
+		},
+		
+		/* SETTINGS */
+		
+		toggleSettings: function() {
+			
+			if (this.app.settingsRegion.hasView()) {
+				this.app.settingsRegion.reset();
+				return;
+			}
+				
+			//login
+			var settings = Database.getInstance().settings;
+			var self = this;
+			
+			settings.login({
+				success: function() {
+					self.app.settingsRegion.show(new SettingsView())
+					$('body').scrollTop($('#settings').position().top);
+				},
+				error: function() {
+					Vent.trigger('dialog:open', {
+						title: "No login", 
+						text: "Could not login. Wrong password or username supplied.", 
+						type: 'message'
+					});
+				}
+			});
+			
+		},
 		
 	});
 	

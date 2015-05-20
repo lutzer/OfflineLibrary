@@ -2,8 +2,9 @@ define([
     'jquery',
 	'underscore',
 	'marionette',
-	'text!templates/dialogs/dialogMessageTemplate.html'
-], function($, _, Marionette, messageTemplate){
+	'text!templates/dialogs/dialogMessageTemplate.html',
+	'text!templates/dialogs/dialogProgressTemplate.html'
+], function($, _, Marionette, messageTemplate, progressTemplate){
 	
 	var ModalDialogView = Marionette.ItemView.extend({
 		
@@ -26,6 +27,8 @@ define([
 		getTemplate: function(){
 			if (this.options.type == 'message')
 				return _.template(messageTemplate);
+			else if (this.options.type == 'progress')
+				return _.template(progressTemplate);
 	    },
 		
 		className: 'modal-background',

@@ -14,6 +14,13 @@ define([
 			logo: 'images/logo.png',
 			header_color: 0,
 			content_color: 0
+		},
+		
+		// login to make changes on the settings
+		login: function(options) {
+			
+			options = _.extend(options, { type: 'GET' });
+			$.ajax(Constants['web_service_url']+"?login", options);	
 		}
 		
 		

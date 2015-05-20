@@ -18,10 +18,22 @@ define([
 			'sync' : 'render'
 		},
 		
+		events: {
+			'click #settingsButton' : 'onClickSettingsButton'
+		},
+		
 		template : _.template(template),
 		
 		onShow: function() {
 			//$('#content').css('margin-bottom',$('#footer').outerHeight());
+		},
+		
+		onClickSettingsButton: function(event) {
+			
+			if(event) 
+				event.preventDefault();
+			
+			Vent.trigger('settings:open');
 		}
 	});
 	

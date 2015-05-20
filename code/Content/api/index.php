@@ -10,8 +10,25 @@
 	$UPLOAD_ALLOWED_EXTENSIONS = array("jpg", "gif", "png", "txt", "pdf", "doc", "docx", "odt", "epub");
 
 	class Controller {
+		
+		/* function authorizes user */
+		function authorize() {
+			if (!isset($_SERVER['PHP_AUTH_USER']))
+				return false;
+			
+			$db = new SettingsDatabase();
+			$result = $db->getCredentials();
+
+			// check password
+			if ($_SERVER['PHP_AUTH_USER'] == $result['admin_username'] &&
+				crypt($_SERVER['PHP_AUTH_PW'],$result['password_salt']) == $result['admin_password'])
+				return true;
+				
+			return false;	
+		}
 
 		/**
+		* @noAuth
 		* @url GET /?documents
 		*/
 		function listDocuments() {
@@ -21,6 +38,7 @@
 		}
 
 		/**
+		 * @noAuth
 		 * @url GET /?documents/$id
 		 */
 		function getDocument($id = null) {
@@ -30,6 +48,7 @@
 		}
 		
 		/**
+		 * @noAuth
 		 * @url POST /?documents
 		 * @url PUT /?documents/$id
 		 */
@@ -100,6 +119,7 @@
 		}
 
 		/**
+		* @noAuth
 		* @url GET /?topics
 		*/
 		function listTopics() {
@@ -109,11 +129,30 @@
 		}
 		
 		/**
+		 * @noAuth
 		 * @url GET /?settings
 		 */
 		function getSettings() {
 			$db = new SettingsDatabase();
 			$result = $db->getSettings();
+			return $result;
+		}
+		
+		/**
+		 * 
+		 * @url GET /?login
+		 */
+		function login() {
+			return "logged in succesfull";
+		}
+		
+		/**
+		 * 
+		 * @url POST /?settings
+		 */
+		function updateSettings($settings) {
+			$db = new SettingsDatabase();
+			$result = $db->updateSettings($settings);
 			return $result;
 		}
 	}

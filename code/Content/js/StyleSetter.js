@@ -11,7 +11,7 @@ define([
 		apply: function(settings) {
 			
 			// set header button and hover colors
-			Jss.set('#header .color-main', {
+			Jss.set('.color-main', {
 			    'background-color' : Colors[settings.get('header_color')].bgColor
 			});
 			Jss.set('#header .side-nav li:hover', {
