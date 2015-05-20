@@ -27,7 +27,7 @@
 			
 			//check if field is set
 			if (($rule & VALIDATE_RULE_REQUIRED) == VALIDATE_RULE_REQUIRED) {
-				if (!isset($this->data[$field]))
+				if (!isset($this->data[$field]) || empty($this->data[$field]))
 					return strtoupper($field)." is required.";
 			} else {
 				if (!isset($this->data[$field]) || empty($this->data[$field]))

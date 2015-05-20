@@ -3,12 +3,13 @@ define([
 	'underscore',
 	'backbone',
 	'marionette',
+	'iframeTransport',
 	'vent',
 	'models/Database',
 	'models/DocumentModel',
 	'values/Languages',
 	'text!templates/uploadTemplate.html',
-], function($, _, Backbone, Marionette, Vent, Database, DocumentModel, Languages, template){
+], function($, _, Backbone, Marionette, iframeTransport, Vent, Database, DocumentModel, Languages, template){
 	
 	var UploadView = Marionette.ItemView.extend({
 		

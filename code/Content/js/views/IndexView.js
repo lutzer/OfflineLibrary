@@ -20,7 +20,7 @@ define([
 		},
 		
 		events : {
-			
+			'click .card-top' : 'onToggleCollapseIndex'
 		},
 		
 		template : _.template(template),
@@ -33,6 +33,12 @@ define([
 				published: this.documents.getPublished(),
 				topics: this.topics.getSortedTopics()
 			}
+		},
+		
+		onToggleCollapseIndex : function(event) {
+			var collapseId = "#"+event.currentTarget.dataset.collapse;
+			
+			this.$(collapseId).slideToggle();
 		}
 	});
 	

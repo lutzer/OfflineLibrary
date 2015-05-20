@@ -1,8 +1,10 @@
 <div class="row">
 	<div class="col s12 m6 l3">
 		<div class="card indexlist">
-			<div class="card-content">
+			<div class="card-top" data-collapse="authors">
 				<span class="card-title">Authors</span>
+			</div>
+			<div id="authors" class="card-content">
 				<ul>
 					<% _.each(authors, function(author){ %>
 					<li><a class="link" href="#author/<%= encodeURIComponent(author) %>"><%= author %></a></li>
@@ -13,8 +15,10 @@
 	</div>
 	<div class="col s12 m6 l3">
 		<div class="card indexlist">
-			<div class="card-content">
+			<div class="card-top" data-collapse="titles">
 				<span class="card-title">Titles</span>
+			</div>
+			<div id="titles" class="card-content">
 				<ul>
 					<% _.each(titles, function(entry){ %>
 					<li><a class="link" href="#document/<%= entry.id %>"><%= entry.title %></a></li>
@@ -25,8 +29,10 @@
 	</div>
 	<div class="col s12 m6 l3">
 		<div class="card indexlist">
-			<div class="card-content">
+			<div class="card-top" data-collapse="keywords">
 				<span class="card-title">Keywords</span>
+			</div>
+			<div id="keywords" class="card-content">
 				<ul>
 					<% _.each(keywords, function(keyword){ %>
 					<li><a class="link" href="#keyword/<%= keyword %>"><%= keyword %></a></li>
@@ -37,8 +43,10 @@
 	</div>
 	<div class="col s12 m6 l3">
 		<div class="card indexlist">
-			<div class="card-content">
-				<span class="card-title">Published</span>
+			<div class="card-top" data-collapse="years">
+				<span class="card-title">Years</span>
+			</div>
+			<div id="years" class="card-content">
 				<ul>
 					<% _.each(published, function(year){ %>
 					<li><a class="link" href="#year/<%= year %>"><%= year %></a></li>
@@ -49,8 +57,10 @@
 	</div>
 	<div class="col s12 m6 l3">
 		<div class="card indexlist">
-			<div class="card-content">
+			<div class="card-top" data-collapse="topics">
 				<span class="card-title">Topics</span>
+			</div>
+			<div id="topics" class="card-content">
 				<ul>
 					<% _.each(topics, function(topic){ %>
 					<li><a class="link" href="#topic/<%= topic.id %>"><%= topic.name %></a></li>

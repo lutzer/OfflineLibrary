@@ -54,6 +54,7 @@ a.link {
 	top: 0px;
 	width: 100%;
 	padding: $page-padding;
+	z-index: 100;
 }
 
 #header a {
@@ -75,6 +76,7 @@ a.link {
 
 #header .side-nav {
 	background-color: $color-header;
+	z-index: 200;
 }
 
 #header .side-nav a {
@@ -166,7 +168,9 @@ a.link {
 }
 
 .card .card-top {
-	padding: $card-padding $card-padding $element-padding $card-padding;
+	padding: $card-padding $card-padding $card-padding $card-padding;
+	border-bottom: 1px solid;
+  	border-color: rgba(0,0,0,0.1);
 }
 
 .card .card-bottom {
@@ -196,6 +200,7 @@ a.link {
 
 .indexlist ul {
 	padding-left: $element-padding;
+	margin: 0;
 }
 
 .indexlist ul li {
@@ -235,7 +240,8 @@ input:focus, textarea:focus {
 }
 
 /* placeholder texts */
-::-webkit-input-placeholder { 
+::-webkit-input-placeholder
+{ 
 	color:rgba(0,0,0,0.4);
 	font-size:90%
 } 

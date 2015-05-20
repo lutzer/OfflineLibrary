@@ -17,6 +17,8 @@ See [Coniguration Instructions](docs/configure.md)
 * [x] Modal Dialogs for Error Handling
 * [ ] Api: Clean up files which are not in database
 * [ ] Put rest server in $mode=production
+* [ ] Hover effect on drop down menu + grey as all topic color
+* [ ] Validate Upload Form in javascript before submitting file
 
 ## MEETING TODO LIST
 
@@ -24,17 +26,17 @@ See [Coniguration Instructions](docs/configure.md)
     * [x] truncate description
     * [x] make author more prominent
     * [ ] keywords zufällig verschieben, evt in weiss darstellen
-    * [ ] Farben in topic drop down menu
-    * [ ] Kein Topic-Farbe auf primär farbe ändern
+    * [x] Farben in topic drop down menu
+    * [x] Kein Topic-Farbe auf primär farbe ändern
 * Upload
     * [ ] Upload size erhöhen wenn möglich 
-    * [ ] Title Feld automatisch angewählt
-    * [ ] Autor und Keyword format erklären
-    * [ ] Autor format: Lastname, Firstname; Lastname2, Firstname2; ...
+    * [x] Title Feld automatisch angewählt
+    * [x] Autor und Keyword format erklären
+    * [x] Autor format: Lastname, Firstname; Lastname2, Firstname2; ...
     * [ ] Keywords auf 5 beschränken
     * [ ] Progressbar für file upload
 * Index
-    * [ ] Kategorien einklappbar
+    * [x] Kategorien einklappbar
     * [ ] Color Coding für Topics und Title, evt durch farbige bullets
     * [ ] Autor Index: nur erstautor anzeigen
 * Admin

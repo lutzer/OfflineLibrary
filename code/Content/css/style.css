@@ -23,7 +23,8 @@ a.link {
   position: fixed;
   top: 0px;
   width: 100%;
-  padding: 1em; }
+  padding: 1em;
+  z-index: 100; }
 
 #header a {
   color: #ffffff; }
@@ -40,7 +41,8 @@ a.link {
   color: #ffffff; }
 
 #header .side-nav {
-  background-color: #37474f; }
+  background-color: #37474f;
+  z-index: 200; }
 
 #header .side-nav a {
   color: #ffffff;
@@ -110,7 +112,9 @@ a.link {
   padding: 20px; }
 
 .card .card-top {
-  padding: 20px 20px 10px 20px; }
+  padding: 20px 20px 20px 20px;
+  border-bottom: 1px solid;
+  border-color: rgba(0, 0, 0, 0.1); }
 
 .card .card-bottom {
   background-color: #bdbdbd;
@@ -132,7 +136,8 @@ a.link {
   padding: 0.3em; }
 
 .indexlist ul {
-  padding-left: 10px; }
+  padding-left: 10px;
+  margin: 0; }
 
 .indexlist ul li {
   padding: 0.3em;
