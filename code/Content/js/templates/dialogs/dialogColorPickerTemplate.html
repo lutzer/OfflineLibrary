@@ -1,0 +1,16 @@
+<div id="dialog" class="modal-dialog z-depth-1 hidden transition">
+	<h2>Color Picker</h2>
+	<p>Choose a color by clicking on one of the circles.</p>
+	<ul class="center">
+		<% _.each(colors, function(item,key){ %>
+		<li><a href="#!" class="color-picker color-<%= key %>" data-color="<%= key %>"></a></li>
+	    <% }); %>
+	</ul>
+	
+	<!--  need this to keep layout alright -->
+	<div><img src="images/placeholder.gif"/></div>
+	
+	<div class="action-bar right-align">
+		<a class="waves-effect waves-light btn" id="rejectButton">Cancel</a>
+	</div>
+</div>

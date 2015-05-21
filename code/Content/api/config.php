@@ -1,4 +1,8 @@
 <?php
+/*
+ * ADMIN SETTINGS
+ */
+
 
 /*
  * DATABASE SETTINGS

@@ -39,16 +39,20 @@ define([
         		self.onSync('settings');
         	});*/
         	
-        	//fetch data
-        	this.documents.fetch();
-        	this.topics.fetch();
-        	this.settings.fetch();
+        	this.sync();
         	
         },
         
         reset: function() {
         	instance = null;
         },
+        
+        sync: function(options) {
+        	//fetch data
+        	this.documents.fetch(options);
+        	this.topics.fetch(options);
+        	this.settings.fetch(options);
+        }
         
         /*onSync: function(event) {
         	this.fetched[event] = true;

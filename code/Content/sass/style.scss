@@ -1,7 +1,7 @@
 /* ########### SET VARS ########### */
 
-$font-regular:    Helvetica ;
-$font-bold:    Helvetica ;
+$font-regular:  Helvetica ;
+$font-bold:  Helvetica ;
 
 $primary-text-color: rgba(0, 0, 0, 0.87);
 $headline-text-color : #ffffff ;
@@ -22,6 +22,8 @@ $card-padding: 20px;
 
 $modal-overlay-color: rgba(0, 0, 0, 0.5);
 $modal-bg-color: #bdbdbd ;
+
+$color-picker-size: 3em;
 
 /* ########### DEFINE CSS ###########*/
 body {
@@ -283,6 +285,10 @@ a.btn {
 
 .btn:hover {
 	background-color: $color-hover;
+}
+
+.icon {
+	color: $primary-text-color;
 }
 
 /*

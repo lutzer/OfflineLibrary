@@ -53,3 +53,18 @@
 	text-align:center;
 	font-weight: bold;
 }
+
+.modal-dialog .color-picker {
+	display: inline-block;
+	overflow: none;
+	height:  $color-picker-size;
+	width:  $color-picker-size;
+	border-radius: 50%;
+	border: 1px solid;
+	border-color: $primary-text-color;
+	margin: $element-padding;
+}
+
+.modal-dialog li {
+	display: inline-block;
+}

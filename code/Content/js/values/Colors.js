@@ -94,14 +94,7 @@ define([], function(){
 		   name: 'blue-grey',
 		   bgColor: '#37474f',
 		   hoverColor: '#263238'
-	   },
-	   
-       'red', 'pink' , 'purple', 
-       'deep-purple', 'indigo', 'blue', 
-       'light-blue', 'cyan', 'teal',
-       'green', 'light-green', 'lime',
-       'yellow', 'amber', 'orange', 
-       'deep-orange', 'brown', 'grey'
+	   }
 	]; 
 		
 	return Colors;

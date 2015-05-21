@@ -18,6 +18,10 @@ define([
 
 		},
 		
+		modelEvents: {
+			'change' : 'render'
+		},
+		
 		template : _.template(template),
 		
 		templateHelpers: function() {

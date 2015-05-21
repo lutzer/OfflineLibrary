@@ -129,6 +129,24 @@
 		}
 		
 		/**
+		 * @url DELETE /?topics/$id
+		 */
+		function deleteTopics($id) {
+			$db = new DocumentsDatabase();
+			$db->deleteTopic($id);
+		}
+		
+		/**
+		 * @url POST /?topics
+		 * @url PUT /?topics/$id
+		 */
+		function insertTopics($id,$data) {
+			$db = new DocumentsDatabase();
+			$db->insertTopic($data);
+		}
+		
+		
+		/**
 		 * @noAuth
 		 * @url GET /?settings
 		 */
@@ -140,20 +158,20 @@
 		
 		/**
 		 * 
-		 * @url GET /?login
-		 */
-		function login() {
-			return "logged in succesfull";
-		}
-		
-		/**
-		 * 
 		 * @url POST /?settings
 		 */
 		function updateSettings($settings) {
 			$db = new SettingsDatabase();
 			$result = $db->updateSettings($settings);
 			return $result;
+		}
+		
+		/**
+		 *
+		 * @url GET /?login
+		 */
+		function login() {
+			return "logged in succesfull";
 		}
 	}
 	

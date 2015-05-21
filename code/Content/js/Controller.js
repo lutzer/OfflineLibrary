@@ -12,8 +12,9 @@ define([
         'views/HeaderView',
         'views/FooterView',
         'views/settings/SettingsView',
-        'views/dialogs/ModalDialogView'
-], function($, Marionette, Vent, StyleSetter, Database, DocumentView, DocumentListView, UploadView, AboutView, IndexView, HeaderView, FooterView, SettingsView, ModalDialogView){
+        'views/dialogs/ModalDialogView',
+        'views/dialogs/ColorPickerDialogView'
+], function($, Marionette, Vent, StyleSetter, Database, DocumentView, DocumentListView, UploadView, AboutView, IndexView, HeaderView, FooterView, SettingsView, ModalDialogView, ColorPickerDialogView){
 	
 	var Controller = Marionette.Controller.extend({
 		
@@ -41,6 +42,8 @@ define([
 			//register events
 			Vent.on('dialog:open', this.openDialog, this);
 			Vent.on('dialog:close', this.closeDialog, this);
+			
+			Vent.on('dialog:colorpicker', this.openColorPickerDialog, this);
 			
 			Vent.on('settings:open', this.toggleSettings, this);
 	
@@ -102,6 +105,10 @@ define([
 		closeDialog: function() {
 			if (this.app.modalRegion.hasView())
 				this.app.modalRegion.reset();
+		},
+		
+		openColorPickerDialog: function(options) {
+			this.app.modalRegion.show(new ColorPickerDialogView(options));
 		},
 		
 		/* SETTINGS */

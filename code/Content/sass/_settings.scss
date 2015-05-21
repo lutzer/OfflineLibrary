@@ -2,12 +2,16 @@
  * SETTING STYLES
  */
  
+ .icon.mdi-action-settings {
+ 	font-size: 200%;
+ 	color: rgba(0,0,0,0.2);
+ }
+ 
  #settings {
 	padding: 0 $page-padding $page-padding $page-padding;
  }
  
 .settings-page {
-	padding: $element-padding;
 	color: $header-text-color;
 	border-radius:2px;
 	width:100%;
@@ -44,5 +48,43 @@
 	}
 	.list-link.active {
 		color:#ffffff;
+	}
+}
+
+#topic-settings-list {
+	
+	ul {
+		list-style-type:none;
+	}
+	
+	li {
+		clear: both;
+		padding: $paragraph-padding;
+	}
+	
+	.table {
+		display: table;
+		width: 100%;
+	}
+	
+	.table span {
+		display: table-cell;
+		width:1px;
+		vertical-align: top;
+	}
+	
+	.table .name-input {
+		width: 100%;
+		padding-right: $element-padding;
+		padding-left: $element-padding;
+	}
+	
+	.color-picker {
+		display: block;
+		height:  $color-picker-size;
+		width:  $color-picker-size;
+		border-radius: 50%;
+		border: 1px solid;
+		border-color: $primary-text-color;
 	}
 }

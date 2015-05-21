@@ -208,6 +208,9 @@ a.btn {
 .btn:hover {
   background-color: #263238; }
 
+.icon {
+  color: rgba(0, 0, 0, 0.87); }
+
 /*
  * SETTINGS
  */
@@ -263,6 +266,19 @@ a.btn {
 .modal-dialog #done {
   text-align: center;
   font-weight: bold; }
+
+.modal-dialog .color-picker {
+  display: inline-block;
+  overflow: none;
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.87);
+  margin: 10px; }
+
+.modal-dialog li {
+  display: inline-block; }
 
 /*
  * COLORS
@@ -345,62 +361,65 @@ a.btn {
   background-color: #558b2f; }
 
 /* lime */
-.color-11 {
+.color-12 {
   background-color: #c0ca33; }
 
-.color-11.dark {
+.color-12.dark {
   background-color: #9e9d24; }
 
 /* yellow */
-.color-12 {
+.color-13 {
   background-color: #fdd835; }
 
-.color-12.dark {
+.color-13.dark {
   background-color: #f9a825; }
 
 /* amber */
-.color-13 {
+.color-14 {
   background-color: #ffb300; }
 
-.color-13.dark {
+.color-14.dark {
   background-color: #ff8f00; }
 
 /* orange */
-.color-14 {
+.color-15 {
   background-color: #fb8c00; }
 
-.color-14.dark {
+.color-15.dark {
   background-color: #ef6c00; }
 
 /* deep-orange */
-.color-15 {
+.color-16 {
   background-color: #f4511e; }
 
-.color-15.dark {
+.color-16.dark {
   background-color: #d84315; }
 
 /* brown */
-.color-16 {
+.color-17 {
   background-color: #6d4c41; }
 
-.color-16.dark {
+.color-17.dark {
   background-color: #4e342e; }
 
 /* blue-grey */
-.color-17 {
+.color-18 {
   background-color: #546e7a; }
 
-.color-17.dark {
+.color-18.dark {
   background-color: #37474f; }
 
 /*
  * SETTING STYLES
  */
+.icon.mdi-action-settings {
+  font-size: 200%;
+  color: rgba(0, 0, 0, 0.2); }
+
 #settings {
   padding: 0 1em 1em 1em; }
 
 .settings-page {
-  padding: 10px;
   color: #ffffff;
   border-radius: 2px;
   width: 100%; }
@@ -423,5 +442,29 @@ a.btn {
   color: #ffffff; }
 .settings-page .list-link.active {
   color: #ffffff; }
+
+#topic-settings-list ul {
+  list-style-type: none; }
+#topic-settings-list li {
+  clear: both;
+  padding: 0.3em; }
+#topic-settings-list .table {
+  display: table;
+  width: 100%; }
+#topic-settings-list .table span {
+  display: table-cell;
+  width: 1px;
+  vertical-align: top; }
+#topic-settings-list .table .name-input {
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px; }
+#topic-settings-list .color-picker {
+  display: block;
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.87); }
 
 /*# sourceMappingURL=style.css.map */
