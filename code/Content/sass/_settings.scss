@@ -2,19 +2,24 @@
  * SETTING STYLES
  */
  
- .icon.mdi-action-settings {
- 	font-size: 200%;
- 	color: rgba(0,0,0,0.2);
- }
- 
- #settings {
-	padding: 0 $page-padding $page-padding $page-padding;
- }
+.icon.mdi-action-settings {
+	font-size: 200%;
+	color: rgba(0,0,0,0.2);
+}
  
 .settings-page {
 	color: $header-text-color;
 	border-radius:2px;
 	width:100%;
+}
+
+.settings-page .color-picker {
+	display: inline-block;
+	height:  $color-picker-size;
+	width:  $color-picker-size;
+	border-radius: 50%;
+	border: 1px solid;
+	border-color: $primary-text-color;
 }
 
 .settings-page {
@@ -51,7 +56,7 @@
 	}
 }
 
-#topic-settings-list {
+#settings-list {
 	
 	ul {
 		list-style-type:none;
@@ -61,30 +66,29 @@
 		clear: both;
 		padding: $paragraph-padding;
 	}
-	
-	.table {
-		display: table;
-		width: 100%;
-	}
-	
-	.table span {
-		display: table-cell;
-		width:1px;
-		vertical-align: top;
-	}
-	
-	.table .name-input {
-		width: 100%;
-		padding-right: $element-padding;
-		padding-left: $element-padding;
-	}
-	
-	.color-picker {
-		display: block;
-		height:  $color-picker-size;
-		width:  $color-picker-size;
-		border-radius: 50%;
-		border: 1px solid;
-		border-color: $primary-text-color;
-	}
+}
+
+.table {
+	display: table;
+	width: 100%;
+}
+
+.table span {
+	display: table-cell;
+	width:1px;
+	vertical-align: middle;
+}
+
+.table .fillspace {
+	width: 100%;
+	padding-right: $element-padding;
+	padding-left: $element-padding;
+}
+
+.table .settings-link a {
+	font-weight: bold;
+}
+
+.table.margin-top {
+	margin-top: $element-padding;
 }

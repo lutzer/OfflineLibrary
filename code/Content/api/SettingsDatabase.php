@@ -55,6 +55,8 @@ class SettingsDatabase extends SQLite3 {
 			"about_text=:about_text, footer_text=:footer_text, logo=:logo, ".
 			"header_color=:header_color, content_color=:content_color"
 		);
+		
+		var_dump($settings);
 
 		foreach ($settings as $key => $value)
 			$stmt->bindValue(':'.$key,$value);
@@ -65,15 +67,18 @@ class SettingsDatabase extends SQLite3 {
 	function updatePassword($password) {
 		$query = "SELECT password_salt FROM ".DATABASE_SETTINGS_TABLE;
 		$result = $this->query($query);
+
 		if ($result) {
-			$result->fetchArray(SQLITE3_ASSOC);
+			$row = $result->fetchArray(SQLITE3_ASSOC);
 		
 			$stmt = $this->prepare("UPDATE ".DATABASE_SETTINGS_TABLE." SET ".
 					"admin_password=:password"
 			);
-		
-			$stmt->bindValue(':password',crypt($password,$result['password_salt']));
+
+			$stmt->bindValue(':password',crypt($password,$row['password_salt']));
 			$stmt->execute();
+		} else {
+			throw new Exception('Could not get salt key from database.');
 		}
 	}
 	

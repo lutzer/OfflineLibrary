@@ -21,6 +21,16 @@ define([
 			
 			options = _.extend(options, { type: 'GET' });
 			$.ajax(Constants['web_service_url']+"?login", options);	
+		},
+		
+		setPassword: function(password, options) {
+			
+			options = _.extend(options, { 
+				type: 'POST',
+				data: {password: password}
+			});
+			
+			$.ajax(Constants['web_service_url']+"?password", options);	
 		}
 		
 		

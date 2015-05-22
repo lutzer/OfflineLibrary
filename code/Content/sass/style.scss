@@ -46,6 +46,10 @@ a.link {
 	color: $primary-text-color;
 }
 
+.noscroll {
+	overflow: hidden
+}
+
 /*
  * HEADER STYLES
  */
@@ -75,7 +79,6 @@ a.link {
 }
 
 #header .side-nav {
-	background-color: $color-header;
 	z-index: 1000;
 }
 

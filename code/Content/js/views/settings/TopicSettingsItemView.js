@@ -17,7 +17,8 @@ define([
 		events : {
 			'click #deleteButton' : 'onDeleteButtonClicked',
 			'click #colorButton' : 'onColorButtonClicked',
-			'keydown input' : 'onInputFieldKeyPressed'
+			'keydown input' : 'onInputFieldKeyPressed',
+			'focusout input' : 'onInputFocusOut'
 		},
 		
 		modelEvents: {
@@ -33,7 +34,6 @@ define([
 			event.preventDefault();
 			
 			this.model.destroy();
-			
 			Database.getInstance().sync();
 		},
 		
@@ -41,9 +41,8 @@ define([
 			
 			event.preventDefault();
 			
-			var self = this;
-			
 			// choose color with color picker dialog
+			var self = this;
 			Vent.trigger('dialog:colorpicker', {
 				callback: function(result) {
 					if (result) {
@@ -51,7 +50,6 @@ define([
 						self.model.save();
 						Database.getInstance().sync();
 					}
-						
 				}
 			});
 		},
@@ -64,7 +62,12 @@ define([
 				this.model.save();
 				Database.getInstance().sync();
 			}
-		}
+		},
+		
+		onInputFocusOut: function() {
+			//revert text if not saved
+			this.$('#topic_name').val(this.model.get('topic_name'));
+		} 
 	});
 	
 	return TopicSettingsItemView;

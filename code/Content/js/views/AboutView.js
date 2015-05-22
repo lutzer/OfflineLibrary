@@ -15,7 +15,8 @@ define([
 		},
 		
 		modelEvents : {
-			'sync' : 'render'
+			'sync' : 'render',
+			'change' : 'render'
 		},
 		
 		template : _.template(template)

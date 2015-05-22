@@ -4,16 +4,15 @@ define([
 	'backbone',
 	'marionette',
 	'vent',
-	'models/database',
+	'models/Database',
 	'text!templates/headerTemplate.html',
 ], function($, _, Backbone, Marionette, Vent, Database, template){
 	
 	var HeaderView = Marionette.ItemView.extend({
 		
 		initialize: function(options) {
-			var database = Database.getInstance();
-			this.collection = database.topics;
-			this.settings = database.settings
+			this.collection = Database.getInstance().topics;
+			this.settings = Database.getInstance().settings
 		},
 		
 		collectionEvents : {

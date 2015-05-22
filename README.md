@@ -11,7 +11,7 @@ See [Coniguration Instructions](docs/configure.md)
 ## TODO
 
 * [x] Validation for Insert new Document
-* [ ] Delete Documents 
+* [x] Delete Documents 
 * [x] Clean up materialize.css code in uploadTemplate.html
 * [x] create / delete topics
 * [x] Modal Dialogs for Error Handling
@@ -41,9 +41,9 @@ See [Coniguration Instructions](docs/configure.md)
     * [ ] Autor Index: nur erstautor anzeigen
 * Admin
     * [x] Topic Farbe aus 16 Grundfarben auswählbar
-    * [ ] Header Farbe und Logo auswählbar
+    * [/] Header Farbe und Logo auswählbar
     * [ ] Primär Hintergrund Farbe auswählbar 
-    * [ ] About, Footer Text und Logo auswählbar
+    * [x] About, Footer Text auswählbar
 
 ## QUESTIONS
 

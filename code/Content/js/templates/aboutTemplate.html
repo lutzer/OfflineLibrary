@@ -6,7 +6,7 @@
 				<span class="card-title">About</span> 
 			</div>
 			<div class="card-content">
-				<p><%= about_text %></p>
+				<p><%= about_text.replace(/\n/g, "<br/>")   %></p>
 			</div>
 		</div>
 	</div>

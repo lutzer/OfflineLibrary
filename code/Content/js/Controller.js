@@ -44,8 +44,6 @@ define([
 			Vent.on('dialog:close', this.closeDialog, this);
 			
 			Vent.on('dialog:colorpicker', this.openColorPickerDialog, this);
-			
-			Vent.on('settings:open', this.toggleSettings, this);
 	
 		},
 		
@@ -91,6 +89,27 @@ define([
 			$('body').scrollTop(0);
 			this.app.contentRegion.show(new IndexView());
 		},
+		
+		settings: function() {
+			
+			var settings = Database.getInstance().settings;
+			
+			//try to login
+			var self = this;
+			settings.login({
+				success: function() {
+					$('body').scrollTop(0);
+					self.app.contentRegion.show(new SettingsView());
+				},
+				error: function() {
+					Vent.trigger('dialog:open', {
+						title: "No login", 
+						text: "Could not login. Wrong password or username supplied.", 
+						type: 'message'
+					});
+				}
+			});
+		},
 	
 		defaultRoute: function() {
 			this.app.contentRegion.show(new DocumentListView());
@@ -109,35 +128,6 @@ define([
 		
 		openColorPickerDialog: function(options) {
 			this.app.modalRegion.show(new ColorPickerDialogView(options));
-		},
-		
-		/* SETTINGS */
-		
-		toggleSettings: function() {
-			
-			if (this.app.settingsRegion.hasView()) {
-				this.app.settingsRegion.reset();
-				return;
-			}
-				
-			//login
-			var settings = Database.getInstance().settings;
-			var self = this;
-			
-			settings.login({
-				success: function() {
-					self.app.settingsRegion.show(new SettingsView())
-					$('body').scrollTop($('#settings').position().top);
-				},
-				error: function() {
-					Vent.trigger('dialog:open', {
-						title: "No login", 
-						text: "Could not login. Wrong password or username supplied.", 
-						type: 'message'
-					});
-				}
-			});
-			
 		},
 		
 	});

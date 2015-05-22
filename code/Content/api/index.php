@@ -160,9 +160,13 @@
 		 * 
 		 * @url POST /?settings
 		 */
-		function updateSettings($settings) {
+		function updateSettings($data) {
+			
+			//put linebreaks in about text
+			//$data['about_text'] = nl2br($data['about_text']);
+			
 			$db = new SettingsDatabase();
-			$result = $db->updateSettings($settings);
+			$result = $db->updateSettings($data);
 			return $result;
 		}
 		
@@ -172,6 +176,21 @@
 		 */
 		function login() {
 			return "logged in succesfull";
+		}
+		
+		/**
+		 *
+		 * @url POST /?password
+		 */
+		function password() {
+			
+			if (isset($_POST['password'])) {
+				$db = new SettingsDatabase();
+				$result = $db->updatePassword($_POST['password']);
+				return "password updated";
+			}
+			
+			throw new RestException(400,"No password submitted");
 		}
 	}
 	

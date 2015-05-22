@@ -21,25 +21,9 @@ define([
         	this.topics = new TopicCollection();
         	this.settings = new SettingsModel();
         	
-        	/*this.fetched = {
-        			documents : false,
-        			topics: false,
-        			settings: false
-        	}
-        	
-        	//listen to sync events
-        	var self = this;
-        	this.documents.on('sync',function() {
-        		self.onSync('documents');
-        	});
-        	this.topics.on('sync',function() {
-        		self.onSync('topics');
-        	});
-        	this.settings.on('sync',function() {
-        		self.onSync('settings');
-        	});*/
-        	
         	this.sync();
+        	
+        	console.trace('init database');
         	
         },
         
@@ -53,22 +37,14 @@ define([
         	this.topics.fetch(options);
         	this.settings.fetch(options);
         }
-        
-        /*onSync: function(event) {
-        	this.fetched[event] = true;
-        	
-        	if (this.fetched.documents && this.fetched.topics && this.fetched.settings)
-        		Vent.trigger('allSynced');
-        		
-        }*/
     };
     
-    Database.getInstance = function(){
-        if(instance === null){
-            instance = new Database();
-        }
-    	return instance;
+    return {
+    	getInstance : function() {
+	        if(instance === null){
+	            instance = new Database();
+	        }
+	    	return instance;
+    	}
     };
-    
-    return Database;
 });

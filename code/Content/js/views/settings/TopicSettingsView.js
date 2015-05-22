@@ -10,7 +10,7 @@ define([
 	'text!templates/settings/topicSettingsTemplate.html',
 ], function($, _, Backbone, Marionette, Vent, Database, TopicModel, TopicSettingsItemView, template){
 	
-	var View = Marionette.CompositeView.extend({
+	var TopicSettingsView = Marionette.CompositeView.extend({
 		
 		initialize: function(options) {
 			this.collection = Database.getInstance().topics;
@@ -24,16 +24,15 @@ define([
 		
 		childView: TopicSettingsItemView,
 		
-		childViewContainer: "#topic-settings-list",
+		childViewContainer: "#settings-list",
 		
 		onAddTopicButtonClicked: function(event) {
 			
 			event.preventDefault();
-			
 			this.collection.add(new TopicModel());
 		}
 	});
 	
-	return View;
+	return TopicSettingsView;
 	
 });

@@ -15,25 +15,14 @@ define([
 		},
 		
 		modelEvents : {
-			'sync' : 'render'
-		},
-		
-		events: {
-			'click #settingsButton' : 'onClickSettingsButton'
+			'sync' : 'render',
+			'change' : 'render'
 		},
 		
 		template : _.template(template),
 		
 		onShow: function() {
 			//$('#content').css('margin-bottom',$('#footer').outerHeight());
-		},
-		
-		onClickSettingsButton: function(event) {
-			
-			if(event) 
-				event.preventDefault();
-			
-			Vent.trigger('settings:open');
 		}
 	});
 	

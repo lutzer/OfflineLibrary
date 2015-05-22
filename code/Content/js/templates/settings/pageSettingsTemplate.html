@@ -1,0 +1,27 @@
+<div class="card-content">
+	<div class="row">
+		<div class="input-field col s12">
+			<textarea id="about_text" class="materialize-textarea"><%= about_text %></textarea>
+			<label for="about_text" class="active">About Text</label>
+		</div>
+		<div class="input-field col s12">
+			<input id="footer_text" type="text" value="<%= footer_text %>"> 
+			<label for="footer_text" class="active">Footer Text</label>
+		</div>
+	</div>
+	<div class="table">
+		<span><a class="color-picker color-<%= header_color %>" href="#!" id="colorButton"></a></span>
+		<span class="fillspace">Header Color</span>
+	</div>
+	<div class="table margin-top">
+		<div class="input-field fillspace">
+			<input id="admin_password" type="text" placeholder="Type in new password and click on SET"> 
+			<label for="admin_password" class="active" >Admin password</label>
+		</div>
+		<span><a href="#!" id="changePassword" class="btn waves-effect waves-dark">Set</a></span>
+	</div>
+	
+</div>
+<div class="card-bottom">
+	<a id="saveSettings" href="#!" class="btn waves-effect waves-dark" >Save Changes</a>
+</div>
