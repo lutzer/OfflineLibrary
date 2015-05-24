@@ -28,12 +28,10 @@ define([
 		
 		show: function() {
 			this.$('#dialog').removeClass('hidden');
-			$('body').addClass('noscroll');
 		},
 		
 		hide: function() {
 			this.$('#dialog').addClass('hidden');
-			$('body').removeClass('noscroll');
 		},
 		
 		close: function() {
@@ -52,6 +50,14 @@ define([
 					self.destroy();
 				});
 			}
+		},
+
+		onShow: function() {
+			$('body').addClass('noscroll');
+		},
+		
+		onDestroy: function() {
+			$('body').removeClass('noscroll');
 		},
 		
 		onAcceptButtonPress: function(event) {

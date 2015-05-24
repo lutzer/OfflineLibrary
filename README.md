@@ -15,7 +15,7 @@ See [Coniguration Instructions](docs/configure.md)
 * [x] Clean up materialize.css code in uploadTemplate.html
 * [x] create / delete topics
 * [x] Modal Dialogs for Error Handling
-* [ ] Api: Clean up files which are not in database
+* [x] Api: Clean up files which are not in database
 * [ ] Put rest server in $mode=production
 * [ ] Hover effect on drop down menu + grey as all topic color
 * [ ] Validate Upload Form in javascript before submitting file
@@ -33,16 +33,14 @@ See [Coniguration Instructions](docs/configure.md)
     * [x] Title Feld automatisch angewählt
     * [x] Autor und Keyword format erklären
     * [x] Autor format: Lastname, Firstname; Lastname2, Firstname2; ...
-    * [ ] Keywords auf 5 beschränken
-    * [/] Progressbar für file upload
+    * [x] Progressbar für file upload
 * Index
     * [x] Kategorien einklappbar
     * [ ] Color Coding für Topics und Title, evt durch farbige bullets
     * [ ] Autor Index: nur erstautor anzeigen
-* Admin
+* Admin    
     * [x] Topic Farbe aus 16 Grundfarben auswählbar
-    * [/] Header Farbe und Logo auswählbar
-    * [ ] Primär Hintergrund Farbe auswählbar 
+    * [x] Header Farbe und Logo auswählbar
     * [x] About, Footer Text auswählbar
 
 ## QUESTIONS

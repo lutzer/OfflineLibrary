@@ -116,6 +116,9 @@
 		function deleteDocument($id = null) {
 			$db = new DocumentsDatabase();
 			$db->deleteDocument($id);
+			
+			$upload_dir = DIR_RECORD_FILES.'/'.$id;
+			deleteDirectory($upload_dir);
 		}
 
 		/**
@@ -162,11 +165,20 @@
 		 */
 		function updateSettings($data) {
 			
-			//put linebreaks in about text
-			//$data['about_text'] = nl2br($data['about_text']);
+			//check if new logo is submitted
+			if (isset($_FILES['file'])) {
+				$file = $_FILES['file'];
+				try {
+					uploadFile($file['tmp_name'],DIR_LOGO_FILE,$file['name']);
+				} catch (Exception $e) {
+					throw new RestException(400, $e->getMessage());
+					return;
+				}
+				$_POST['logo'] = DIR_LOGO_FILE.'/'.$file['name'];
+			}
 			
 			$db = new SettingsDatabase();
-			$result = $db->updateSettings($data);
+			$result = $db->updateSettings($_POST);
 			return $result;
 		}
 		
@@ -207,18 +219,36 @@
 	function uploadFile($tmp_file,$path,$filename) {
 		
 		//check if upload dir exists, else create it
-		if(!is_dir($path))  {
+		if(!is_dir($path))
 			mkdir($path,0755);
-			//chmod($path,0777);
-		} else {
-			throw new Exception('Cant create directory for file upload.');
-		}
 		
 		if (is_uploaded_file($tmp_file)) {
-			move_uploaded_file($tmp_file, $path.'/'.$filename);
+			// delete file if it exists
+			$createFile = $path.'/'.$filename;
+			if (is_file($createFile))
+				unlink($createFile);
+			move_uploaded_file($tmp_file,$createFile);
 		} else {
-			throw new Exception('No file submitted.');
+			throw new Exception('Could not copy file');
 		}
+	}
+	
+	function deleteDirectory($directory) {
+		
+		//throw new RestException(400,$directory);
+		
+		if (!is_dir($directory))
+			return;
+		
+		
+		// delete content
+		$files = glob($directory . '/*', GLOB_MARK);
+		foreach ($files as $file) {
+			unlink($file);
+		}
+		
+		//delete empty directory
+		rmdir($directory);
 	}
 
 	spl_autoload_register(); // don't load our classes unless we use them

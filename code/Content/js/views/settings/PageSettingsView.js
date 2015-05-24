@@ -17,7 +17,8 @@ define([
 		events : {
 			'click #saveSettings' : 'onSaveButtonClicked',
 			'click #colorButton' : 'onColorButtonClicked',
-			'click #changePassword' : 'onChangePasswordClicked'
+			'click #changePassword' : 'onChangePasswordClicked',
+			'change #file-chooser' : 'onFileChoosen'
 		},
 		
 		modelEvents: {
@@ -34,7 +35,17 @@ define([
 				footer_text: this.$('#footer_text').val(),
 				about_text: this.$('#about_text').val()
 			});
-			this.model.save();
+			
+			//check if file is selected
+			if (!this.$('#file-chooser').val())
+				this.model.save();
+			else {
+				this.model.save(this.model.attributes, { 
+					iframe: true,
+					files: this.$('#file-chooser'),
+					data: this.model.attributes
+				});
+			}
 			Database.getInstance().sync();
 		},
 		
@@ -76,7 +87,14 @@ define([
 					}
 				});
 			}
+		},
+		
+		onFileChoosen: function(event) {
+			filename = event.target.value.split('/').pop()
+			filename = filename.split('\\').pop();
+			this.$('#filepath').html(filename);
 		}
+		
 	});
 	
 	return View;

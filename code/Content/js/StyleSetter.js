@@ -23,6 +23,9 @@ define([
 			Jss.set('.btn:hover', {
 				'background-color' : Colors[settings.get('header_color')].hoverColor
 			});
+			
+			//set page logo
+			$('#pageLogo').attr("src", settings.get('logo'));
 		},
 		
 	});

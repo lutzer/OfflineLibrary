@@ -18,5 +18,6 @@ define("DATABASE_SETTINGS_FILE","../../settings.sqlite");
 define("DATABASE_SETTINGS_TABLE","settings");
 
 define("DIR_RECORD_FILES","../../Shared/docs");
+define("DIR_LOGO_FILE","../../Shared/images/logo");
 
 define("UPLOAD_FILE_MAX_SIZE",(8*1024*1024*100)); // 100mb

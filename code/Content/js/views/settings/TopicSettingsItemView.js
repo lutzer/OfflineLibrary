@@ -29,7 +29,7 @@ define([
 		
 		tagName: "li",
 		
-		onDeleteButtonClicked: function() {
+		onDeleteButtonClicked: function(event) {
 			
 			event.preventDefault();
 			
@@ -37,7 +37,7 @@ define([
 			Database.getInstance().sync();
 		},
 		
-		onColorButtonClicked: function() {
+		onColorButtonClicked: function(event) {
 			
 			event.preventDefault();
 			

@@ -22,7 +22,10 @@ define([
 		
 		tagName: "li",
 		
-		onDeleteButtonClicked: function() {
+		onDeleteButtonClicked: function(event) {
+			
+			event.preventDefault();
+			
 			this.model.destroy();
 			Database.getInstance().sync();
 		}

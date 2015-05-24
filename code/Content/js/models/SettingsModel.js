@@ -9,8 +9,8 @@ define([
 		url : Constants['web_service_url']+"?settings",
 		
 		defaults: {
-			about_text: '-',
-			footer_text: 'Powered by OfflineLibrary',
+			about_text: '',
+			footer_text: '',
 			logo: 'images/logo.png',
 			header_color: 0,
 			content_color: 0

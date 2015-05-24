@@ -29,6 +29,10 @@ a.link {
   padding: 1em;
   z-index: 100; }
 
+#pageLogo {
+  height: 100%;
+  padding: 10px; }
+
 #header a {
   color: #ffffff; }
 
