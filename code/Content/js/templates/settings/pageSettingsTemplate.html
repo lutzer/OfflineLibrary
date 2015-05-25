@@ -1,6 +1,15 @@
 
 <div class="card-content">
 	<div class="row">
+	
+		<div class="file-field input-field">
+			<div id="filepath"><img src="<%= logo %>"/></div>
+			<div class="btn imagePicker">
+				<span>Upload Logo</span> <input id="file-chooser" name="file" type="file">
+			</div>
+			
+		</div>
+	
 		<div class="input-field col s12">
 			<textarea id="about_text" class="materialize-textarea"><%= about_text %></textarea>
 			<label for="about_text" class="active">About Text</label>
@@ -13,13 +22,6 @@
 	<div class="table">
 		<span><a class="color-picker color-<%= header_color %>" href="#!" id="colorButton"></a></span>
 		<span class="fillspace">Header Color</span>
-	</div>
-	
-	<div class="file-field input-field">
-		<div class="btn">
-			<span>Upload Logo</span> <input id="file-chooser" name="file" type="file">
-		</div>
-		<div id="filepath"></div>
 	</div>
 	
 	<div class="table margin-top">

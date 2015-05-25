@@ -242,8 +242,12 @@ input:focus, textarea:focus {
 .input-field #filepath {
 	display:block;
 	text-align: right;
-	height:3.5em;
-	line-height:3.5em;
+	margin:$element-padding;
+	height:3em;
+}
+
+.input-field #filepath img {
+	height:100%;
 }
 
 .input-field .btn {

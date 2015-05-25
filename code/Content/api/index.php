@@ -175,11 +175,18 @@
 					return;
 				}
 				$_POST['logo'] = DIR_LOGO_FILE.'/'.$file['name'];
+				
+				$db = new SettingsDatabase();
+				$result = $db->updateSettings($_POST);
+				return $result;
+				
 			}
 			
 			$db = new SettingsDatabase();
-			$result = $db->updateSettings($_POST);
+			$result = $db->updateSettings($data);
 			return $result;
+			
+			
 		}
 		
 		/**

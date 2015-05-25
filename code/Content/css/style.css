@@ -169,8 +169,11 @@ input:focus, textarea:focus {
 .input-field #filepath {
   display: block;
   text-align: right;
-  height: 3.5em;
-  line-height: 3.5em; }
+  margin: 10px;
+  height: 3em; }
+
+.input-field #filepath img {
+  height: 100%; }
 
 .input-field .btn {
   margin-left: 10px;
@@ -455,6 +458,11 @@ a.btn {
   color: #ffffff; }
 .settings-page .list-link.active {
   color: #ffffff; }
+.settings-page .imagePicker.btn {
+  right: 0;
+  left: auto; }
+.settings-page #filePath {
+  text-align: left; }
 
 #settings-list ul {
   list-style-type: none; }

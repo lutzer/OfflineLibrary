@@ -1,3 +1,5 @@
-/code/Shared/docs/*
+/code/Shared/*
 /code/.externalToolBuilders/
 /code/.sass-cache/
+/code/*.sqlite
+
