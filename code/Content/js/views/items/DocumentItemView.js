@@ -15,7 +15,6 @@ define([
 		},
 		
 		events : {
-
 		},
 		
 		modelEvents: {
@@ -28,6 +27,17 @@ define([
 			return {
 				description_short : String.truncate(this.model.get('description'),200)
 			}
+		},
+		
+		onShow: function() {
+			
+			// float keywords
+			var containerWidth = this.$('.keywords ul').width();
+			
+			this.$('.keywords .link').each(function() {
+				var elementWidth = $(this).width();
+				$(this).css('margin-left',Math.random()*(containerWidth - elementWidth)+'px');
+			});
 		}
 	});
 	return DocumentItemView;

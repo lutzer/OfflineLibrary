@@ -25,7 +25,7 @@ See [Coniguration Instructions](docs/configure.md)
 * Document List
     * [x] truncate description
     * [x] make author more prominent
-    * [ ] keywords zufällig verschieben, evt in weiss darstellen
+    * [x] keywords zufällig verschieben, evt in weiss darstellen
     * [x] Farben in topic drop down menu
     * [x] Kein Topic-Farbe auf primär farbe ändern
 * Upload
@@ -45,12 +45,6 @@ See [Coniguration Instructions](docs/configure.md)
 
 ## QUESTIONS
 
-* Who can edit/delete documents
-* do we want an Image upload?
-* do you need to define topic colors manualy or can they be automaticaly generated?
-* Customize look: only logo, about and footer text?
-* how big will the book collection be / how much does it has to handle?
-* maximum filesize for documents?
 * which file types need to be supported?
-* Problem: hardware very slow. large uploads take forever and disable the whole box
-* right now its only possible to upload files up to 15 mb
+* **right now its only possible to upload files up to 15 mb**
+* float keywords: do we really need it? it doesnt look so great. problem on resizing page
