@@ -31,7 +31,12 @@ a.link {
 
 #pageLogo {
   height: 100%;
-  padding: 10px; }
+  padding: 10px;
+  vertical-align: top; }
+
+nav .brand-logo {
+  white-space: nowrap;
+  font-size: 120%; }
 
 #header a {
   color: #ffffff; }
@@ -42,9 +47,11 @@ a.link {
   text-size: 110%; }
 
 #header .nav-wrapper {
-  padding-left: 10px;
-  padding-right: 10px;
   color: #ffffff; }
+
+#header #navContent {
+  padding-left: 10px;
+  padding-right: 10px; }
 
 #header .side-nav {
   z-index: 1000; }
@@ -58,6 +65,13 @@ a.link {
 
 #header i {
   color: #ffffff; }
+
+#header .input-field input {
+  /*color: $header-text-color;*/ }
+#header .input-field input:focus {
+  border-color: #000000 !important;
+  webkit-box-shadow: 0 0 0 0 #000000 !important;
+  box-shadow: 0 0 0 0 #000000 !important; }
 
 /*
  * FOOTER STYLES
@@ -94,6 +108,42 @@ a.link {
   padding-left: 1em;
   padding-right: 1em; }
 
+.columns {
+  -webkit-column-count: 1;
+  -webkit-column-gap: 0px;
+  -webkit-column-fill: auto;
+  -moz-column-count: 1;
+  -moz-column-gap: 0px;
+  -moz-column-fill: auto;
+  column-count: 1;
+  column-gap: 0px;
+  column-fill: auto;
+  width: 100%; }
+
+@media (min-width: 601px) {
+  .columns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2; } }
+@media (min-width: 931px) {
+  .columns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3; } }
+.column-item {
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-break-inside: avoid;
+  margin: 10px 5px 10px 5px; }
+
+.column-item:first-child {
+  margin-top: 0; }
+
+.column-item .card {
+  position: static;
+  overflow: visible;
+  margin: 0px; }
+
 /*
  * CARD STYLES
  */
@@ -103,12 +153,19 @@ a.link {
 .card a {
   color: rgba(0, 0, 0, 0.87); }
 
+.card .card-title {
+  font-size: 24px;
+  font-weight: bold; }
+
 .card-author {
   display: block;
   font-size: 125%;
   font-style: italic;
   padding-top: 10px;
   padding-bottom: 10px; }
+
+.card a .card-format {
+  color: rgba(0, 0, 0, 0.5); }
 
 .card p {
   padding: 0.3em; }
@@ -129,10 +186,14 @@ a.link {
   margin: 0px; }
 
 .keywords {
-  padding: 0.3em; }
+  padding: 0.3em;
+  overflow: hidden; }
 
 .keywords.big {
-  font-size: 115%; }
+  font-size: 20px; }
+
+.keywords.big a {
+  color: #ffffff; }
 
 .keywords ul {
   padding-left: 10px; }
@@ -154,28 +215,23 @@ a.link {
 /*
  * FORM STYLES
  */
-.input-field input, .input-field label, .input-field textarea {
+.card .input-field input, .card .input-field label, .card .input-field textarea {
   border-color: #000000;
   color: rgba(0, 0, 0, 0.87); }
-
-input:focus, textarea:focus {
+.card input:focus, .card textarea:focus {
   border-color: #000000 !important;
   webkit-box-shadow: 0 1px 0 0 #000000 !important;
   box-shadow: 0 1px 0 0 #000000 !important; }
-
-.input-field label.active {
+.card .input-field label.active {
   color: rgba(0, 0, 0, 0.87) !important; }
-
-.input-field #filepath {
+.card .input-field #filepath {
   display: block;
   text-align: right;
   margin: 10px;
   height: 3em; }
-
-.input-field #filepath img {
+.card .input-field #filepath img {
   height: 100%; }
-
-.input-field .btn {
+.card .input-field .btn {
   margin-left: 10px;
   margin-right: 10px; }
 
@@ -294,12 +350,18 @@ a.btn {
 /*
  * COLORS
  */
+.noBg {
+  background-color: transparent !important; }
+
 /* red */
 .color-1 {
   background-color: #e53935; }
 
 .color-1.dark {
   background-color: #c62828; }
+
+.color-1.text {
+  color: #d50000; }
 
 /* pink */
 .color-2 {
@@ -308,12 +370,18 @@ a.btn {
 .color-2.dark {
   background-color: #c2185b; }
 
+.color-2.text {
+  color: #c51162; }
+
 /* purple */
 .color-3 {
-  background-color: #8e24aa; }
+  background-color: #9c27b0; }
 
 .color-3.dark {
-  background-color: #6a1b9a; }
+  background-color: #7b1fa2; }
+
+color-3.text {
+  color: #aa00ff; }
 
 /* deep-purple */
 .color-4 {
@@ -322,12 +390,18 @@ a.btn {
 .color-4.dark {
   background-color: #4527a0; }
 
+color-4.text {
+  color: #6200ea; }
+
 /* indigo */
 .color-5 {
   background-color: #3949ab; }
 
 .color-5.dark {
   background-color: #283593; }
+
+.color-5.text {
+  color: #304ffe; }
 
 /* blue */
 .color-6 {
@@ -336,12 +410,18 @@ a.btn {
 .color-6.dark {
   background-color: #1565c0; }
 
+.color-6.text {
+  color: #2962ff; }
+
 /* light-blue */
 .color-7 {
   background-color: #039be5; }
 
 .color-7.dark {
   background-color: #0277bd; }
+
+.color-7.text {
+  color: #0091ea; }
 
 /* cyan */
 .color-8 {
@@ -350,12 +430,18 @@ a.btn {
 .color-8.dark {
   background-color: #00838f; }
 
+.color-8.text {
+  color: #00b8d4; }
+
 /* teal */
 .color-9 {
   background-color: #00897b; }
 
 .color-9.dark {
   background-color: #00695c; }
+
+.color-9.text {
+  color: #00bfa5; }
 
 /* green */
 .color-10 {
@@ -364,12 +450,18 @@ a.btn {
 .color-10.dark {
   background-color: #2e7d32; }
 
+.color-10.text {
+  color: #00c853; }
+
 /* light-green */
 .color-11 {
   background-color: #7cb342; }
 
 .color-11.dark {
   background-color: #558b2f; }
+
+.color-11.text {
+  color: #64dd17; }
 
 /* lime */
 .color-12 {
@@ -378,12 +470,18 @@ a.btn {
 .color-12.dark {
   background-color: #9e9d24; }
 
+.color-12.text {
+  color: #aeea00; }
+
 /* yellow */
 .color-13 {
   background-color: #fdd835; }
 
 .color-13.dark {
   background-color: #f9a825; }
+
+.color-13.text {
+  color: #ffd600; }
 
 /* amber */
 .color-14 {
@@ -392,12 +490,18 @@ a.btn {
 .color-14.dark {
   background-color: #ff8f00; }
 
+.color-14.text {
+  color: #ffab00; }
+
 /* orange */
 .color-15 {
   background-color: #fb8c00; }
 
 .color-15.dark {
   background-color: #ef6c00; }
+
+.color-15.text {
+  color: #ff6d00; }
 
 /* deep-orange */
 .color-16 {
@@ -406,6 +510,9 @@ a.btn {
 .color-16.dark {
   background-color: #d84315; }
 
+.color-16.text {
+  color: #dd2c00; }
+
 /* brown */
 .color-17 {
   background-color: #6d4c41; }
@@ -413,12 +520,18 @@ a.btn {
 .color-17.dark {
   background-color: #4e342e; }
 
+.color-17.text {
+  color: #3e2723; }
+
 /* blue-grey */
 .color-18 {
   background-color: #546e7a; }
 
 .color-18.dark {
   background-color: #37474f; }
+
+.color-18.text {
+  color: #263238; }
 
 /*
  * SETTING STYLES

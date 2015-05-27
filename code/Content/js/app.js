@@ -29,6 +29,7 @@ define([
 				'year/:year' : 'year',
 				'author/:author' : 'author',
 				'index' : 'index',
+				'search/:string' : 'search',
 				'settings' : 'settings',
 				'*actions': 'defaultRoute'
 			}

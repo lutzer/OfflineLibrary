@@ -15,7 +15,8 @@ define([
 			var topics = _.map(this.models,function(model) {
 				return { 
 					name: model.get('topic_name'),
-					id: model.get('id')
+					id: model.get('id'),
+					color: model.get('topic_color')
 				}
 			})
 			var sortedTopics = _.sortBy(topics,function(entry) {

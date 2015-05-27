@@ -1,6 +1,10 @@
 /*
  * COLORS
  */
+ 
+.noBg {
+ 	background-color: transparent !important; 
+}
 
 /* red */
 .color-1 {
@@ -11,6 +15,10 @@
 	background-color: #c62828;
 }
 
+.color-1.text {
+	color: #d50000;
+}
+
 /* pink */
 .color-2 {
 	background-color: #d81b60;
@@ -19,13 +27,19 @@
 .color-2.dark {
 	background-color: #c2185b;
 }
+.color-2.text {
+	color: #c51162;
+}
 
 /* purple */
 .color-3 {
-	background-color: #8e24aa;
+	background-color: #9c27b0;
 }
 .color-3.dark {
-	background-color: #6a1b9a;
+	background-color: #7b1fa2;
+}
+color-3.text {
+	color: #aa00ff;
 }
 
 /* deep-purple */
@@ -35,6 +49,9 @@
 .color-4.dark {
 	background-color: #4527a0;
 }
+color-4.text {
+	color: #6200ea;
+}
 
 /* indigo */
 .color-5 {
@@ -42,6 +59,9 @@
 }
 .color-5.dark {
 	background-color: #283593;
+}
+.color-5.text {
+	color: #304ffe;
 }
 
 /* blue */
@@ -51,6 +71,9 @@
 .color-6.dark {
 	background-color: #1565c0;
 }
+.color-6.text {
+	color: #2962ff
+}
 
 /* light-blue */
 .color-7 {
@@ -58,6 +81,9 @@
 }
 .color-7.dark {
 	background-color: #0277bd;
+}
+.color-7.text {
+	color: #0091ea;
 }
 
 /* cyan */
@@ -67,6 +93,9 @@
 .color-8.dark {
 	background-color: #00838f;
 }
+.color-8.text {
+	color: #00b8d4;
+}
 
 /* teal */
 .color-9 {
@@ -74,6 +103,9 @@
 }
 .color-9.dark {
 	background-color: #00695c;
+}
+.color-9.text {
+	color: #00bfa5;
 }
 
 /* green */
@@ -83,6 +115,9 @@
 .color-10.dark {
 	background-color: #2e7d32;
 }
+.color-10.text {
+	color: #00c853;
+}
 
 /* light-green */
 .color-11 {
@@ -90,6 +125,9 @@
 }
 .color-11.dark {
 	background-color: #558b2f;
+}
+.color-11.text {
+	color: #64dd17;
 }
 
 /* lime */
@@ -99,6 +137,9 @@
 .color-12.dark {
 	background-color: #9e9d24;
 }
+.color-12.text {
+	color: #aeea00;
+}
 
 /* yellow */
 .color-13 {
@@ -106,6 +147,9 @@
 }
 .color-13.dark {
 	background-color: #f9a825;
+}
+.color-13.text {
+	color: #ffd600;
 }
 
 /* amber */
@@ -115,6 +159,9 @@
 .color-14.dark {
 	background-color: #ff8f00;
 }
+.color-14.text {
+	color: #ffab00;
+}
 
 /* orange */
 .color-15 {
@@ -122,6 +169,9 @@
 }
 .color-15.dark {
 	background-color: #ef6c00;
+}
+.color-15.text {
+	color: #ff6d00;
 }
 
 /* deep-orange */
@@ -131,6 +181,9 @@
 .color-16.dark {
 	background-color: #d84315;
 }
+.color-16.text {
+	color: #dd2c00;
+}
 
 /* brown */
 .color-17 {
@@ -139,6 +192,9 @@
 .color-17.dark {
 	background-color: #4e342e;
 }
+.color-17.text {
+	color: #3e2723;
+}
 
 /* blue-grey */
 .color-18 {
@@ -146,4 +202,7 @@
 }
 .color-18.dark {
 	background-color: #37474f;
+}
+.color-18.text {
+	color: #263238;
 }

@@ -332,8 +332,9 @@ class RestServer
 
 	public function getPath()
 	{
-		//$path = preg_replace('/\?.*$/', '', $_SERVER['REQUEST_URI']);
-		$path = $_SERVER['REQUEST_URI'];
+		// only remove everything which is behind &
+		$path = preg_replace('/\&.*$/', '', $_SERVER['REQUEST_URI']);
+		//$path = $_SERVER['REQUEST_URI'];
 		// remove root from path
 		if ($this->root) $path = preg_replace('/^' . preg_quote($this->root, '/') . '/', '', $path);
 		// remove trailing format definition, like /controller/action.json -> /controller/action

@@ -32,9 +32,16 @@
 		* @url GET /?documents
 		*/
 		function listDocuments() {
-			$db = new DocumentsDatabase();
-			$result = $db->listDocuments();
-			return $result;
+			
+			if (isset($_GET['search'])) {
+				$db = new DocumentsDatabase();
+				$result = $db->searchDocuments($_GET['search']);
+				return $result;
+			} else {
+				$db = new DocumentsDatabase();
+				$result = $db->listDocuments();
+				return $result;
+			}
 		}
 
 		/**

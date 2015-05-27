@@ -14,7 +14,10 @@ define([
 			
 		},
 		
+		className: 'column-item',
+		
 		events : {
+			
 		},
 		
 		modelEvents: {
@@ -25,7 +28,8 @@ define([
 		
 		templateHelpers: function() {
 			return {
-				description_short : String.truncate(this.model.get('description'),200)
+				description_short : String.truncate(this.model.get('description'),100),
+				format: this.model.get('file').split('.').pop()
 			}
 		},
 		
@@ -36,7 +40,7 @@ define([
 			
 			this.$('.keywords .link').each(function() {
 				var elementWidth = $(this).width();
-				$(this).css('margin-left',Math.random()*(containerWidth - elementWidth)+'px');
+				$(this).css('margin-left',Math.random()*(1 - elementWidth/containerWidth)*100+'%');
 			});
 		}
 	});

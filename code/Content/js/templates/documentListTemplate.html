@@ -1,4 +1,7 @@
 <% if (filterName) { %>
 <h1>Filter by <%= filterName %></h1>
 <% } %>
-<div id="document-list"></div>
+<% if (searchString) { %>
+<h1>Searching for <%= searchString %></h1>
+<% } %>
+<div id="document-list" class="columns col"></div>

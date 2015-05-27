@@ -14,7 +14,13 @@ define([
 		initialize: function(options) {
 			
 			var database = Database.getInstance();
-			this.collection = database.documents;
+			if (this.options.searchString !== undefined) {
+				this.collection = new DocumentCollection();
+				this.collection.search(options.searchString);
+			} else {
+				this.collection = database.documents;
+			}
+			
 			
 			if (this.options.collectionFilter !== undefined) {
 				var field = _.keys(this.options.collectionFilter)[0];
@@ -28,7 +34,8 @@ define([
 		
 		templateHelpers: function() {
 			return {
-				filterName : this.options.filterName
+				filterName : this.options.filterName,
+				searchString : this.options.searchString
 			}
 		},
 		

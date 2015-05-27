@@ -44,6 +44,12 @@ define([
 			var publishedYears = this.pluck('published');
 			publishedYears = _.uniq(_.compact(publishedYears))
 			return publishedYears.sort().reverse();
+		},
+		
+		search: function(searchString) {
+			this.fetch({data : 
+				$.param({ search : searchString}) 
+			});
 		}
 	
 	});

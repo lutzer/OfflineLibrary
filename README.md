@@ -41,23 +41,32 @@ See [Coniguration Instructions](docs/configure.md)
     * [x] keywords zufällig verschieben, evt in weiss darstellen
     * [x] Farben in topic drop down menu
     * [x] Kein Topic-Farbe auf primär farbe ändern
+    * [ ] Fix Column layout, no blank space
 * Upload
     * [ ] Upload size erhöhen wenn möglich 
     * [x] Title Feld automatisch angewählt
     * [x] Autor und Keyword format erklären
     * [x] Autor format: Lastname, Firstname; Lastname2, Firstname2; ...
     * [x] Progressbar für file upload
+    * [x] Disclaimer unter upload formular einfügen
 * Index
     * [x] Kategorien einklappbar
-    * [ ] Color Coding für Topics und Title, evt durch farbige bullets
+    * [x] Color Coding für Topics und Title, evt durch farbige bullets
     * [ ] Autor Index: nur erstautor anzeigen
 * Admin    
     * [x] Topic Farbe aus 16 Grundfarben auswählbar
     * [x] Header Farbe und Logo auswählbar
     * [x] About, Footer Text auswählbar
+* Header
+    * [x] Topic schrift weiss 
+    * [x] Search funktion implementieren
+    * [x] Header Schriftzug neben Logo "Offline Library"
+
+* Other
+    * [x] "Topic" durch "collection" ersetzt werden 
+    * [ ] Logout mechanismus
 
 ## QUESTIONS
 
 * which file types need to be supported?
 * **right now its only possible to upload files up to 15 mb**
-* float keywords: do we really need it? it doesnt look so great. problem on resizing page

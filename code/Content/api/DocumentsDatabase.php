@@ -67,6 +67,22 @@ class DocumentsDatabase extends SQLite3 {
 			return $this->fetchAllRows($result,SQLITE3_ASSOC);
 		return array();
 	}
+	
+	function searchDocuments($searchString) {
+		
+		// make string match any subpattern
+		$searchString = '%'.$searchString.'%';
+		
+		$stmt = $this->prepare("SELECT documents.*,topics.topic_name,topics.topic_color ".
+				"FROM ".DATABASE_TABLE_DOCUMENTS." AS documents ".
+				"LEFT OUTER JOIN ".DATABASE_TABLE_TOPICS." AS topics ON topic_id=topics.id ".
+				"WHERE documents.title LIKE :searchString OR documents.author LIKE :searchString");
+		$stmt->bindValue(":searchString",$searchString);
+		$result = $stmt->execute();
+		if ($result)
+			return $this->fetchAllRows($result,SQLITE3_ASSOC);
+		return array();
+	}
 
 	//insert or edit
 	function insertDocument($document) {

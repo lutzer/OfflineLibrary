@@ -58,12 +58,12 @@
 	<div class="col s12 m6 l3">
 		<div class="card indexlist">
 			<div class="card-top link-cursor" data-collapse="topics">
-				<span class="card-title">Topics</span>
+				<span class="card-title">Collections</span>
 			</div>
 			<div id="topics" class="card-content">
 				<ul>
 					<% _.each(topics, function(topic){ %>
-					<li><a class="link" href="#topic/<%= topic.id %>"><%= topic.name %></a></li>
+					<li><a class="link color-<%= topic.color %> text noBg" href="#topic/<%= topic.id %>"><%= topic.name %></a></li>
 					<% }); %>
 				</ul>
 			</div>

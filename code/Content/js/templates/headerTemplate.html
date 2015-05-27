@@ -8,7 +8,7 @@
 
 <!-- Dropdown Menu -->
 <ul id="topic-dropdown" class="dropdown-content">
-	<li><a href="#">All Topics</a></li>
+	<li><a href="#">All Collections</a></li>
 	<li class="divider"></li>
 	<% _.each(items, function(item){ %>
 	<li><a class="color-<%= item.topic_color %>" href="#topic/<%= item.id %>"><%= item.topic_name %></a></li>
@@ -19,22 +19,33 @@
 <div class="header-wrapper">
 	<nav>
 		<div class="nav-wrapper color-main">
-			<a href="#" class="brand-logo"><img src="images/logo.png" id="pageLogo"></a> <a href="#"
-				data-activates="mobile-demo" class="button-collapse"> <i
-				class="mdi-navigation-menu"></i>
-			</a>
-			<div class="right">
-				<a href="#search"><i class="mdi-action-search"></i></a>
+			<div id="searchInput" style="display:none">
+		        <div class="input-field">
+		          <input id="search" type="search" required>
+		          <label for="search"><i class="mdi-action-search"></i></label>
+		          <i class="mdi-navigation-close"></i>
+		        </div>
+		    </div>
+		    <div id="navContent">
+				<a href="#" class="brand-logo"><img src="images/logo.png" id="pageLogo"> OFFLINE LIBRARY </a>
+				<a href="#"
+					data-activates="mobile-demo" class="button-collapse"> <i
+					class="mdi-navigation-menu"></i>
+				</a>
+				<div class="right">
+					<div class="right"><a id="searchButton" href="#!"><i class="mdi-action-search"></i></a></div>
+				</div>
+				<ul class="right hide-on-med-and-down">
+					<li><a class="link" href="#">HOME</a></li>
+					<li><a class="link" href="#about">ABOUT</a></li>
+					<li><a class="link" href="#upload">UPLOAD</a></li>
+					<li><a class="link" href="#index">INDEX</a></li>
+					<li>
+						<a class="dropdown-button link" href="#!" data-activates="topic-dropdown">COLLECTIONS
+						<i class="mdi-navigation-arrow-drop-down right"></i></a>
+					</li>
+				</ul>
 			</div>
-			<ul class="right hide-on-med-and-down">
-				<li><a class="link" href="#">HOME</a></li>
-				<li><a class="link" href="#about">ABOUT</a></li>
-				<li><a class="link" href="#upload">UPLOAD</a></li>
-				<li><a class="link" href="#index">INDEX</a></li>
-				<li><a class="dropdown-button link" href="#!" data-activates="topic-dropdown">TOPICS
-				<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-			</ul>
-			
 		</div>
 	</nav>
 </div>

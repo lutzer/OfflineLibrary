@@ -23,6 +23,12 @@ define([
 			'sync' : 'render'
 		},
 		
+		events: {
+			'click #searchButton' : 'openSearchBar',
+			'keydown input' : 'onSearchBarKeyPressed',
+			'click .mdi-navigation-close' : 'closeSearchBar'
+		},
+		
 		template : _.template(template),
 		
 		templateHelpers: function() {
@@ -50,6 +56,33 @@ define([
 			this.$(".dropdown-button").dropdown({
 				constrain_width: false
 			});
+		},
+		
+		openSearchBar: function(event) {
+			event.preventDefault();
+			
+			this.$('#searchInput').show();
+			this.$('#navContent').hide();
+			
+			this.$('#searchInput input').focus();
+		},
+		
+		closeSearchBar: function(event) {
+			event.preventDefault();
+			
+			this.$('#searchInput').hide();
+			this.$('#navContent').show();
+		},
+		
+		onSearchBarKeyPressed: function(event) {
+			
+			// on enter press
+			if (event.keyCode == 13) {
+				this.$('#searchInput input').blur();
+				
+				var searchString = this.$('#searchInput input').val();
+				window.location.hash = "#search/"+encodeURIComponent(searchString);
+			}
 		}
 	});
 	

@@ -4,6 +4,7 @@ $font-regular:  Helvetica ;
 $font-bold:  Helvetica ;
 
 $primary-text-color: rgba(0, 0, 0, 0.87);
+$secondary-text-color: rgba(0, 0, 0, 0.5);
 $headline-text-color : #ffffff ;
 $primary-border-color: #000000 ;
 
@@ -65,6 +66,12 @@ a.link {
 #pageLogo {
 	height:100%;
 	padding: $element-padding;
+	vertical-align: top;
+}
+
+nav .brand-logo {
+	white-space: nowrap;
+	font-size: 120%;
 }
 
 #header a {
@@ -78,9 +85,13 @@ a.link {
 }
 
 #header .nav-wrapper {
+	
+	color: $header-text-color;
+}
+
+#header #navContent {
 	padding-left: $element-padding;
 	padding-right: $element-padding;
-	color: $header-text-color;
 }
 
 #header .side-nav {
@@ -98,6 +109,19 @@ a.link {
 
 #header i {
 	color: $header-text-color;
+}
+
+#header .input-field {
+	
+	input {
+		/*color: $header-text-color;*/
+	}
+	
+	input:focus {
+		border-color: $primary-border-color !important; 
+		webkit-box-shadow: 0 0 0 0 $primary-border-color !important;
+		box-shadow: 0 0 0 0 $primary-border-color !important;
+	}
 }
 
 /*
@@ -144,6 +168,54 @@ a.link {
 	padding-right: $page-padding;
 }
 
+.columns {
+	-webkit-column-count: 1;
+	-webkit-column-gap: 0px;
+	-webkit-column-fill: auto;
+	-moz-column-count: 1;
+	-moz-column-gap: 0px;
+	-moz-column-fill: auto;
+	column-count: 1;
+	column-gap: 0px;
+	column-fill: auto;
+	width:100%;
+}
+
+@media (min-width: 601px) {
+	.columns {
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+	}
+}
+
+@media (min-width: 931px) {
+	.columns {
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		column-count: 3;
+	}
+}
+
+
+
+.column-item {
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	column-break-inside: avoid;
+	margin: $element-padding $element-padding/2 $element-padding $element-padding/2;
+}
+
+.column-item:first-child {
+	margin-top:0;
+}
+
+.column-item .card {
+	position: static;
+	overflow: visible;
+	margin:0px;
+}
+
 /*
  * CARD STYLES
  */
@@ -157,6 +229,8 @@ a.link {
 } 
 
 .card .card-title {
+	font-size: 24px;
+	font-weight: bold;
 }
  
 .card-author {
@@ -165,6 +239,10 @@ a.link {
 	font-style:italic;
 	padding-top: $element-padding;
 	padding-bottom: $element-padding;
+}
+
+.card a .card-format {
+	color: $secondary-text-color;
 }
 
 .card p {
@@ -192,10 +270,15 @@ a.link {
 
 .keywords {
 	padding: $paragraph-padding;
+	overflow: hidden;
 }
 
 .keywords.big {
-	font-size:115%;
+	font-size:20px;
+}
+
+.keywords.big a {
+	color: #ffffff;
 }
 
 .keywords ul {
@@ -205,6 +288,8 @@ a.link {
 .keywords ul li {
 	padding: $paragraph-padding;
 }
+
+
 
 .indexlist ul {
 	padding-left: $element-padding;
@@ -224,35 +309,39 @@ a.link {
  * FORM STYLES
  */
  
-.input-field input, .input-field label, .input-field textarea {
-	border-color: $primary-border-color;
-	color: $primary-text-color;
-}
+.card {
+ 
+	.input-field input, .input-field label, .input-field textarea {
+		border-color: $primary-border-color;
+		color: $primary-text-color;
+	}
+	
+	input:focus, textarea:focus {
+		border-color: $primary-border-color !important; 
+		webkit-box-shadow: 0 1px 0 0 $primary-border-color !important;
+		box-shadow: 0 1px 0 0 $primary-border-color !important;
+	}
+	
+	.input-field label.active  {
+		color: $primary-text-color !important; 
+	}
+	
+	.input-field #filepath {
+		display:block;
+		text-align: right;
+		margin:$element-padding;
+		height:3em;
+	}
+	
+	.input-field #filepath img {
+		height:100%;
+	}
+	
+	.input-field .btn {
+		margin-left:$element-padding;
+		margin-right:$element-padding;
+	}
 
-input:focus, textarea:focus {
-	border-color: $primary-border-color !important; 
-	webkit-box-shadow: 0 1px 0 0 $primary-border-color !important;
-	box-shadow: 0 1px 0 0 $primary-border-color !important;
-}
-
-.input-field label.active  {
-	color: $primary-text-color !important; 
-}
-
-.input-field #filepath {
-	display:block;
-	text-align: right;
-	margin:$element-padding;
-	height:3em;
-}
-
-.input-field #filepath img {
-	height:100%;
-}
-
-.input-field .btn {
-	margin-left:$element-padding;
-	margin-right:$element-padding;
 }
 
 /* placeholder texts */

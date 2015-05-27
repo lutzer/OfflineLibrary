@@ -90,6 +90,11 @@ define([
 			this.app.contentRegion.show(new IndexView());
 		},
 		
+		search: function(searchString) {
+			$('body').scrollTop(0);
+			this.app.contentRegion.show(new DocumentListView({searchString : searchString}));
+		},
+		
 		settings: function() {
 			
 			var settings = Database.getInstance().settings;
