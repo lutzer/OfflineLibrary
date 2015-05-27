@@ -8,6 +8,19 @@ Follow these instructions: <http://librarybox.us/building.php>
 
 See [Coniguration Instructions](docs/configure.md)
 
+## Install Offline Library
+
+1. Follow the [Coniguration Instructions](docs/configure.md). Only these two steps are necessary:
+    * setup the lighthttpd config
+    * change the php.ini
+2. Replace code/content Folder in **/mnt/usb/LibraryBox/**
+3. Create the two directories with chmod 777:
+`/mnt/usb/LibraryBox/Shared/docs`
+`/mnt/usb/LibraryBox/Shared/images/logo`
+
+4. Reboot The LibraryBox
+
+
 ## TODO
 
 * [x] Validation for Insert new Document

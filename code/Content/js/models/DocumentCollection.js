@@ -42,6 +42,7 @@ define([
 		
 		getPublished: function() {
 			var publishedYears = this.pluck('published');
+			publishedYears = _.uniq(_.compact(publishedYears))
 			return publishedYears.sort().reverse();
 		}
 	

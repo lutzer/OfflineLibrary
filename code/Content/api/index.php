@@ -7,7 +7,7 @@
 	require_once('Validator.php');
 	
 
-	$UPLOAD_ALLOWED_EXTENSIONS = array("jpg", "gif", "png", "txt", "pdf", "doc", "docx", "odt", "epub");
+	$UPLOAD_ALLOWED_EXTENSIONS = array("jpg", "jpeg", "gif", "png", "txt", "pdf", "doc", "docx", "odt", "epub");
 
 	class Controller {
 		

@@ -56,7 +56,7 @@ define([
 			$('body').addClass('noscroll');
 		},
 		
-		onDestroy: function() {
+		onBeforeDestroy: function() {
 			$('body').removeClass('noscroll');
 		},
 		

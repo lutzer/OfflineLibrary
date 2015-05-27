@@ -2,6 +2,8 @@
 
 ## Enable internet access for box
 
+(These steps only need to be done for development)
+
 First make backup of network config:
 
 ```
@@ -105,6 +107,13 @@ change redirect line to:
 ### WWW Folder
 
 the root folder is under **/mnt/usb/LibraryBox/**. The index.html needs to be placed here: **/mnt/usb/LibraryBox/Content/index.html**
+
+Two folders have to be created with chmod 777:
+
+```
+/mnt/usb/LibraryBox/Shared/docs
+/mnt/usb/LibraryBox/Shared/images/logo
+```
 
 ### Change Php.ini
 
