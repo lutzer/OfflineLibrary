@@ -55,8 +55,6 @@ class SettingsDatabase extends SQLite3 {
 			"about_text=:about_text, footer_text=:footer_text, logo=:logo, ".
 			"header_color=:header_color, content_color=:content_color"
 		);
-		
-		var_dump($settings);
 
 		foreach ($settings as $key => $value)
 			$stmt->bindValue(':'.$key,$value);

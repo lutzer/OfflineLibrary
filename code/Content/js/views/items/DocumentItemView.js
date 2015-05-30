@@ -28,7 +28,7 @@ define([
 		
 		templateHelpers: function() {
 			return {
-				description_short : String.truncate(this.model.get('description'),100),
+				description_short : String.truncate(this.model.get('description'),150),
 				format: this.model.get('file').split('.').pop()
 			}
 		},

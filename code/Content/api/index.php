@@ -271,6 +271,7 @@
 				"isbn" => "978-1-906496-92-0"
 			));
 			
+			return("Database reseted.");
 		}
 	}
 	

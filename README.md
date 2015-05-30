@@ -30,7 +30,6 @@ See [Coniguration Instructions](docs/configure.md)
 * [x] Modal Dialogs for Error Handling
 * [x] Api: Clean up files which are not in database
 * [ ] Put rest server in $mode=production
-* [ ] Hover effect on drop down menu + grey as all topic color
 * [ ] Validate Upload Form in javascript before submitting file
 
 ## MEETING TODO LIST
@@ -41,7 +40,8 @@ See [Coniguration Instructions](docs/configure.md)
     * [x] keywords zufällig verschieben, evt in weiss darstellen
     * [x] Farben in topic drop down menu
     * [x] Kein Topic-Farbe auf primär farbe ändern
-    * [ ] Fix Column layout, no blank space
+    * [x] Fix Column layout, no blank space
+    * [x] Add Entry Type Property
 * Upload
     * [ ] Upload size erhöhen wenn möglich 
     * [x] Title Feld automatisch angewählt

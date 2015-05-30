@@ -8,8 +8,9 @@ define([
 	'models/Database',
 	'models/DocumentModel',
 	'values/Languages',
+	'values/EntryTypes',
 	'text!templates/uploadTemplate.html',
-], function($, _, Backbone, Marionette, iframeTransport, Vent, Database, DocumentModel, Languages, template){
+], function($, _, Backbone, Marionette, iframeTransport, Vent, Database, DocumentModel, Languages, EntryTypes, template){
 	
 	var UploadView = Marionette.ItemView.extend({
 		
@@ -29,7 +30,8 @@ define([
 		template : _.template(template),
 		
 		templateHelpers: {
-	        languages: Languages
+	        languages: Languages,
+	        entryTypes : EntryTypes
 	    },
 	    
 	    onShow: function() {
@@ -46,7 +48,8 @@ define([
 					published: $('#published').val(),
 					isbn: $('#isbn').val(),
 					language: $("#language").val(),
-					topic_id: $("#topic").val()
+					topic_id: $("#topic").val(),
+					entry_type: $('#entry_type').val()
 			};
 
 			if(event) 
