@@ -16,6 +16,7 @@ define([
 			published: false,
 			isbn: false,
 			language: false,
+			entry_type: false,
 			topic_name: false,
 			topic_id: null,
 			topic_color: 0,

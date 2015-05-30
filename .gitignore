@@ -2,5 +2,9 @@
 /code/Shared/images/logo/*
 /code/.externalToolBuilders/
 /code/.sass-cache/
-/code/*.sqlite
+#/code/*.sqlite
+
+# dont ignore these
+!/code/Shared/docs/1/rehtinking-gamification.pdf
+!/code/Shared/docs/2/Digital-Solidarity-Felix-Stalder.pdf
 

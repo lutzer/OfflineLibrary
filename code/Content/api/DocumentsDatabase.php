@@ -33,6 +33,7 @@ class DocumentsDatabase extends SQLite3 {
 			"published INT DEFAULT 0,".
 			"isbn TEXT,".
 			"language TEXT DEFAULT 'English',".
+			"entry_type TEXT DEFAULT 'Document',".
 			"created_at NUMERIC DEFAULT 0,".
 			"file TEXT NOT NULL,
 			FOREIGN KEY(topic_id) REFERENCES ".DATABASE_TABLE_TOPICS."(id)".
@@ -87,8 +88,8 @@ class DocumentsDatabase extends SQLite3 {
 	//insert or edit
 	function insertDocument($document) {
 		$stmt = $this->prepare("INSERT OR REPLACE INTO ".DATABASE_TABLE_DOCUMENTS." ".
-			"(id,title,author,description,keywords,topic_id,published,isbn,language,file) VALUES ".
-			"(:id,:title,:author,:description,LOWER(:keywords),:topic_id,:published,:isbn,:language,:file)"
+			"(id,title,author,description,keywords,topic_id,published,isbn,language,entry_type,file) VALUES ".
+			"(:id,:title,:author,:description,LOWER(:keywords),:topic_id,:published,:isbn,:language,:entry_type,:file)"
 		);
 
 		foreach ($document as $key => $value)
