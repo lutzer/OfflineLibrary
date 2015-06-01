@@ -32,7 +32,7 @@ See [Coniguration Instructions](docs/configure.md)
 * [ ] Put rest server in $mode=production
 * [ ] Validate Upload Form in javascript before submitting file
 
-## MEETING TODO LIST
+### MEETING TODO LIST
 
 * Document List
     * [x] truncate description
@@ -67,7 +67,7 @@ See [Coniguration Instructions](docs/configure.md)
     * [ ] Logout mechanismus
     * [x] Special Characters in upload file 
     * [x] Collection:name statt topic_id bei filter
-    * [ ] Fix Column Anordnung der Items in Firefox
+    * [x] Fix Column Anordnung der Items in Firefox
     * [ ] Buggy Collection dropdown in safari
 
 ## QUESTIONS
