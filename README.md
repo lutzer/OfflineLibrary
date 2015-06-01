@@ -65,6 +65,8 @@ See [Coniguration Instructions](docs/configure.md)
 * Other
     * [x] "Topic" durch "collection" ersetzt werden 
     * [ ] Logout mechanismus
+    * [ ] Special Characters in upload file 
+    * [ ] Collection:name statt topic_id bei filter
 
 ## QUESTIONS
 

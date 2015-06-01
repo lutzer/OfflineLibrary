@@ -46,7 +46,7 @@
 					
 					<div class="input-field col s12">
 						<select id="entry_type" class="browser-default">
-							<option value="" disabled selected>Choose Format</option>
+							<option value="" disabled selected>Choose entry type</option>
 							<% _.each(entryTypes, function(type){ %>
 						    <option value="<%= type %>"><%= type %></option>
 						    <% }); %>
@@ -55,7 +55,7 @@
 					
 					<div class="input-field col s12">
 						<select id="topic" class="browser-default">
-							<option value="" disabled selected>Choose topic</option>
+							<option value="" disabled selected>Choose collection</option>
 							<% _.each(items, function(item){ %>
 						    <option value="<%= item.id %>"><%= item.topic_name %></option>
 						    <% }); %>

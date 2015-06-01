@@ -39,7 +39,8 @@ a.link {
 
 nav .brand-logo {
   white-space: nowrap;
-  font-size: 120%; }
+  font-size: 120%;
+  height: 100%; }
 
 #header a {
   color: #ffffff; }
@@ -117,7 +118,7 @@ nav .brand-logo {
   -webkit-column-fill: auto;
   -moz-column-count: 1;
   -moz-column-gap: 10px;
-  -moz-column-fill: auto;
+  -moz-column-fill: balance;
   column-count: 1;
   column-gap: 10px;
   column-fill: auto;

@@ -1,6 +1,6 @@
 # CONFIGURE LIBRARY BOX FOR OFFLINE LIBRARY
 
-## Enable internet access for box
+## (Enable internet access for box)
 
 (These steps only need to be done for development)
 
@@ -39,7 +39,7 @@ config alias
 ```
 
 
-### Disable dns resolution of piratebox
+### (Disable dns resolution of piratebox)
 
 Everytime you want to have internet access, you need to switch the dns resolution off. If you don't do this step, the box will resolve always its own IP address.
 
@@ -50,7 +50,7 @@ You may add this line above the **exit** command in **/etc/rc.local**.
 
 ***!!! Dont forget to disable/delete before deployment. You also need to replace the network config file with the backup.***
 
-### Change Packaging Manager config
+### (Change Packaging Manager config)
 
 change `vi /etc/okpg.conf` to:
 
@@ -66,7 +66,7 @@ dest ext /mnt/ext
 
 (6th line is important)
 
-## Enable SFTP server
+## (Enable SFTP server)
 Some clients, e.g. Cyberduck on the Mac, cannot connect to the SCP server provided by OpenWrt's standard ssh server, dropbear, unless an additional binary is installed in /usr/libexec/sftp-server - this can be done with:
 
 ```
@@ -78,7 +78,7 @@ Now you can use sftp clients such as Cyberduck to connect to the OpenWrt system.
 (see <https://trac.cyberduck.io/ticket/4161>)
 
 
-## configure lighthttpd
+## Configure lighthttpd
 
 *Already installed!*
 
@@ -92,7 +92,7 @@ Change line 13 in **lighthttpd.conf**:
 server.upload-dirs = ( "/mnt/usb/LibraryBox/tmp" )
 ```
 
-### change redirection
+### (change redirection)
 
 edit file **/opt/piratebox/www/redirect.html**:
 

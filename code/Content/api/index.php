@@ -220,58 +220,11 @@
 		}
 		
 		/**
-		 *
+		 * 
 		 * @url GET /?reset
 		 */
 		function resetDatabase() {
 			
-			// create settings database
-			$db = new SettingsDatabase();
-			$db->create();
-			$db->updateSettings(array(
-				"about_text" => "Lorem ipsum...",
-				"footer_text" => "Powered By OfflineLibrary.",
-				"logo" => "images/logo.png",
-				"header_color" => 0,
-				"content_color" => 0
-			));
-			
-			//create standard documents database
-			$db = new DocumentsDatabase();
-			$db->create();
-			$db->insertTopic(array(
-				"id" => null,
-				"topic_name" => "Culture, Arts & Media",
-				"topic_color" => 1
-			));
-			$db->insertDocument(array(
-				"id" => null,
-				"title" => "Rethinking Gamification",
-				"author" => "Fuchs, Mathias; et al.",
-				"description" => "This book is about gamification, and much more. The publication intends to explore the concept of gamification, its history and applications, its implications for theory and practice. It also aims at doing more than simply mapping a trend, or providing guidelines for the design of gamification apps. In this book the concept of gamification will be rethought, through several distinct approaches and a multitude of questions.",
-				"keywords" => "games economy gamification",
-				"topic_id" => 1,
-				"published" => 2014,
-				"language" => "English",
-				"entry_type" => "Book",
-				"file" => "rethinking-gamification.pdf",
-				"isbn" => "978-3-95796-001-6"
-			));
-			$db->insertDocument(array(
-				"id" => null,
-				"title" => "Digital Solidarity",
-				"author" => "Stalder, Felix",
-				"description" => "Felix Stalder’s extended essay, Digital Solidarity, responds to the wave of new forms of networked organisation emerging from and colliding with the global economic crisis of 2008. Across the globe, voluntary association, participatory decision making and the sharing of resources, all widely adopted online, are being translated into new forms of social space. This movement operates in the breach between accelerating technical innovation, on the one hand, and the crises of institutions which organise, or increasingly restrain society on the other. Through an inventory of social forms – commons, assemblies, swarms and weak networks – the essay outlines how far we have already left McLuhan’s ‘Gutenberg Galaxy’ behind. In his cautiously optimistic account, Stalder reminds us that the struggles over where we will arrive are only just beginning.",
-				"keywords" => "games economy gamification",
-				"topic_id" => 1,
-				"published" => 2013,
-				"language" => "English",
-				"entry_type" => "Book",
-				"file" => "Digital-Solidarity-Felix-Stalder.pdf",
-				"isbn" => "978-1-906496-92-0"
-			));
-			
-			return("Database reseted.");
 		}
 	}
 	

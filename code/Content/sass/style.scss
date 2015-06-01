@@ -30,7 +30,7 @@ $color-picker-size: 3em;
 body {
 	color: $primary-text-color;
 }
-
+ 
 h1 {
 	padding-left:$element-padding;
 	font-size: 130%;
@@ -76,6 +76,7 @@ a.link {
 nav .brand-logo {
 	white-space: nowrap;
 	font-size: 120%;
+	height:100%;
 }
 
 #header a {
@@ -178,11 +179,11 @@ nav .brand-logo {
 	-webkit-column-fill: auto;
 	-moz-column-count: 1;
 	-moz-column-gap: $element-padding;
-	-moz-column-fill: auto;
+	-moz-column-fill: balance;
 	column-count: 1;
 	column-gap: $element-padding;
 	column-fill: auto;
-	width:100%;
+	width:100%; 
 }
 
 @media (min-width: 601px) {
