@@ -65,24 +65,36 @@ define([
 			this.app.contentRegion.show(new AboutView());
 		},
 		
-		topic: function(id) {
+		topic: function(topic) {
 			$('body').scrollTop(0);
-			this.app.contentRegion.show(new DocumentListView({collectionFilter : { topic_id : id}}));
+			this.app.contentRegion.show(new DocumentListView({
+				collectionFilter : { topic_name : topic}, 
+				filterName: 'topic: '+ topic
+			}));
 		},
 		
 		keyword: function(keyword) {
 			$('body').scrollTop(0);
-			this.app.contentRegion.show(new DocumentListView({collectionFilter : { keywords : keyword}}));
+			this.app.contentRegion.show(new DocumentListView(
+				{collectionFilter : { keywords : keyword}, 
+				filterName: 'keyword: '+keyword
+			}));
 		},
 		
 		year: function(year) {
 			$('body').scrollTop(0);
-			this.app.contentRegion.show(new DocumentListView({collectionFilter : { published : year}}));
+			this.app.contentRegion.show(new DocumentListView({
+				collectionFilter : { published : year},
+				filterName: 'year: '+year
+			}));
 		},
 		
 		author: function(author) {
 			$('body').scrollTop(0);
-			this.app.contentRegion.show(new DocumentListView({collectionFilter : { author : author}}));
+			this.app.contentRegion.show(new DocumentListView({
+				collectionFilter : { author : author},
+				filterName: 'author: '+author
+			}));
 		},
 		
 		index: function() {

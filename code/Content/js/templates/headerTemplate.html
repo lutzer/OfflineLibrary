@@ -11,7 +11,7 @@
 	<li><a href="#">All Collections</a></li>
 	<li class="divider"></li>
 	<% _.each(items, function(item){ %>
-	<li><a class="color-<%= item.topic_color %>" href="#topic/<%= item.id %>"><%= item.topic_name %></a></li>
+	<li><a class="color-<%= item.topic_color %>" href="#topic/<%= encodeURIComponent(item.topic_name) %>"><%= item.topic_name %></a></li>
     <% }); %>
 </ul>
 

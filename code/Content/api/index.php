@@ -35,12 +35,12 @@
 			
 			if (isset($_GET['search'])) {
 				$db = new DocumentsDatabase();
-				$result = $db->searchDocuments($_GET['search']);
-				return $result;
+				$results = $db->searchDocuments($_GET['search']);
+				return arrayToUtf8($results);
 			} else {
 				$db = new DocumentsDatabase();
 				$result = $db->listDocuments();
-				return $result;
+				return arrayToUtf8($result);
 			}
 		}
 
@@ -51,7 +51,8 @@
 		function getDocument($id = null) {
 			$db = new DocumentsDatabase();
 			$result = $db->getDocument($id);
-			return $result;
+
+			return arrayToUtf8($result);
 		}
 		
 		/**
@@ -135,7 +136,7 @@
 		function listTopics() {
 			$db = new DocumentsDatabase();
 			$result = $db->listTopics();
-			return $result;
+			return arrayToUtf8($result);
 		}
 		
 		/**
@@ -163,7 +164,7 @@
 		function getSettings() {
 			$db = new SettingsDatabase();
 			$result = $db->getSettings();
-			return $result;
+			return arrayToUtf8($result);
 		}
 		
 		/**
@@ -185,13 +186,13 @@
 				
 				$db = new SettingsDatabase();
 				$result = $db->updateSettings($_POST);
-				return $result;
+				return arrayToUtf8($result);
 				
 			}
 			
 			$db = new SettingsDatabase();
 			$result = $db->updateSettings($data);
-			return $result;
+			return arrayToUtf8($result);
 			
 			
 		}
@@ -226,6 +227,17 @@
 		function resetDatabase() {
 			
 		}
+	}
+
+	function arrayToUtf8($array) {
+		$result = array();
+		foreach ($array as $key => $val) {
+			if (!is_array($val))
+				$result[$key] = utf8_encode($val);
+			else
+				$result[$key] = arrayToUtf8($array[$key]);
+		}
+		return $result;
 	}
 	
 	function checkFileType($fileName) {

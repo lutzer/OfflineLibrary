@@ -2,7 +2,7 @@
 
 ## Install LibraryBox on TP Link MR 3020
 
-Follow these instructions: <http://librarybox.us/building.php>
+See [Installation Instructions](docs/installation.md)
 
 ## Configure Library Box
 
@@ -65,8 +65,10 @@ See [Coniguration Instructions](docs/configure.md)
 * Other
     * [x] "Topic" durch "collection" ersetzt werden 
     * [ ] Logout mechanismus
-    * [ ] Special Characters in upload file 
-    * [ ] Collection:name statt topic_id bei filter
+    * [x] Special Characters in upload file 
+    * [x] Collection:name statt topic_id bei filter
+    * [ ] Fix Column Anordnung der Items in Firefox
+    * [ ] Buggy Collection dropdown in safari
 
 ## QUESTIONS
 
