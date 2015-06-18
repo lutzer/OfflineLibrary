@@ -69,7 +69,7 @@ define([
 			$('body').scrollTop(0);
 			this.app.contentRegion.show(new DocumentListView({
 				collectionFilter : { topic_name : topic}, 
-				filterName: 'topic: '+ topic
+				filterName: 'collection: '+ topic
 			}));
 		},
 		

@@ -235,7 +235,8 @@ nav .brand-logo {
   display: block;
   text-align: right;
   margin: 10px;
-  height: 3em; }
+  height: 3em;
+  line-height: 3em; }
 .card .input-field #filepath img {
   height: 100%; }
 .card .input-field .btn {
@@ -579,8 +580,7 @@ color-4.text {
 .settings-page .list-link.active {
   color: #ffffff; }
 .settings-page .imagePicker.btn {
-  right: 0;
-  left: auto; }
+  left: 0; }
 .settings-page #filePath {
   text-align: left; }
 

@@ -25,7 +25,6 @@ define([
 			if (this.options.collectionFilter !== undefined) {
 				var field = _.keys(this.options.collectionFilter)[0];
 				var value = _.values(this.options.collectionFilter)[0];
-				//this.options.filterName = field+": "+value;
 			}
 		
 		},

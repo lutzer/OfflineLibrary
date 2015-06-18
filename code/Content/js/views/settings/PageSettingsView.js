@@ -93,6 +93,12 @@ define([
 			filename = event.target.value.split('/').pop()
 			filename = filename.split('\\').pop();
 			this.$('#filepath').html(filename);
+			
+			Vent.trigger('dialog:open', {
+				type: 'message',
+				title: 'Logo selected',
+				text: 'Click on "Save Changes" to apply the changed logo. Refresh the page to make the change visible.'
+			});
 		}
 		
 	});
