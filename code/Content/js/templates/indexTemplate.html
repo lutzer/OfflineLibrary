@@ -21,7 +21,7 @@
 			<div id="titles" class="card-content">
 				<ul>
 					<% _.each(titles, function(entry){ %>
-					<li><a class="link" href="#document/<%= entry.id %>"><%= entry.title %></a></li>
+					<li><a class="link color-<%= entry.color %> text noBg" href="#document/<%= entry.id %>"><%= entry.title %></a></li>
 					<% }); %>
 				</ul>
 			</div>

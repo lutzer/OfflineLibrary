@@ -7,7 +7,7 @@
 			<div class="card-content">
 				<span class="card-author"><%= author %></span>
 				<p><%= description %></p>
-				<p>Posted in <a class="link" href="#/topic/<%= topic_id %>"><%= topic_name %></a></p>
+				<p>Posted in <a class="link" href="#/topic/<%= encodeURIComponent(topic_name) %>"><%= topic_name %></a></p>
 				<p>ISBN: <%= isbn %></p>
 				<p>Published in <%= published %></p>
 				<p>Language: <%= language %></p>
@@ -16,7 +16,7 @@
 				<div class="keywords"> 
 					Keywords:
 					<ul>
-						<% _.each(keywords.split(" "), function(keyword){ %>
+						<% _.each(keywords.split(","), function(keyword){ %>
 						<li><a class="link" href="#keyword/<%= keyword %>"><%= keyword.toUpperCase() %></a></li>
 						<% }); %>
 					</ul>

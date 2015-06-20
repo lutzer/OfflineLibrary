@@ -1,4 +1,5 @@
 /* ########### SET VARS ########### */
+/* ########### MIXINS ########### */
 /* ########### DEFINE CSS ###########*/
 body {
   color: rgba(0, 0, 0, 0.87); }
@@ -30,7 +31,8 @@ a.link {
   top: 0px;
   width: 100%;
   padding: 1em;
-  z-index: 100; }
+  z-index: 100;
+  background-color: #ffffff; }
 
 #pageLogo {
   height: 100%;
@@ -144,7 +146,8 @@ nav .brand-logo {
   /* IE 11 */
   display: table;
   /* Actually FF 20+ */
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  width: 100%; }
 
 .column-item .card {
   position: static;
@@ -175,7 +178,11 @@ nav .brand-logo {
   color: rgba(0, 0, 0, 0.5); }
 
 .card p {
-  padding: 0.3em; }
+  padding: 0.3em;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto; }
 
 .card .card-content {
   padding: 20px; }
@@ -206,7 +213,11 @@ nav .brand-logo {
   padding-left: 10px; }
 
 .keywords ul li {
-  padding: 0.3em; }
+  padding: 0.3em;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto; }
 
 .indexlist ul {
   padding-left: 10px;
@@ -222,26 +233,34 @@ nav .brand-logo {
 /*
  * FORM STYLES
  */
-.card .input-field input, .card .input-field label, .card .input-field textarea {
-  border-color: #000000;
-  color: rgba(0, 0, 0, 0.87); }
-.card input:focus, .card textarea:focus {
-  border-color: #000000 !important;
-  webkit-box-shadow: 0 1px 0 0 #000000 !important;
-  box-shadow: 0 1px 0 0 #000000 !important; }
-.card .input-field label.active {
-  color: rgba(0, 0, 0, 0.87) !important; }
-.card .input-field #filepath {
-  display: block;
-  text-align: right;
-  margin: 10px;
-  height: 3em;
-  line-height: 3em; }
-.card .input-field #filepath img {
-  height: 100%; }
-.card .input-field .btn {
-  margin-left: 10px;
-  margin-right: 10px; }
+.card {
+  /* hide spinner buttons */ }
+  .card .input-field input, .card .input-field label, .card .input-field textarea {
+    border-color: #000000;
+    color: rgba(0, 0, 0, 0.87); }
+  .card input:focus, .card textarea:focus {
+    border-color: #000000 !important;
+    webkit-box-shadow: 0 1px 0 0 #000000 !important;
+    box-shadow: 0 1px 0 0 #000000 !important; }
+  .card .input-field label.active {
+    color: rgba(0, 0, 0, 0.87) !important; }
+  .card .input-field #filepath {
+    display: block;
+    text-align: right;
+    margin: 10px;
+    height: 3em;
+    line-height: 3em; }
+  .card .input-field #filepath img {
+    height: 100%; }
+  .card .input-field .btn {
+    margin-left: 10px;
+    margin-right: 10px; }
+  .card input[type="number"]::-webkit-outer-spin-button,
+  .card input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  .card input[type="number"] {
+    -moz-appearance: textfield; }
 
 /* placeholder texts */
 ::-webkit-input-placeholder {

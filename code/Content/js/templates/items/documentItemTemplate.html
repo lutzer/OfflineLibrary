@@ -12,8 +12,8 @@
 	</a>
 	<div class="card-content card-bottom keywords big color-<%= topic_color %> dark">
 		<ul>
-			<% _.each(keywords.split(" "), function(keyword){ %>
-			<li><a class="link" href="#keyword/<%= keyword %>"><%= keyword.toUpperCase() %></a></li>
+			<% _.each(keywords.split(","), function(keyword){ %>
+			<li><a class="link" href="#keyword/<%= encodeURIComponent(keyword) %>"><%= keyword.toUpperCase() %></a></li>
 			<% }); %>
 		</ul>
 	</div>

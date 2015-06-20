@@ -1,28 +1,33 @@
 
 <div class="card-content">
 	<div class="row">
-	
 		<div class="file-field input-field">
 		
 			<div id="filepath"><img src="<%= logo %>"/></div>
 			<div class="btn imagePicker">
-				<span>Upload Logo</span> <input id="file-chooser" name="file" type="file">
+				<span>Upload Header Logo</span> <input id="file-chooser" name="file" type="file">
 			</div>
-			
+		</div>
+		
+		<div style="height:1em"><img src="images/placeholder.gif"/></div>
+		
+		<div class="table">
+			<span><a class="color-picker color-<%= header_color %>" href="#!" id="colorButton"></a></span>
+			<span class="fillspace">Click circle to change header color.</span>
+		</div>
+		
+		<div style="height:2em"><img src="images/placeholder.gif"/></div>
+	
+		
+		<div class="input-field col s12">
+			<input id="footer_text" type="text" value="<%= footer_text %>" placeholder="Type footer text here"> 
+			<label for="footer_text" class="active">Footer Text</label>
 		</div>
 	
 		<div class="input-field col s12">
-			<textarea id="about_text" class="materialize-textarea"><%= about_text %></textarea>
+			<textarea id="about_text" class="materialize-textarea" placeholder="Type about text here"><%= about_text %></textarea>
 			<label for="about_text" class="active">About Text</label>
 		</div>
-		<div class="input-field col s12">
-			<input id="footer_text" type="text" value="<%= footer_text %>"> 
-			<label for="footer_text" class="active">Footer Text</label>
-		</div>
-	</div>
-	<div class="table">
-		<span><a class="color-picker color-<%= header_color %>" href="#!" id="colorButton"></a></span>
-		<span class="fillspace">Header Color</span>
 	</div>
 	
 	<div class="table margin-top">

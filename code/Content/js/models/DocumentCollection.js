@@ -11,6 +11,11 @@ define([
 
 		url : Constants['web_service_url']+"?documents",
 		
+		// reverse order collection
+		comparator: function (model) {
+		    return -model.get('id');
+		},
+		
 		getAuthors : function() {
 			var authors = this.pluck('author');
 			authors = _.uniq(authors);
@@ -20,7 +25,7 @@ define([
 		getKeywords: function() {
 			var keywordStrings = this.pluck('keywords');
 			var keywords = _.map(keywordStrings,function(keywords) {
-				return keywords.split(" ");
+				return keywords.split(",");
 			})
 			keywords = _.uniq(_.flatten(keywords))
 			return keywords.sort();
@@ -30,7 +35,8 @@ define([
 			var titles = _.map(this.models,function(model) {
 				return { 
 					title: model.get('title'),
-					id: model.get('id')
+					id: model.get('id'),
+					color : model.get('topic_color')
 				}
 			})
 			var sortedTitles = _.sortBy(titles,function(entry) {

@@ -29,7 +29,7 @@ define([
 		 */
 		matches: function(attribute,value) {
 			if (attribute == 'keywords') {
-				return _.contains(this.get('keywords').split(" "), value) 
+				return _.contains(this.get('keywords').split(","), value) 
 			} else {
 				return this.get(attribute) == value;
 			}
