@@ -35,7 +35,7 @@
 			<div id="keywords" class="card-content">
 				<ul>
 					<% _.each(keywords, function(keyword){ %>
-					<li><a class="link" href="#keyword/<%= keyword %>"><%= keyword %></a></li>
+					<li><a class="link" href="#keyword/<%= encodeURIComponent(keyword) %>"><%= keyword %></a></li>
 					<% }); %>
 				</ul>
 			</div>
