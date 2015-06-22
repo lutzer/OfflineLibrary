@@ -1,5 +1,23 @@
 # TODOS
 
+## Fixes (22.6.15)
+
+* [x] Upload: die neue Trennung der Keywords durch Komma ist im
+Beschreibungstext noch nicht angepasst
+
+* [x] Index: Bei Uploads mit mehreren Autoren werden die Autoren im Index
+nicht separat dargestellt, sondern als eine Einheit. Bitte separieren
+und alphabetisch ordnen. z.B:
+    ```
+    FIZEK, SONIA
+    FUCHS, MATTHIAS
+    RUFFINO, PAOLO
+    SCHRAPE, NIKLAS
+
+    anstatt:
+    FUCHS, MATTHIAS; FIZEK, SONIA; RUFFINO, PAOLO; SCHRAPE, NIKLAS
+    ```
+
 ## Fixes (20.6.15)
 
 * [x] Landing Page: Der neueste Upload soll an erster Stelle angezeigt werden
