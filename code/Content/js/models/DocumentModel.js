@@ -30,6 +30,12 @@ define([
 		matches: function(attribute,value) {
 			if (attribute == 'keywords') {
 				return _.contains(this.get('keywords').split(","), value) 
+			} else if (attribute == 'author') {
+				var authors = this.get('author').split(';');
+				authors = _.map(authors, function(string) {
+					return string.trim().toLowerCase();
+				});
+				return _.contains(authors, value)
 			} else {
 				return this.get(attribute) == value;
 			}

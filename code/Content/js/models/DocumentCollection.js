@@ -17,8 +17,17 @@ define([
 		},
 		
 		getAuthors : function() {
-			var authors = this.pluck('author');
-			authors = _.uniq(authors);
+			var authorStrings = this.pluck('author');
+			// create list
+			authors = _.map(authorStrings, function(string) {
+				return string.split(';')
+			});
+			// flatten list and throw out duplicates
+			authors = _.uniq(_.flatten(authors));
+			// trim whitespaces and make lowercase
+			authors = _.map(authors, function(author) {
+				return author.trim().toLowerCase();
+			})
 			return authors.sort();
 		},
 		

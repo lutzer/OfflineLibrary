@@ -40,7 +40,7 @@ define([
 			
 			this.$('.keywords .link').each(function() {
 				var elementWidth = $(this).width();
-				$(this).css('margin-left',Math.random()*(1 - elementWidth/containerWidth)*100+'%');
+				$(this).css('margin-left',Math.random()*(0.99 - elementWidth/containerWidth)*100+'%');
 			});
 		}
 	});
