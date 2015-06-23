@@ -2,6 +2,7 @@
 
 * [ ] Put rest server in $mode=production
 * [ ] Validate Upload Form in javascript before submitting file
+* [ ] Upload size erhöhen wenn möglich 
 
 ## Fixes (22.6.15)
 
@@ -76,7 +77,6 @@ und alphabetisch ordnen. z.B:
     * [x] Fix Column layout, no blank space
     * [x] Add Entry Type Property
 * Upload
-    * [ ] Upload size erhöhen wenn möglich 
     * [x] Title Feld automatisch angewählt
     * [x] Autor und Keyword format erklären
     * [x] Autor format: Lastname, Firstname; Lastname2, Firstname2; ...
