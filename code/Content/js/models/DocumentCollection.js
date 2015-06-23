@@ -22,12 +22,14 @@ define([
 			authors = _.map(authorStrings, function(string) {
 				return string.split(';')
 			});
-			// flatten list and throw out duplicates
-			authors = _.uniq(_.flatten(authors));
+			// flatten list
+			authors = _.flatten(authors);
 			// trim whitespaces and make lowercase
 			authors = _.map(authors, function(author) {
 				return author.trim().toLowerCase();
 			})
+			// throw out duplicates
+			authors = _.uniq(authors);
 			return authors.sort();
 		},
 		
