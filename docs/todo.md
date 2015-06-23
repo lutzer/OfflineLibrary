@@ -1,5 +1,8 @@
 # TODOS
 
+* [ ] Put rest server in $mode=production
+* [ ] Validate Upload Form in javascript before submitting file
+
 ## Fixes (22.6.15)
 
 * [x] Upload: die neue Trennung der Keywords durch Komma ist im
@@ -61,4 +64,41 @@ und alphabetisch ordnen. z.B:
     ADMIN PASSWORD
     Type in your new password and click on SET
     ```
-    
+
+### Fixes (2.6.15)
+
+* Document List
+    * [x] truncate description
+    * [x] make author more prominent
+    * [x] keywords zufällig verschieben, evt in weiss darstellen
+    * [x] Farben in topic drop down menu
+    * [x] Kein Topic-Farbe auf primär farbe ändern
+    * [x] Fix Column layout, no blank space
+    * [x] Add Entry Type Property
+* Upload
+    * [ ] Upload size erhöhen wenn möglich 
+    * [x] Title Feld automatisch angewählt
+    * [x] Autor und Keyword format erklären
+    * [x] Autor format: Lastname, Firstname; Lastname2, Firstname2; ...
+    * [x] Progressbar für file upload
+    * [x] Disclaimer unter upload formular einfügen
+* Index
+    * [x] Kategorien einklappbar
+    * [x] Color Coding für Topics und Title, evt durch farbige bullets
+    * [x] Autor Index: nur erstautor anzeigen
+* Admin    
+    * [x] Topic Farbe aus 16 Grundfarben auswählbar
+    * [x] Header Farbe und Logo auswählbar
+    * [x] About, Footer Text auswählbar
+* Header
+    * [x] Topic schrift weiss 
+    * [x] Search funktion implementieren
+    * [x] Header Schriftzug neben Logo "Offline Library"
+
+* Other
+    * [x] "Topic" durch "collection" ersetzt werden 
+    * [ ] Logout mechanismus
+    * [x] Special Characters in upload file 
+    * [x] Collection:name statt topic_id bei filter
+    * [x] Fix Column Anordnung der Items in Firefox
+    * [ ] Buggy Collection dropdown in safari
