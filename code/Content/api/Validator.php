@@ -47,8 +47,8 @@
 			}
 			//check if its only letters and spaces
 			if (($rule & VALIDATE_RULE_TAGS) == VALIDATE_RULE_TAGS) {
-				if (!preg_match("/^[\w, ]+$/",$this->data[$field]))
-					return strtoupper($field)." must contain comma seperated words (no special characters, except \" \" and \"_\").";
+				if (!preg_match("/^[\w,\- ]+$/",$this->data[$field]))
+					return strtoupper($field)." must contain comma seperated words (no special characters).";
 			}
 			//check if its only numbers and -
 			if (($rule & VALIDATE_RULE_ISBN) == VALIDATE_RULE_ISBN) {

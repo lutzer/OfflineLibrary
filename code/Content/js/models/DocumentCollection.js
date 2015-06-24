@@ -38,7 +38,11 @@ define([
 			var keywords = _.map(keywordStrings,function(keywords) {
 				return keywords.split(",");
 			})
-			keywords = _.uniq(_.flatten(keywords))
+			keywords = _.flatten(keywords);
+			keywords = _.map(keywords, function(keyword) {
+				return keyword.trim().toLowerCase();
+			});
+			keywords = _.uniq(keywords);
 			return keywords.sort();
 		},
 		

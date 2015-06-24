@@ -68,7 +68,7 @@
 				'title' => VALIDATE_RULE_REQUIRED | VALIDATE_RULE_NON_EMPTY_STRING,
 				'author' => VALIDATE_RULE_REQUIRED | VALIDATE_RULE_NON_EMPTY_STRING,
 				'published' => VALIDATE_RULE_YEAR,
-				'keywords' => VALIDATE_RULE_REQUIRED | VALIDATE_RULE_TAGS,
+				'keywords' => VALIDATE_RULE_REQUIRED /*| VALIDATE_RULE_TAGS*/,
 				'isbn' => VALIDATE_RULE_ISBN, 
 			));
 			if (!empty($errors))
